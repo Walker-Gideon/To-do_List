@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <title>To-do List | Web App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-box"></div>
+      <div class="right-box">
+        <h1>Sign Up</h1>
+
+        <form action="">
+          <div>
+            <input
+              type="text"
+              name="firstname"
+              id="firstName"
+              placeholder="Enter First Name"
+              required
+            />
+          </div>
+
+          <div>
+            <input
+              type="text"
+              name="lastname"
+              id="lastName"
+              placeholder="Enter Last Name"
+              required
+            />
+          </div>
+
+          <div>
+            <span><ion-icon name="person"></ion-icon></span>
+            <input
+              type="text"
+              name="username"
+              id="userName"
+              placeholder="Enter Username"
+              required
+            />
+          </div>
+
+          <div>
+            <span><ion-icon name="mail"></ion-icon></span>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter Email"
+              required
+            />
+          </div>
+
+          <div>
+            <span><ion-icon name="lock-closed"></ion-icon></span>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter Password"
+              required
+            />
+          </div>
+
+          <div>
+            <span><ion-icon name="lock-closed-outline"></ion-icon></span>
+            <input
+              type="password"
+              name="password"
+              id="confPassword"
+              placeholder="Confirm Password"
+              required
+            />
+          </div>
+
+          <div>
+            <input type="checkbox" />
+            <p>I agree to all terms</p>
+          </div>
+
+          <div class="submit-container">
+            <input type="submit" value="" />
+          </div>
+
+          <p>Already has an acc</p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
