@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -15,6 +24,53 @@
     <title>To-do List | Web App</title>
   </head>
   <body>
+    <!-- Dashboard -->
+    <header class="top-header">
+      <a href="" class="dashboard-logo">
+        <h1><span class="dash">Dash</span><span class="board">board</span></h1>
+      </a>
+
+      <form action="" method="get" class="searchbar">
+        <input
+          type="text"
+          name="query"
+          id="search"
+          placeholder="Search your task here..."
+          class="search-box"
+        />
+        <button type="su" class="search-btn">
+          <ion-icon name="search-outline" class="search-btn-icon"></ion-icon>
+        </button>
+      </form>
+
+      <div class="notice-main-container">
+        <div class="icons-container">
+          <button class="search-btn-icon">
+            <ion-icon name="notifications-outline" class="btn-icon"></ion-icon>
+          </button>
+
+          <button class="search-btn-icon">
+            <ion-icon name="calendar-outline" class="btn-icon"></ion-icon>
+          </button>
+        </div>
+
+        <div class="date-comtainer">
+          <p class="date-day">Tuesday</p>
+          <p class="date">24/09/2024</p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <aside></aside>
+
+      <div class="dashboard-comainer">
+        <header></header>
+        <section></section>
+      </div>
+    </main>
+
+    <!-- Sign up -->
+    <!-- 
     <div class="container">
       <div class="left-box"></div>
       <div class="right-box">
@@ -94,9 +150,10 @@
             <input type="submit" value="" />
           </div>
 
-          <p>Already has an acc</p>
+          <p>Already have an account?<a href="">Sign in</a></p>
         </form>
       </div>
     </div>
+     -->
   </body>
 </html>

@@ -1,0 +1,142 @@
+/*? Generals  */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+:root {
+  /* Colors */
+  --primary-col: #ff6767;
+  --dashblue-col: #3abeff;
+  --primary-black-col: #000;
+  --placeholder-col: #adb5bd;
+  --topheader-col: #f8f8f8;
+  --white-col: #fff;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/*? Main Styling  */
+
+/*? Main Header */
+.top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 3.2rem 8rem 3.2rem 12.8rem;
+  background-color: var(--topheader-col);
+}
+.dashboard-logo {
+  text-decoration: none;
+  font-size: 2.4rem;
+  margin-right: 3rem;
+}
+.dash {
+  color: var(--primary-col);
+}
+.board {
+  color: var(--primary-black-col);
+}
+
+.searchbar {
+  width: 45%;
+  display: flex;
+  margin-left: auto;
+}
+.search-box {
+  width: 90%;
+  border: none;
+  padding: 1.2rem;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: 1.6rem;
+  box-shadow: 0 0 1.4rem rgba(0, 0, 0, 0.1);
+}
+.search-box::placeholder {
+  font-size: 1.4rem;
+  color: var(--placeholder-col);
+}
+.search-box:focus {
+  /* outline: ; */
+}
+.search-btn {
+  padding: 1.2rem;
+  border: none;
+  background-color: var(--primary-col);
+  border-radius: 5px;
+}
+.search-btn-icon {
+  color: var(--white-col);
+  font-size: 2rem;
+  font-weight: 700;
+}
+.notice-main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  margin-left: 5rem;
+}
+.icons-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.icons-container > * {
+  border: none;
+  background-color: var(--primary-col);
+  color: var(--white-col);
+  padding: 1rem 1.2rem;
+  font-size: 2rem;
+  border-radius: 5px;
+  font-weight: 700;
+}
+.btn-icon {
+  font-size: 2rem;
+  text-align: center;
+}
+.date-day {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-black-col);
+}
+.date {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--dashblue-col);
+}
+
+/* 
+1. Typography System (font-size)
+    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+2. Spacing System (Padding)
+    2 / 4 / 8 / 12 / 32 / 48 / 64 / 80 / 96 / 128
+
+3. Font-width
+    default: 400
+    medium: 500
+    semi-large: 600
+    large: 700
+
+4. line-height
+    default: 
+    smaill: 
+    medium: 
+
+5. letter-sapcing
+
+6. Colors
+    primary: #ff6767, #000
+    Tints: 
+    Shade: 
+    Accents: 
+    Grayes:
+ */
