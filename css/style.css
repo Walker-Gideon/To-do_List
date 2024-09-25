@@ -10,14 +10,29 @@ html {
 :root {
   /* Colors */
   --primary-col: #ff6767;
-  --dashblue-col: #3abeff;
+  --secondary-orange-col: #f24e1e;
   --primary-black-col: #000;
-  --placeholder-col: #adb5bd;
   --topheader-col: #f8f8f8;
   --white-col: #fff;
+  --gray-col: #747474;
+  --graywhite-col: #a1a3ab;
+  --blue-col: #0225ff;
+  --greenone-col: #05a301;
+  --orangered-col: #f21e1e;
+  --greentwo-col: #04c400;
+  --lightblue-col: #42ade2;
+  --whitegray-col: #d9d9d9;
+  --secondary-white-col: #f5f8ff;
+  --primary-gray-col: #888888;
+  --mixed-gray-col: #a1a3ab;
+  --mixed-seconday-orange-col: #f24e1e;
 }
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Rubik", "Roboto", sans-serif;
+}
+.flex {
+  display: flex;
+  align-items: center;
 }
 
 /*? Main Styling  */
@@ -28,7 +43,7 @@ body {
   align-items: center;
   justify-content: space-evenly;
   padding: 3.2rem 8rem 3.2rem 12.8rem;
-  background-color: var(--topheader-col);
+  background-color: var(--secondary-white-col);
   box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.1);
 }
 .dashboard-logo {
@@ -61,7 +76,7 @@ body {
 }
 .search-box::placeholder {
   font-size: 1.4rem;
-  color: var(--placeholder-col);
+  color: var(--primary-gray-col);
 }
 .search-box:focus {
   /* outline: ; */
@@ -111,7 +126,7 @@ body {
 .date {
   font-size: 1.6rem;
   font-weight: 600;
-  color: var(--dashblue-col);
+  color: var(--lightblue-col);
 }
 
 /*? Main Section */
@@ -240,11 +255,78 @@ body {
   background-color: var(--primary-col);
   color: var(--white-col);
 }
+
+/*? Dashboard Body */
 .dashboard-body {
   margin-top: 1.2rem;
-  border: 2px solid var(--placeholder-col);
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-right-width: 2px;
+  border-left-width: 2px;
+  border-style: solid;
+  border-color: var(--mixed-gray-col);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  padding: 1.2rem;
+}
+.todo {
+  padding: 1.2rem;
+  box-sizing: 0 0.4rem 1.4rem rgba(0, 0, 0, 0.1);
+  /* check out the shadow */
+  border: 1px solid var(--graywhite-col);
+}
+.todo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.2rem;
+}
+.to-do,
+.add-task {
+  gap: 0.4rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.board-icon {
+  font-size: 3rem;
+}
+.to-do p {
+  font-size: 2rem;
+  color: var(--primary-col);
+}
+.add-task {
+  padding: 0.2rem 1.2rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.add-task:hover {
+  border: 1px solid var(--primary-col);
+  border-radius: 8px;
+  font-size: 1.4rem;
+}
+.plus-icon {
+  color: var(--primary-col);
+  font-size: 2rem;
+  font-weight: 600;
+}
+.todo-date {
+  gap: 0.4rem;
+  padding-left: 0.4rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--primary-black-col);
+}
+.today {
+  color: var(--primary-gray-col);
+}
+
+.card-image {
+  width: 12.8rem;
+  border: 2px solid var(--white-col);
+  border-radius: 8px;
+  /* height: 4.8rem; */
 }
 /* 
 1. Typography System (font-size)

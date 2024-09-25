@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    /> -->
 
     <script
       type="module"
@@ -21,6 +25,14 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script defer src="script.js"></script>
 
     <title>To-do List | Web App</title>
@@ -77,7 +89,8 @@
 
         <div class="main-container">
           <button class="btn-container">
-            <ion-icon name="speedometer-outline"></ion-icon>
+            <!-- <ion-icon name="speedometer-outline"></ion-icon> -->
+            <ion-icon name="grid-outline"></ion-icon>
             <p class="btn dashboard-btn">Dashboard</p>
           </button>
 
@@ -159,22 +172,77 @@
             </button>
           </div>
         </header>
+
+        <!-- In this section I am going to put temprary stuff for now -->
         <section class="dashboard-body">
+          <!-- ? To-Do Task -->
           <div class="todo">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-              praesentium itaque, expedita vel eius soluta minus. Cumque
-              consequatur ipsa quo, est, earum autem nesciunt doloremque,
-              reprehenderit aut deserunt dolore. Consequatur!
-            </p>
+            <div class="todo-header">
+              <div class="to-do flex">
+                <ion-icon
+                  name="clipboard-outline"
+                  class="board-icon"
+                ></ion-icon>
+                <p>To-Do</p>
+              </div>
+
+              <button class="add-task flex">
+                <ion-icon name="add-outline" class="plus-icon"></ion-icon>
+                <p>Add task</p>
+              </button>
+            </div>
+
+            <div class="todo-date flex">
+              <p>20 June</p>
+              <p class="today">.Today</p>
+            </div>
+
+            <div class="task-today">
+              <div class="card">
+                <div class="flex">
+                  <div class="flex">
+                    <ion-icon name="ellipse-outline"></ion-icon>
+                    <p class="title">Attend John's Birthday Party</p>
+                  </div>
+
+                  <button class="btn-option">
+                    <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                  </button>
+                </div>
+
+                <div class="card-body flex">
+                  <p>
+                    Buy gifts on the way and pick up cake from the bakery. (6 PM
+                    | Fresh Elements)....
+                  </p>
+
+                  <img src="./img/user2.jpg" alt="" class="card-image" />
+                </div>
+
+                <div class="card-status flex">
+                  <p class="card-level">
+                    Priority: <span class="level">Moderate</span>
+                  </p>
+                  <p class="card-start">
+                    Status: <span class="start">Not Started</span>
+                  </p>
+                  <p class="created-on">
+                    Created on: <span class="created">20/06/2023</span>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <!-- ? Task Status -->
           <div class="task">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Reprehenderit, explicabo! Magnam placeat autem reiciendis
-              consequuntur numquam vitae? Sed porro rerum consequatur ab,
-              voluptas iure nobis! Rem nam labore dolore quo?
-            </p>
+            <div class="status-container">
+              <div class="status-header">
+                <!-- <i class="fa-light fa-clipboard-check"></i> -->
+                <i class="fa-thin fa-clipboard-check"></i>
+                <p>Task Status</p>
+              </div>
+            </div>
           </div>
         </section>
       </div>
