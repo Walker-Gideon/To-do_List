@@ -39,7 +39,7 @@
   </head>
   <body>
     <!-- Dashboard -->
-    <header class="top-header">
+    <header class="top-header flex">
       <a href="" class="dashboard-logo">
         <h1><span class="dash">Dash</span><span class="board">board</span></h1>
       </a>
@@ -57,8 +57,8 @@
         </button>
       </form>
 
-      <div class="notice-main-container">
-        <div class="icons-container">
+      <div class="notice-main-container flex">
+        <div class="icons-container flex">
           <button class="search-btn-icon">
             <ion-icon name="notifications-outline" class="btn-icon"></ion-icon>
           </button>
@@ -76,7 +76,6 @@
     </header>
 
     <main class="main">
-      <!--  -->
       <aside class="aside">
         <div class="userImage">
           <img src="./img/7.png" alt="" class="img" />
@@ -87,43 +86,50 @@
           <p class="dashboard-email">gideonawortwe3@gmail.com</p>
         </div>
 
-        <div class="main-container">
-          <button class="btn-container">
-            <!-- <ion-icon name="speedometer-outline"></ion-icon> -->
-            <ion-icon name="grid-outline"></ion-icon>
-            <p class="btn dashboard-btn">Dashboard</p>
+        <div class="contain-dashboard-nav flex">
+          <div class="main-container">
+            <button class="btn-container">
+              <ion-icon name="speedometer-outline"></ion-icon>
+              <p class="btn dashboard-btn">Dashboard</p>
+            </button>
+
+            <button class="btn-container">
+              <ion-icon name="alert-outline"></ion-icon>
+              <p class="btn vitaltask-btn">Vital Task</p>
+            </button>
+
+            <button class="btn-container">
+              <ion-icon name="checkbox-outline"></ion-icon>
+              <p class="btn Mytask-btn">My Task</p>
+            </button>
+
+            <button class="btn-container">
+              <ion-icon name="list-outline"></ion-icon>
+              <p class="btn categories-btn">Task Categories</p>
+            </button>
+
+            <button class="btn-container">
+              <ion-icon name="settings-outline"></ion-icon>
+              <p class="btn settings-btn">Settings</p>
+            </button>
+
+            <button class="btn-container">
+              <ion-icon name="help-circle-outline"></ion-icon>
+              <p class="btn help-btn">Help</p>
+            </button>
+          </div>
+
+          <button class="btn-container logout">
+            <ion-icon name="log-out-outline"></ion-icon>
+            <p class="btn logout-btn">Logout</p>
           </button>
 
-          <button class="btn-container">
-            <ion-icon name="alert-outline"></ion-icon>
-            <p class="btn vitaltask-btn">Vital Task</p>
-          </button>
-
-          <button class="btn-container">
-            <ion-icon name="checkbox-outline"></ion-icon>
-            <p class="btn Mytask-btn">My Task</p>
-          </button>
-
-          <button class="btn-container">
-            <ion-icon name="list-outline"></ion-icon>
-            <p class="btn categories-btn">Task Categories</p>
-          </button>
-
-          <button class="btn-container">
-            <ion-icon name="settings-outline"></ion-icon>
-            <p class="btn settings-btn">Settings</p>
-          </button>
-
-          <button class="btn-container">
-            <ion-icon name="help-circle-outline"></ion-icon>
-            <p class="btn help-btn">Help</p>
-          </button>
+          <!-- ? I will use Js to toggle between the two -->
+          <!-- <button class="btn-container logout">
+          <ion-icon name="log-in-outline"></ion-icon>
+          <p class="btn logout-btn">Signin</p>
+        </button> -->
         </div>
-
-        <button class="btn-container logout">
-          <ion-icon name="log-out-outline"></ion-icon>
-          <p class="btn logout-btn">Logout</p>
-        </button>
       </aside>
 
       <div class="dashboard-container">
@@ -173,7 +179,7 @@
           </div>
         </header>
 
-        <!-- In this section I am going to put temprary stuff for now -->
+        <!-- ?In this section I am going to put temprary stuff for now -->
         <section class="dashboard-body">
           <!-- ? To-Do Task -->
           <div class="todo">
@@ -192,6 +198,7 @@
               </button>
             </div>
 
+            <!-- ? Will have to make changes to this later -->
             <div class="todo-date flex">
               <p>20 June</p>
               <p class="today">.Today</p>
@@ -199,14 +206,97 @@
 
             <div class="task-today">
               <div class="card">
-                <div class="flex">
-                  <div class="flex">
+                <div class="card-header flex">
+                  <div class="card-title flex">
                     <ion-icon name="ellipse-outline"></ion-icon>
-                    <p class="title">Attend John's Birthday Party</p>
+                    <p class="card-title-text">Attend John's Birthday Party</p>
                   </div>
 
                   <button class="btn-option">
-                    <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                    <ion-icon
+                      name="ellipsis-horizontal-outline"
+                      class="option-icon"
+                    ></ion-icon>
+                  </button>
+                </div>
+
+                <div class="card-body flex">
+                  <p>
+                    Buy gifts on the way and pick up cake from the bakery. (6 PM
+                    | Fresh Elements)....
+                  </p>
+
+                  <img src="./img/user2.jpg" alt="" class="card-image" />
+                </div>
+
+                <div class="card-status flex">
+                  <p class="card-level">
+                    Priority: <span class="level">Moderate</span>
+                  </p>
+                  <p class="card-start">
+                    Status: <span class="start">Not Started</span>
+                  </p>
+                  <p class="created-on">
+                    Created on: <span class="created">20/06/2023</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header flex">
+                  <div class="card-title flex">
+                    <ion-icon name="ellipse-outline"></ion-icon>
+                    <p class="card-title-text">
+                      Landing Page Design for TravelDays
+                    </p>
+                  </div>
+
+                  <button class="btn-option">
+                    <ion-icon
+                      name="ellipsis-horizontal-outline"
+                      class="option-icon"
+                    ></ion-icon>
+                  </button>
+                </div>
+
+                <div class="card-body flex">
+                  <p>
+                    Get the work done by EOD and discuss with client before
+                    leaving. (4 PM | Meeting Room)
+                  </p>
+
+                  <img src="./img/user2.jpg" alt="" class="card-image" />
+                </div>
+
+                <div class="card-status flex">
+                  <p class="card-level">
+                    Priority: <span class="level">Moderate</span>
+                  </p>
+                  <p class="card-start">
+                    Status: <span class="start">In Progress</span>
+                  </p>
+                  <p class="created-on">
+                    Created on: <span class="created">20/06/2023</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="next-todo-task"></div>
+            <!-- ? Next todo-task -->
+            <div class="task-today next-task">
+              <div class="card">
+                <div class="card-header flex">
+                  <div class="card-title flex">
+                    <ion-icon name="ellipse-outline"></ion-icon>
+                    <p class="card-title-text">Attend John's Birthday Party</p>
+                  </div>
+
+                  <button class="btn-option">
+                    <ion-icon
+                      name="ellipsis-horizontal-outline"
+                      class="option-icon"
+                    ></ion-icon>
                   </button>
                 </div>
 

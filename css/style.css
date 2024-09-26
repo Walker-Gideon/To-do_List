@@ -10,6 +10,7 @@ html {
 :root {
   /* Colors */
   --primary-col: #ff6767;
+  --prihover-col: #ff7676;
   --secondary-orange-col: #f24e1e;
   --primary-black-col: #000;
   --topheader-col: #f8f8f8;
@@ -39,21 +40,22 @@ body {
 
 /*? Main Header */
 .top-header {
-  display: flex;
-  align-items: center;
   justify-content: space-evenly;
-  padding: 3.2rem 8rem 3.2rem 12.8rem;
+  padding: 3.2rem 8rem 3.2rem 9.6rem;
   background-color: var(--secondary-white-col);
   box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.1);
 }
+
 .dashboard-logo {
   text-decoration: none;
-  font-size: 2.4rem;
+  font-size: 2rem;
   margin-right: 3rem;
 }
+
 .dash {
   color: var(--primary-col);
 }
+
 .board {
   color: var(--primary-black-col);
 }
@@ -66,13 +68,13 @@ body {
 .search-box {
   width: 90%;
   border: none;
-  padding: 1.2rem;
+  padding: 1.2rem 0.8rem 1.2rem 1.6rem;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   font-size: 1.6rem;
-  box-shadow: 0 0.4rem 1.4rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.4rem 1.4rem rgba(0, 0, 0, 0.2);
 }
 .search-box::placeholder {
   font-size: 1.4rem;
@@ -82,10 +84,16 @@ body {
   /* outline: ; */
 }
 .search-btn {
-  padding: 1.2rem;
+  padding: 0.8rem 1.2rem;
   border: none;
   background-color: var(--primary-col);
   border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.4rem rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+.search-btn:hover {
+  background-color: var(--prihover-col);
 }
 .search-btn-icon {
   color: var(--white-col);
@@ -93,15 +101,11 @@ body {
   font-weight: 700;
 }
 .notice-main-container {
-  display: flex;
-  align-items: center;
   justify-content: center;
   gap: 4rem;
   margin-left: 5rem;
 }
 .icons-container {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
   gap: 1rem;
 }
@@ -109,10 +113,15 @@ body {
   border: none;
   background-color: var(--primary-col);
   color: var(--white-col);
-  padding: 1rem 1.2rem;
+  padding: 0.8rem 1.2rem;
   font-size: 2rem;
   border-radius: 5px;
   font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.search-btn-icon:hover {
+  background-color: var(--prihover-col);
 }
 .btn-icon {
   font-size: 2rem;
@@ -174,8 +183,13 @@ body {
 .dashboard-email {
   font-size: 1.6rem;
 }
+.contain-dashboard-nav {
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12.8rem;
+}
 .main-container {
-  margin-bottom: auto;
+  margin: auto auto 1.2rem 0;
 }
 .btn-container {
   width: 100%;
@@ -195,8 +209,6 @@ body {
 .btn-container ion-icon {
   font-size: 3rem;
 }
-.btn-container .btn {
-}
 .btn-container:hover {
   background-color: var(--white-col);
   color: var(--primary-col);
@@ -204,7 +216,7 @@ body {
   padding: 1.2rem 3.4rem;
 }
 .logout {
-  margin-top: 6.4rem;
+  margin-top: 12.8rem;
 }
 
 /*? Dashboard Body */
@@ -271,9 +283,10 @@ body {
 }
 .todo {
   padding: 1.2rem;
-  box-sizing: 0 0.4rem 1.4rem rgba(0, 0, 0, 0.1);
-  /* check out the shadow */
-  border: 1px solid var(--graywhite-col);
+  box-sizing: 5px 10px 15px rgba(0, 0, 0, 0.2),
+    /* Right and bottom shadow */ -5px 10px 15px rgba(0, 0, 0, 0.1); /* Left and top shadow */
+  background-color: white;
+  border-radius: 8px;
 }
 .todo-header {
   display: flex;
@@ -322,12 +335,83 @@ body {
   color: var(--primary-gray-col);
 }
 
+/*? CARDS */
+.task-today {
+  padding: 1.2rem;
+}
+.next-todo-task {
+  border: 1px solid var(--graywhite-col);
+}
+.next-task {
+}
+.card {
+  border: 1px solid var(--graywhite-col);
+  border-radius: 8px;
+  margin-top: 1.2rem;
+  padding: 0.4rem 1.2rem 1.2rem;
+}
+.card-header {
+  justify-content: space-between;
+  font-size: 2.4rem;
+}
+.card-title {
+  gap: 1rem;
+  font-weight: 700;
+}
+.card-title ion-icon {
+  color: var(--orangered-col);
+}
+.card-title .card-title-text {
+  margin-top: 1.2rem;
+}
+.btn-option {
+  border: none;
+  background-color: transparent;
+  font-size: 3.6rem;
+  cursor: pointer;
+}
+.option-icon {
+  /* font-size: 2rem; */
+}
+.card-body {
+  gap: 1rem;
+  padding-bottom: 1.2rem;
+}
+.card-body p {
+  font-size: 1.8rem;
+  padding: 1.2rem 0 1.2rem 3.2rem;
+  color: var(--graywhite-col);
+}
 .card-image {
   width: 12.8rem;
   border: 2px solid var(--white-col);
   border-radius: 8px;
   /* height: 4.8rem; */
 }
+.card-status {
+  padding: 1.2rem 0 0 3.2rem;
+  gap: 1.8rem;
+  font-size: 1.4rem;
+  color: var(--primary-black-col);
+}
+.card-level {
+  font-weight: 600;
+}
+.level {
+  color: var(--lightblue-col);
+}
+.card-start {
+  margin-right: 2rem;
+  font-weight: 600;
+}
+.start {
+  color: var(--blue-col);
+}
+.created-on {
+  color: var(--graywhite-col);
+  font-weight: 500;
+}
+
 /* 
 1. Typography System (font-size)
     10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
