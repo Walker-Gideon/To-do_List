@@ -189,6 +189,7 @@ body {
   gap: 12.8rem;
 }
 .main-container {
+  width: 100%;
   margin: auto auto 1.2rem 0;
 }
 .btn-container {
@@ -279,13 +280,13 @@ body {
   border-color: var(--mixed-gray-col);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 1.2rem;
+  gap: 3.2rem;
+  padding: 3.2rem 3.2rem 1.2rem;
 }
 .todo {
   padding: 1.2rem;
-  box-sizing: 5px 10px 15px rgba(0, 0, 0, 0.2),
-    /* Right and bottom shadow */ -5px 10px 15px rgba(0, 0, 0, 0.1); /* Left and top shadow */
-  background-color: white;
+  box-shadow: 0.2rem 0.1rem rgba(0, 0, 0, 0.2),
+    -0.2rem 0.1rem rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
 .todo-header {
@@ -348,21 +349,23 @@ body {
   border: 1px solid var(--graywhite-col);
   border-radius: 8px;
   margin-top: 1.2rem;
-  padding: 0.4rem 1.2rem 1.2rem;
+  padding: 0.2rem 1.2rem 1.2rem;
 }
 .card-header {
   justify-content: space-between;
+  padding-bottom: 1.2rem;
   font-size: 2.4rem;
+  font-weight: 700;
 }
 .card-title {
   gap: 1rem;
-  font-weight: 700;
+  margin-bottom: 1.2rem;
 }
-.card-title ion-icon {
+.card-title-icon {
   color: var(--orangered-col);
 }
-.card-title .card-title-text {
-  margin-top: 1.2rem;
+.card-title-text {
+  margin-top: 3rem;
 }
 .btn-option {
   border: none;
@@ -390,7 +393,7 @@ body {
 }
 .card-status {
   padding: 1.2rem 0 0 3.2rem;
-  gap: 1.8rem;
+  gap: 2rem;
   font-size: 1.4rem;
   color: var(--primary-black-col);
 }
@@ -401,7 +404,7 @@ body {
   color: var(--lightblue-col);
 }
 .card-start {
-  margin-right: 2rem;
+  margin-right: 4.8rem;
   font-weight: 600;
 }
 .start {

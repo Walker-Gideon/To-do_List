@@ -18,7 +18,9 @@ const daysOfWeek = [
 const dayName = daysOfWeek[date.getDay()];
 todayDay.textContent = dayName;
 
-const day = date.getDate();
-const month = (date.getMonth() + 1).toString();
-const year = date.getFullYear();
-todayDate.textContent = `${day}/${month.padStart(2, "0")}/${year}`;
+// const day = date.getDate();
+// const month = (date.getMonth() + 1).toString();
+// const year = date.getFullYear();
+// todayDate.textContent = `${day}/${month.padStart(2, "0")}/${year}`;
+
+todayDate.textContent = date.toLocaleDateString();
