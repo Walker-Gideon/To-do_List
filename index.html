@@ -347,10 +347,56 @@
           <!-- ? Task Status -->
           <div class="task">
             <div class="status-container">
-              <div class="status-header">
-                <!-- <i class="fa-light fa-clipboard-check"></i> -->
-                <i class="fa-thin fa-clipboard-check"></i>
+              <div class="status-header flex">
+                <ion-icon
+                  name="clipboard-outline"
+                  class="board-icon"
+                ></ion-icon>
                 <p>Task Status</p>
+              </div>
+
+              <div class="progress-container">
+                <!-- completed -->
+                <div
+                  class="circle-progress col-1"
+                  data-progress="84"
+                  style="--progress-color: green"
+                >
+                  <svg>
+                    <circle class="bg" cx="50%" cy="50%" r="40"></circle>
+                    <circle class="progress" cx="50%" cy="50%" r="40"></circle>
+                  </svg>
+                  <div class="percentage">84%</div>
+                  <div class="status">Completed</div>
+                </div>
+
+                <!-- In Progress -->
+                <div
+                  class="circle-progress col-1"
+                  data-progress="46"
+                  style="--progress-color: blue"
+                >
+                  <svg>
+                    <circle class="bg" cx="50%" cy="50%" r="40"></circle>
+                    <circle class="progress" cx="50%" cy="50%" r="40"></circle>
+                  </svg>
+                  <div class="percentage">46%</div>
+                  <div class="status">In Progress</div>
+                </div>
+
+                <!-- Not Started -->
+                <div
+                  class="circle-progress col-1"
+                  data-progress="13"
+                  style="--progress-color: red"
+                >
+                  <svg>
+                    <circle class="bg" cx="50%" cy="50%" r="40"></circle>
+                    <circle class="progress" cx="50%" cy="50%" r="40"></circle>
+                  </svg>
+                  <div class="percentage">13%</div>
+                  <div class="status">Not Started</div>
+                </div>
               </div>
             </div>
           </div>
