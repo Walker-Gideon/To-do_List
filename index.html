@@ -86,8 +86,8 @@
           <p class="dashboard-email">gideonawortwe3@gmail.com</p>
         </div>
 
-        <div class="contain-dashboard-nav flex">
-          <div class="main-container">
+        <div class="contain-dashboard-nav">
+          <div class="main-btn-container">
             <button class="btn-container">
               <ion-icon name="speedometer-outline"></ion-icon>
               <p class="btn dashboard-btn">Dashboard</p>
@@ -119,19 +119,22 @@
             </button>
           </div>
 
-          <button class="btn-container logout">
-            <ion-icon name="log-out-outline"></ion-icon>
-            <p class="btn logout-btn">Logout</p>
-          </button>
+          <div class="next-btn-comtainer">
+            <button class="btn-container logout">
+              <ion-icon name="log-out-outline"></ion-icon>
+              <p class="btn logout-btn">Logout</p>
+            </button>
 
-          <!-- ? I will use Js to toggle between the two -->
-          <!-- <button class="btn-container logout">
-          <ion-icon name="log-in-outline"></ion-icon>
-          <p class="btn logout-btn">Signin</p>
-        </button> -->
+            <!-- ? I will use Js to toggle between the two -->
+            <!-- <button class="btn-container logout">
+              <ion-icon name="log-in-outline"></ion-icon>
+              <p class="btn logout-btn">Signin</p>
+            </button> -->
+          </div>
         </div>
       </aside>
 
+      <!-- ! DASHBOARD START -->
       <div class="dashboard-container">
         <header class="dashboard-body-header">
           <div class="welcome">
@@ -179,11 +182,9 @@
           </div>
         </header>
 
-        <!-- ?In this section I am going to put temprary stuff for now -->
         <section class="dashboard-body">
-          <!-- ? To-Do Task -->
-          <div class="todo">
-            <div class="todo-header">
+          <section class="todo">
+            <header class="todo-header">
               <div class="to-do flex">
                 <ion-icon
                   name="clipboard-outline"
@@ -196,7 +197,7 @@
                 <ion-icon name="add-outline" class="plus-icon"></ion-icon>
                 <p>Add task</p>
               </button>
-            </div>
+            </header>
 
             <!-- ? Will have to make changes to this later -->
             <div class="todo-date flex">
@@ -204,20 +205,14 @@
               <p class="today">.Today</p>
             </div>
 
-            <div class="task-today">
+            <!--? The card will be display in this section-->
+            <section class="task-today">
               <div class="card">
-                <div class="card-header flex">
-                  <div class="card-title flex">
-                    <ion-icon
-                      name="ellipse-outline"
-                      class="card-title-icon"
-                    ></ion-icon>
-                    <div class="text-title-container">
-                      <p class="card-title-text">
-                        Attend John's Birthday Party
-                      </p>
-                    </div>
-                  </div>
+                <header class="card-header flex">
+                  <ion-icon
+                    name="ellipse-outline"
+                    class="card-title-icon"
+                  ></ion-icon>
 
                   <button class="btn-option">
                     <ion-icon
@@ -225,14 +220,15 @@
                       class="option-icon"
                     ></ion-icon>
                   </button>
-                </div>
+                </header>
+
+                <p class="card-title-text">Attend John's Birthday Party</p>
 
                 <div class="card-body flex">
                   <p>
-                    Buy gifts on the way and pick up cake from the bakery. (6 PM
+                    Buy gifts on the way and pick up cake from the bakery. (6PM
                     | Fresh Elements)....
                   </p>
-
                   <img src="./img/user2.jpg" alt="" class="card-image" />
                 </div>
 
@@ -248,104 +244,11 @@
                   </p>
                 </div>
               </div>
+            </section>
+          </section>
 
-              <div class="card">
-                <div class="card-header flex">
-                  <div class="card-title flex">
-                    <ion-icon
-                      name="ellipse-outline"
-                      class="card-title-icon"
-                    ></ion-icon>
-                    <div class="text-title-container">
-                      <p class="card-title-text">
-                        Landing Page Design for TravelDays
-                      </p>
-                    </div>
-                  </div>
-
-                  <button class="btn-option">
-                    <ion-icon
-                      name="ellipsis-horizontal-outline"
-                      class="option-icon"
-                    ></ion-icon>
-                  </button>
-                </div>
-
-                <div class="card-body flex">
-                  <p>
-                    Get the work done by EOD and discuss with client before
-                    leaving. (4 PM | Meeting Room)
-                  </p>
-
-                  <img src="./img/user2.jpg" alt="" class="card-image" />
-                </div>
-
-                <div class="card-status flex">
-                  <p class="card-level">
-                    Priority: <span class="level">Moderate</span>
-                  </p>
-                  <p class="card-start">
-                    Status: <span class="start">In Progress</span>
-                  </p>
-                  <p class="created-on">
-                    Created on: <span class="created">20/06/2023</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="next-todo-task"></div>
-            <!-- ? Next todo-task -->
-            <div class="task-today next-task">
-              <div class="card">
-                <div class="card-header flex">
-                  <div class="card-title flex">
-                    <ion-icon
-                      name="ellipse-outline"
-                      class="card-title-icon"
-                    ></ion-icon>
-                    <div class="text-title-container">
-                      <p class="card-title-text">
-                        Presentation on Final Project
-                      </p>
-                    </div>
-                  </div>
-
-                  <button class="btn-option">
-                    <ion-icon
-                      name="ellipsis-horizontal-outline"
-                      class="option-icon"
-                    ></ion-icon>
-                  </button>
-                </div>
-
-                <div class="card-body flex">
-                  <p>
-                    Make sure everything is functionaing and all the necessities
-                    are properly met. Prepare the team and get the documents
-                    ready for....
-                  </p>
-
-                  <img src="./img/user2.jpg" alt="" class="card-image" />
-                </div>
-
-                <div class="card-status flex">
-                  <p class="card-level">
-                    Priority: <span class="level">Moderate</span>
-                  </p>
-                  <p class="card-start">
-                    Status: <span class="start">In Progress</span>
-                  </p>
-                  <p class="created-on">
-                    Created on: <span class="created">20/06/2023</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ? Task Status -->
-          <div class="task">
+          <section class="task">
+            <!-- neext -->
             <div class="status-container">
               <div class="status-header flex">
                 <ion-icon
@@ -358,7 +261,7 @@
               <div class="progress-container">
                 <!-- completed -->
                 <div
-                  class="circle-progress col-1"
+                  class="circle-progress"
                   data-progress="84"
                   style="--progress-color: green"
                 >
@@ -372,7 +275,7 @@
 
                 <!-- In Progress -->
                 <div
-                  class="circle-progress col-1"
+                  class="circle-progress"
                   data-progress="46"
                   style="--progress-color: blue"
                 >
@@ -386,7 +289,7 @@
 
                 <!-- Not Started -->
                 <div
-                  class="circle-progress col-1"
+                  class="circle-progress"
                   data-progress="13"
                   style="--progress-color: red"
                 >
@@ -399,9 +302,57 @@
                 </div>
               </div>
             </div>
-          </div>
+
+            <div class="completed-task-container">
+              <header class="completed-task-header flex">
+                <ion-icon
+                  name="clipboard-outline"
+                  class="board-icon"
+                ></ion-icon>
+                <p>Completed Task</p>
+              </header>
+
+              <div class="completed-card-container">
+                <div class="card completion-card">
+                  <header class="card-header flex">
+                    <ion-icon
+                      name="ellipse-outline"
+                      class="card-title-icon comp-title-icon"
+                    ></ion-icon>
+
+                    <button class="btn-option">
+                      <ion-icon
+                        name="ellipsis-horizontal-outline"
+                        class="option-icon"
+                      ></ion-icon>
+                    </button>
+                  </header>
+
+                  <p class="card-title-text">Attend John's Birthday Party</p>
+
+                  <div class="flex comp-body">
+                    <div class="completed-text-cont">
+                      <p>
+                        Buy gifts on the way and pick up cake from the bakery.
+                        (6PM | Fresh Elements)....
+                      </p>
+                      <p class="card-start start-comp">
+                        Status: <span class="start comp-start">Completed</span>
+                      </p>
+                    </div>
+                    <img src="./img/user2.jpg" alt="" class="card-image" />
+                  </div>
+
+                  <div class="card-status">
+                    <p class="created-on comp-on">Completed 2 days ago</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </section>
       </div>
+      <!-- ! DASHBOARD ENDS -->
     </main>
 
     <!-- Sign up -->
