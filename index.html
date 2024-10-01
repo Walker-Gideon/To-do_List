@@ -39,554 +39,7 @@
     <title>To-do List | Web App</title>
   </head>
   <body>
-    <header class="top-header flex">
-      <a href="" class="dashboard-logo">
-        <h1><span class="dash">Dash</span><span class="board">board</span></h1>
-      </a>
-
-      <form action="" method="get" class="searchbar">
-        <input
-          type="text"
-          name="query"
-          id="search"
-          placeholder="Search your task here..."
-          class="search-box"
-        />
-        <button type="su" class="search-btn">
-          <ion-icon name="search-outline" class="search-btn-icon"></ion-icon>
-        </button>
-      </form>
-
-      <div class="notice-main-container flex">
-        <div class="icons-container flex">
-          <button class="search-btn-icon">
-            <ion-icon name="notifications-outline" class="btn-icon"></ion-icon>
-          </button>
-
-          <button class="search-btn-icon">
-            <ion-icon name="calendar-outline" class="btn-icon"></ion-icon>
-          </button>
-        </div>
-
-        <div class="date-comtainer">
-          <p class="date-day">Friday</p>
-          <p class="date">06/07/2002</p>
-        </div>
-      </div>
-    </header>
-
-    <main class="main">
-      <aside class="aside">
-        <div class="userImage">
-          <img src="./img/7.png" alt="" class="img" />
-        </div>
-
-        <div class="name-container">
-          <p class="dashboard-name">Walker Gideon</p>
-          <p class="dashboard-email">gideonawortwe3@gmail.com</p>
-        </div>
-
-        <div class="contain-dashboard-nav">
-          <div class="main-btn-container">
-            <button class="btn-container dashboardbtn">
-              <ion-icon name="speedometer-outline"></ion-icon>
-              <p class="btn dashboard-btn">Dashboard</p>
-            </button>
-
-            <button class="btn-container vitaltaskbtn">
-              <ion-icon name="alert-outline"></ion-icon>
-              <p class="btn vitaltask-btn">Vital Task</p>
-            </button>
-
-            <button class="btn-container myTaskBtn">
-              <ion-icon name="checkbox-outline"></ion-icon>
-              <p class="btn Mytask-btn">My Task</p>
-            </button>
-
-            <button class="btn-container categoriesBtn">
-              <ion-icon name="list-outline"></ion-icon>
-              <p class="btn categories-btn">Task Categories</p>
-            </button>
-
-            <button class="btn-container settingsBtn">
-              <ion-icon name="settings-outline"></ion-icon>
-              <p class="btn settings-btn">Settings</p>
-            </button>
-
-            <button class="btn-container helpBtn">
-              <ion-icon name="help-circle-outline"></ion-icon>
-              <p class="btn help-btn">Help</p>
-            </button>
-          </div>
-
-          <div class="next-btn-comtainer">
-            <button class="btn-container logout">
-              <ion-icon name="log-out-outline"></ion-icon>
-              <p class="btn logout-btn">Logout</p>
-            </button>
-          </div>
-        </div>
-      </aside>
-
-      <div class="container">
-        <!-- ! DASHBOARD START -->
-        <div class="section-dashboard">
-          <header class="dashboard-body-header">
-            <div class="welcome">
-              <p>
-                Welcome back,
-                <span class="user-name">Walk</span>
-                👋
-              </p>
-            </div>
-
-            <div class="image-invite-container">
-              <div class="user-images">
-                <img
-                  src="./img/user4.jpg"
-                  alt="Woman folded her hands, standing smiling"
-                  class="img-users"
-                />
-                <img
-                  src="./img/user2.jpg"
-                  alt="Man using his phone smiling"
-                  class="img-users"
-                />
-
-                <img
-                  src="./img/user1.jpg"
-                  alt="Woman smiling"
-                  class="img-users"
-                />
-                <img
-                  src="./img/user3.jpg"
-                  alt="Man using his phone with glasses on smiling"
-                  class="img-users"
-                />
-                <img
-                  src="./img/user5.jpg"
-                  alt="Woman standing with her hand on her head smiling"
-                  class="img-users"
-                />
-              </div>
-
-              <button class="invite-btn">
-                <ion-icon name="people-outline"></ion-icon>
-                <p class="invite">Invite</p>
-              </button>
-            </div>
-          </header>
-
-          <div class="dashboard-body">
-            <section class="todo">
-              <header class="todo-header">
-                <div class="to-do flex">
-                  <ion-icon
-                    name="clipboard-outline"
-                    class="board-icon"
-                  ></ion-icon>
-                  <p>To-Do</p>
-                </div>
-
-                <button class="add-task flex">
-                  <ion-icon name="add-outline" class="plus-icon"></ion-icon>
-                  <p>Add task</p>
-                </button>
-              </header>
-
-              <!-- ? Will have to make changes to this later -->
-              <div class="todo-date flex">
-                <p class="present-date">20</p>
-                <p class="presnt-month">June</p>
-                <p class="today">.Today</p>
-              </div>
-
-              <!--? The card will be display in this section-->
-              <section class="task-today">
-                <!-- card 1 -->
-                <!-- <div class="card todo-card">
-                <header class="card-header flex">
-                  <ion-icon
-                    name="ellipse-outline"
-                    class="card-title-icon"
-                  ></ion-icon>
-
-                  <button class="btn-option">
-                    <ion-icon
-                      name="ellipsis-horizontal-outline"
-                      class="option-icon"
-                    ></ion-icon>
-                  </button>
-                </header>
-
-                <p class="card-title-text">Attend John's Birthday Party</p>
-
-                <div class="card-body flex">
-                  <p>
-                    Buy gifts on the way and pick up cake from the bakery. (6PM
-                    | Fresh Elements)....
-                  </p>
-                  <img src="./img/user2.jpg" alt="" class="card-image" />
-                </div>
-
-                <div class="card-status flex">
-                  <p class="card-level">
-                    Priority: <span class="level">Moderate</span>
-                  </p>
-                  <p class="card-start">
-                    Status: <span class="start">Not Started</span>
-                  </p>
-                  <p class="created-on">
-                    Created on: <span class="created">20/06/2023</span>
-                  </p>
-                </div>
-              </div> -->
-
-                <!-- card 2 -->
-                <!-- <div class="card todo-card">
-                <header class="card-header flex">
-                  <ion-icon
-                    name="ellipse-outline"
-                    class="card-title-icon"
-                  ></ion-icon>
-
-                  <button class="btn-option">
-                    <ion-icon
-                      name="ellipsis-horizontal-outline"
-                      class="option-icon"
-                    ></ion-icon>
-                  </button>
-                </header>
-
-                <p class="card-title-text">Attend John's Birthday Party</p>
-
-                <div class="card-body flex">
-                  <p>
-                    Buy gifts on the way and pick up cake from the bakery. (6PM
-                    | Fresh Elements)....
-                  </p>
-                  <img src="./img/user2.jpg" alt="" class="card-image" />
-                </div>
-
-                <div class="card-status flex">
-                  <p class="card-level">
-                    Priority: <span class="level">Moderate</span>
-                  </p>
-                  <p class="card-start">
-                    Status: <span class="start">Not Started</span>
-                  </p>
-                  <p class="created-on">
-                    Created on: <span class="created">20/06/2023</span>
-                  </p>
-                </div>
-              </div> -->
-
-                <!-- card 3 -->
-                <!-- <div class="card todo-card">
-                <header class="card-header flex">
-                  <ion-icon
-                    name="ellipse-outline"
-                    class="card-title-icon"
-                  ></ion-icon>
-
-                  <button class="btn-option">
-                    <ion-icon
-                      name="ellipsis-horizontal-outline"
-                      class="option-icon"
-                    ></ion-icon>
-                  </button>
-                </header>
-
-                <p class="card-title-text">Attend John's Birthday Party</p>
-
-                <div class="card-body flex">
-                  <p>
-                    Buy gifts on the way and pick up cake from the bakery. (6PM
-                    | Fresh Elements)....
-                  </p>
-                  <img src="./img/user2.jpg" alt="" class="card-image" />
-                </div>
-
-                <div class="card-status flex">
-                  <p class="card-level">
-                    Priority: <span class="level">Moderate</span>
-                  </p>
-                  <p class="card-start">
-                    Status: <span class="start">Not Started</span>
-                  </p>
-                  <p class="created-on">
-                    Created on: <span class="created">20/06/2023</span>
-                  </p>
-                </div>
-              </div> -->
-              </section>
-            </section>
-
-            <section class="task">
-              <!-- neext -->
-              <div class="status-container">
-                <div class="status-header flex">
-                  <ion-icon
-                    name="clipboard-outline"
-                    class="board-icon"
-                  ></ion-icon>
-                  <p>Task Status</p>
-                </div>
-
-                <div class="progress-container">
-                  <!-- completed -->
-                  <div
-                    class="circle-progress"
-                    data-progress="0"
-                    style="--progress-color: green"
-                  >
-                    <svg>
-                      <circle class="bg" cx="50%" cy="50%" r="40"></circle>
-                      <circle
-                        class="progress"
-                        cx="50%"
-                        cy="50%"
-                        r="40"
-                      ></circle>
-                    </svg>
-                    <div class="percentage">0%</div>
-                    <div class="status">Completed</div>
-                  </div>
-
-                  <!-- In Progress -->
-                  <div
-                    class="circle-progress"
-                    data-progress="0"
-                    style="--progress-color: blue"
-                  >
-                    <svg>
-                      <circle class="bg" cx="50%" cy="50%" r="40"></circle>
-                      <circle
-                        class="progress"
-                        cx="50%"
-                        cy="50%"
-                        r="40"
-                      ></circle>
-                    </svg>
-                    <div class="percentage">0%</div>
-                    <div class="status">In Progress</div>
-                  </div>
-
-                  <!-- Not Started -->
-                  <div
-                    class="circle-progress"
-                    data-progress="0"
-                    style="--progress-color: red"
-                  >
-                    <svg>
-                      <circle class="bg" cx="50%" cy="50%" r="40"></circle>
-                      <circle
-                        class="progress"
-                        cx="50%"
-                        cy="50%"
-                        r="40"
-                      ></circle>
-                    </svg>
-                    <div class="percentage">0%</div>
-                    <div class="status">Not Started</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="completed-task-container">
-                <header class="completed-task-header flex">
-                  <ion-icon
-                    name="clipboard-outline"
-                    class="board-icon"
-                  ></ion-icon>
-                  <p>Completed Task</p>
-                </header>
-
-                <div class="completed-card-container">
-                  <!-- completed card 1 -->
-                  <!-- <div class="card completion-card">
-                  <header class="card-header flex">
-                    <ion-icon
-                      name="ellipse-outline"
-                      class="card-title-icon comp-title-icon"
-                    ></ion-icon>
-
-                    <button class="btn-option">
-                      <ion-icon
-                        name="ellipsis-horizontal-outline"
-                        class="option-icon"
-                      ></ion-icon>
-                    </button>
-                  </header>
-
-                  <p class="card-title-text">Attend John's Birthday Party</p>
-
-                  <div class="flex comp-body">
-                    <div class="completed-text-cont">
-                      <p>
-                        Buy gifts on the way and pick up cake from the bakery.
-                        (6PM | Fresh Elements)....
-                      </p>
-                      <p class="card-start start-comp">
-                        Status: <span class="start comp-start">Completed</span>
-                      </p>
-                    </div>
-                    <img src="./img/user2.jpg" alt="" class="card-image" />
-                  </div>
-
-                  <div class="card-status">
-                    <p class="created-on comp-on">Completed 2 days ago</p>
-                  </div>
-                </div> -->
-
-                  <!-- completed card 2 -->
-                  <!-- <div class="card completion-card">
-                  <header class="card-header flex">
-                    <ion-icon
-                      name="ellipse-outline"
-                      class="card-title-icon comp-title-icon"
-                    ></ion-icon>
-
-                    <button class="btn-option">
-                      <ion-icon
-                        name="ellipsis-horizontal-outline"
-                        class="option-icon"
-                      ></ion-icon>
-                    </button>
-                  </header>
-
-                  <p class="card-title-text">Attend John's Birthday Party</p>
-
-                  <div class="flex comp-body">
-                    <div class="completed-text-cont">
-                      <p>
-                        Buy gifts on the way and pick up cake from the bakery.
-                        (6PM | Fresh Elements)....
-                      </p>
-                      <p class="card-start start-comp">
-                        Status: <span class="start comp-start">Completed</span>
-                      </p>
-                    </div>
-                    <img src="./img/user2.jpg" alt="" class="card-image" />
-                  </div>
-
-                  <div class="card-status">
-                    <p class="created-on comp-on">Completed 2 days ago</p>
-                  </div>
-                </div> -->
-                </div>
-              </div>
-            </section>
-          </div>
-        </div>
-
-        <!-- ! Add Task (it is a button display) -->
-        <div class="section-addtask"></div>
-
-        <!-- ! VITALS START -->
-        <div class="section-vitals grid">
-          <section class="vital-task">
-            <p class="vital-htext"><span>Vital </span>Tasks</p>
-
-            <div class="vital-task-container">
-              <div class="cardVital vital-card">
-                <header class="vital-header flex">
-                  <ion-icon
-                    name="ellipse-outline"
-                    class="card-title-icon"
-                  ></ion-icon>
-
-                  <button class="btn-option">
-                    <ion-icon
-                      name="ellipsis-horizontal-outline"
-                      class="option-icon"
-                    ></ion-icon>
-                  </button>
-                </header>
-
-                <p class="vital-title-text">Attend John's Birthday Party</p>
-
-                <div class="vital-body flex">
-                  <p>
-                    Buy gifts on the way and pick up cake from the bakery. (6PM
-                    | Fresh Elements)....
-                  </p>
-                  <img src="./img/user2.jpg" alt="" class="card-image" />
-                </div>
-
-                <div class="vital-status flex">
-                  <p class="card-level">
-                    Priority: <span class="level">Moderate</span>
-                  </p>
-                  <p class="card-start">
-                    Status: <span class="start">Not Started</span>
-                  </p>
-                  <p class="created-on">
-                    Created on: <span class="created">20/06/2023</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="vital-details"></section>
-        </div>
-
-        <!-- ! MY TASKS START -->
-        <div class="section-mytask grid">
-          <section class="my-task">
-            <p class="vital-htext"><span>My </span>Tasks</p>
-
-            <div class="vital-task-container">
-              <div class="cardVital vital-card">
-                <header class="vital-header flex">
-                  <ion-icon
-                    name="ellipse-outline"
-                    class="card-title-icon"
-                  ></ion-icon>
-
-                  <button class="btn-option">
-                    <ion-icon
-                      name="ellipsis-horizontal-outline"
-                      class="option-icon"
-                    ></ion-icon>
-                  </button>
-                </header>
-
-                <p class="vital-title-text">Attend John's Birthday Party</p>
-
-                <div class="vital-body flex">
-                  <p>
-                    Buy gifts on the way and pick up cake from the bakery. (6PM
-                    | Fresh Elements)....
-                  </p>
-                  <img src="./img/user2.jpg" alt="" class="card-image" />
-                </div>
-
-                <div class="vital-status flex">
-                  <p class="card-level">
-                    Priority: <span class="level">Moderate</span>
-                  </p>
-                  <p class="card-start">
-                    Status: <span class="start">Not Started</span>
-                  </p>
-                  <p class="created-on">
-                    Created on: <span class="created">20/06/2023</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="my-details">
-            <div class="details"></div>
-          </section>
-        </div>
-      </div>
-    </main>
-
-    <!-- Sign up -->
-    <!-- 
+    <!-- !SIGN UP -->
     <div class="container">
       <div class="left-box"></div>
       <div class="right-box">
@@ -670,7 +123,567 @@
         </form>
       </div>
     </div>
-     -->
-    <div class="overlay"></div>
+
+    <div class="home-container content">
+      <header class="top-header flex">
+        <a href="" class="dashboard-logo">
+          <h1>
+            <span class="dash">Dash</span><span class="board">board</span>
+          </h1>
+        </a>
+
+        <form action="" method="get" class="searchbar">
+          <input
+            type="text"
+            name="query"
+            id="search"
+            placeholder="Search your task here..."
+            class="search-box"
+          />
+          <button type="su" class="search-btn">
+            <ion-icon name="search-outline" class="search-btn-icon"></ion-icon>
+          </button>
+        </form>
+
+        <div class="notice-main-container flex">
+          <div class="icons-container flex">
+            <button class="search-btn-icon">
+              <ion-icon
+                name="notifications-outline"
+                class="btn-icon"
+              ></ion-icon>
+            </button>
+
+            <button class="search-btn-icon">
+              <ion-icon name="calendar-outline" class="btn-icon"></ion-icon>
+            </button>
+          </div>
+
+          <div class="date-comtainer">
+            <p class="date-day">Friday</p>
+            <p class="date">06/07/2002</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <aside class="aside">
+          <div class="userImage">
+            <img src="./img/7.png" alt="" class="img" />
+          </div>
+
+          <div class="name-container">
+            <p class="dashboard-name">Walker Gideon</p>
+            <p class="dashboard-email">gideonawortwe3@gmail.com</p>
+          </div>
+
+          <div class="contain-dashboard-nav">
+            <div class="main-btn-container">
+              <button class="btn-container" data-target="content1">
+                <ion-icon name="speedometer-outline"></ion-icon>
+                <p class="btn dashboard-btn">Dashboard</p>
+              </button>
+
+              <button class="btn-container" data-target="content2">
+                <ion-icon name="alert-outline"></ion-icon>
+                <p class="btn vitaltask-btn">Vital Task</p>
+              </button>
+
+              <button class="btn-container" data-target="content3">
+                <ion-icon name="checkbox-outline"></ion-icon>
+                <p class="btn Mytask-btn">My Task</p>
+              </button>
+
+              <button class="btn-container" data-target="content4">
+                <ion-icon name="list-outline"></ion-icon>
+                <p class="btn categories-btn">Task Categories</p>
+              </button>
+
+              <button class="btn-container" data-target="content5">
+                <ion-icon name="settings-outline"></ion-icon>
+                <p class="btn settings-btn">Settings</p>
+              </button>
+
+              <button class="btn-container" data-target="content6">
+                <ion-icon name="help-circle-outline"></ion-icon>
+                <p class="btn help-btn">Help</p>
+              </button>
+            </div>
+
+            <div class="next-btn-comtainer">
+              <button class="btn-container" data-target="content7">
+                <ion-icon name="log-out-outline"></ion-icon>
+                <p class="btn logout-btn">Logout</p>
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <div class="container">
+          <!-- ! DASHBOARD START -->
+          <div id="content1" class="section-dashboard content">
+            <div class="dashboard-body-header">
+              <div class="welcome">
+                <p>
+                  Welcome back,
+                  <span class="user-name">Walk</span>
+                  👋
+                </p>
+              </div>
+
+              <div class="image-invite-container">
+                <div class="user-images">
+                  <img
+                    src="./img/user4.jpg"
+                    alt="Woman folded her hands, standing smiling"
+                    class="img-users"
+                  />
+                  <img
+                    src="./img/user2.jpg"
+                    alt="Man using his phone smiling"
+                    class="img-users"
+                  />
+
+                  <img
+                    src="./img/user1.jpg"
+                    alt="Woman smiling"
+                    class="img-users"
+                  />
+                  <img
+                    src="./img/user3.jpg"
+                    alt="Man using his phone with glasses on smiling"
+                    class="img-users"
+                  />
+                  <img
+                    src="./img/user5.jpg"
+                    alt="Woman standing with her hand on her head smiling"
+                    class="img-users"
+                  />
+                </div>
+
+                <button class="invite-btn">
+                  <ion-icon name="people-outline"></ion-icon>
+                  <p class="invite">Invite</p>
+                </button>
+              </div>
+            </div>
+
+            <div class="dashboard-body">
+              <div class="todo">
+                <div class="todo-header">
+                  <div class="to-do flex">
+                    <ion-icon
+                      name="clipboard-outline"
+                      class="board-icon"
+                    ></ion-icon>
+                    <p>To-Do</p>
+                  </div>
+
+                  <button class="add-task flex">
+                    <ion-icon name="add-outline" class="plus-icon"></ion-icon>
+                    <p>Add task</p>
+                  </button>
+                </div>
+
+                <!-- ? Will have to make changes to this later -->
+                <div class="todo-date flex">
+                  <p class="present-date">20</p>
+                  <p class="presnt-month">June</p>
+                  <p class="today">.Today</p>
+                </div>
+
+                <!--? The card will be display in this section-->
+                <div class="task-today">
+                  <!-- card 1 -->
+                  <div class="card todo-card">
+                    <header class="card-header flex">
+                      <ion-icon
+                        name="ellipse-outline"
+                        class="card-title-icon"
+                      ></ion-icon>
+
+                      <button class="btn-option">
+                        <ion-icon
+                          name="ellipsis-horizontal-outline"
+                          class="option-icon"
+                        ></ion-icon>
+                      </button>
+                    </header>
+
+                    <p class="card-title-text">Attend John's Birthday Party</p>
+
+                    <div class="card-body flex">
+                      <p>
+                        Buy gifts on the way and pick up cake from the bakery.
+                        (6PM | Fresh Elements)....
+                      </p>
+                      <img src="./img/user2.jpg" alt="" class="card-image" />
+                    </div>
+
+                    <div class="card-status flex">
+                      <p class="card-level">
+                        Priority: <span class="level">Moderate</span>
+                      </p>
+                      <p class="card-start">
+                        Status: <span class="start">Not Started</span>
+                      </p>
+                      <p class="created-on">
+                        Created on: <span class="created">20/06/2023</span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- card 2 -->
+                  <!-- <div class="card todo-card">
+                <header class="card-header flex">
+                  <ion-icon
+                    name="ellipse-outline"
+                    class="card-title-icon"
+                  ></ion-icon>
+
+                  <button class="btn-option">
+                    <ion-icon
+                      name="ellipsis-horizontal-outline"
+                      class="option-icon"
+                    ></ion-icon>
+                  </button>
+                </header>
+
+                <p class="card-title-text">Attend John's Birthday Party</p>
+
+                <div class="card-body flex">
+                  <p>
+                    Buy gifts on the way and pick up cake from the bakery. (6PM
+                    | Fresh Elements)....
+                  </p>
+                  <img src="./img/user2.jpg" alt="" class="card-image" />
+                </div>
+
+                <div class="card-status flex">
+                  <p class="card-level">
+                    Priority: <span class="level">Moderate</span>
+                  </p>
+                  <p class="card-start">
+                    Status: <span class="start">Not Started</span>
+                  </p>
+                  <p class="created-on">
+                    Created on: <span class="created">20/06/2023</span>
+                  </p>
+                </div>
+              </div> -->
+
+                  <!-- card 3 -->
+                  <!-- <div class="card todo-card">
+                <header class="card-header flex">
+                  <ion-icon
+                    name="ellipse-outline"
+                    class="card-title-icon"
+                  ></ion-icon>
+
+                  <button class="btn-option">
+                    <ion-icon
+                      name="ellipsis-horizontal-outline"
+                      class="option-icon"
+                    ></ion-icon>
+                  </button>
+                </header>
+
+                <p class="card-title-text">Attend John's Birthday Party</p>
+
+                <div class="card-body flex">
+                  <p>
+                    Buy gifts on the way and pick up cake from the bakery. (6PM
+                    | Fresh Elements)....
+                  </p>
+                  <img src="./img/user2.jpg" alt="" class="card-image" />
+                </div>
+
+                <div class="card-status flex">
+                  <p class="card-level">
+                    Priority: <span class="level">Moderate</span>
+                  </p>
+                  <p class="card-start">
+                    Status: <span class="start">Not Started</span>
+                  </p>
+                  <p class="created-on">
+                    Created on: <span class="created">20/06/2023</span>
+                  </p>
+                </div>
+              </div> -->
+                </div>
+              </div>
+
+              <div class="task">
+                <!-- neext -->
+                <div class="status-container">
+                  <div class="status-header flex">
+                    <ion-icon
+                      name="clipboard-outline"
+                      class="board-icon"
+                    ></ion-icon>
+                    <p>Task Status</p>
+                  </div>
+
+                  <div class="progress-container">
+                    <!-- completed -->
+                    <div
+                      class="circle-progress"
+                      data-progress="0"
+                      style="--progress-color: green"
+                    >
+                      <svg>
+                        <circle class="bg" cx="50%" cy="50%" r="40"></circle>
+                        <circle
+                          class="progress"
+                          cx="50%"
+                          cy="50%"
+                          r="40"
+                        ></circle>
+                      </svg>
+                      <div class="percentage">0%</div>
+                      <div class="status">Completed</div>
+                    </div>
+
+                    <!-- In Progress -->
+                    <div
+                      class="circle-progress"
+                      data-progress="0"
+                      style="--progress-color: blue"
+                    >
+                      <svg>
+                        <circle class="bg" cx="50%" cy="50%" r="40"></circle>
+                        <circle
+                          class="progress"
+                          cx="50%"
+                          cy="50%"
+                          r="40"
+                        ></circle>
+                      </svg>
+                      <div class="percentage">0%</div>
+                      <div class="status">In Progress</div>
+                    </div>
+
+                    <!-- Not Started -->
+                    <div
+                      class="circle-progress"
+                      data-progress="0"
+                      style="--progress-color: red"
+                    >
+                      <svg>
+                        <circle class="bg" cx="50%" cy="50%" r="40"></circle>
+                        <circle
+                          class="progress"
+                          cx="50%"
+                          cy="50%"
+                          r="40"
+                        ></circle>
+                      </svg>
+                      <div class="percentage">0%</div>
+                      <div class="status">Not Started</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="completed-task-container">
+                  <header class="completed-task-header flex">
+                    <ion-icon
+                      name="clipboard-outline"
+                      class="board-icon"
+                    ></ion-icon>
+                    <p>Completed Task</p>
+                  </header>
+
+                  <div class="completed-card-container">
+                    <!-- completed card 1 -->
+                    <div class="card completion-card">
+                      <div class="card-header flex">
+                        <ion-icon
+                          name="ellipse-outline"
+                          class="card-title-icon comp-title-icon"
+                        ></ion-icon>
+
+                        <button class="btn-option">
+                          <ion-icon
+                            name="ellipsis-horizontal-outline"
+                            class="option-icon"
+                          ></ion-icon>
+                        </button>
+                      </div>
+
+                      <p class="card-title-text">
+                        Attend John's Birthday Party
+                      </p>
+
+                      <div class="flex comp-body">
+                        <div class="completed-text-cont">
+                          <p>
+                            Buy gifts on the way and pick up cake from the
+                            bakery. (6PM | Fresh Elements)....
+                          </p>
+                          <p class="card-start start-comp">
+                            Status:
+                            <span class="start comp-start">Completed</span>
+                          </p>
+                        </div>
+                        <img src="./img/user2.jpg" alt="" class="card-image" />
+                      </div>
+
+                      <div class="card-status">
+                        <p class="created-on comp-on">Completed 2 days ago</p>
+                      </div>
+                    </div>
+
+                    <!-- completed card 2 -->
+                    <!-- <div class="card completion-card">
+                  <div class="card-header flex">
+                    <ion-icon
+                      name="ellipse-outline"
+                      class="card-title-icon comp-title-icon"
+                    ></ion-icon>
+
+                    <button class="btn-option">
+                      <ion-icon
+                        name="ellipsis-horizontal-outline"
+                        class="option-icon"
+                      ></ion-icon>
+                    </button>
+                  </div>
+
+                  <p class="card-title-text">Attend John's Birthday Party</p>
+
+                  <div class="flex comp-body">
+                    <div class="completed-text-cont">
+                      <p>
+                        Buy gifts on the way and pick up cake from the bakery.
+                        (6PM | Fresh Elements)....
+                      </p>
+                      <p class="card-start start-comp">
+                        Status: <span class="start comp-start">Completed</span>
+                      </p>
+                    </div>
+                    <img src="./img/user2.jpg" alt="" class="card-image" />
+                  </div>
+
+                  <div class="card-status">
+                    <p class="created-on comp-on">Completed 2 days ago</p>
+                  </div>
+                </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--  Add Task (it is a button display) -->
+          <div class="section-addtask"></div>
+
+          <!-- ! VITALS START -->
+          <div id="content2" class="content">
+            <div class="section-vitals grid">
+              <section class="vital-task">
+                <p class="vital-htext"><span>Vital </span>Tasks</p>
+
+                <div class="vital-task-container">
+                  <div class="cardVital vital-card">
+                    <div class="vital-header flex">
+                      <ion-icon
+                        name="ellipse-outline"
+                        class="card-title-icon"
+                      ></ion-icon>
+
+                      <button class="btn-option">
+                        <ion-icon
+                          name="ellipsis-horizontal-outline"
+                          class="option-icon"
+                        ></ion-icon>
+                      </button>
+                    </div>
+
+                    <p class="vital-title-text">Attend John's Birthday Party</p>
+
+                    <div class="vital-body flex">
+                      <p>
+                        Buy gifts on the way and pick up cake from the bakery.
+                        (6PM | Fresh Elements)....
+                      </p>
+                      <img src="./img/user2.jpg" alt="" class="card-image" />
+                    </div>
+
+                    <div class="vital-status flex">
+                      <p class="card-level">
+                        Priority: <span class="level">Moderate</span>
+                      </p>
+                      <p class="card-start">
+                        Status: <span class="start">Not Started</span>
+                      </p>
+                      <p class="created-on">
+                        Created on: <span class="created">20/06/2023</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="vital-details"></section>
+            </div>
+          </div>
+
+          <!-- ! MY TASKS START -->
+          <div id="content3" class="content">
+            <div class="section-mytask grid">
+              <section class="my-task">
+                <p class="vital-htext"><span>My </span>Tasks</p>
+
+                <div class="vital-task-container">
+                  <div class="cardVital vital-card">
+                    <div class="vital-header flex">
+                      <ion-icon
+                        name="ellipse-outline"
+                        class="card-title-icon"
+                      ></ion-icon>
+
+                      <button class="btn-option">
+                        <ion-icon
+                          name="ellipsis-horizontal-outline"
+                          class="option-icon"
+                        ></ion-icon>
+                      </button>
+                    </div>
+
+                    <p class="vital-title-text">Attend John's Birthday Party</p>
+
+                    <div class="vital-body flex">
+                      <p>
+                        Buy gifts on the way and pick up cake from the bakery.
+                        (6PM | Fresh Elements)....
+                      </p>
+                      <img src="./img/user2.jpg" alt="" class="card-image" />
+                    </div>
+
+                    <div class="vital-status flex">
+                      <p class="card-level">
+                        Priority: <span class="level">Moderate</span>
+                      </p>
+                      <p class="card-start">
+                        Status: <span class="start">Not Started</span>
+                      </p>
+                      <p class="created-on">
+                        Created on: <span class="created">20/06/2023</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="my-details">
+                <div class="details"></div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <div class="overlay"></div>
+    </div>
   </body>
 </html>

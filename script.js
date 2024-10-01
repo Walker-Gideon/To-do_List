@@ -11,12 +11,8 @@ const dashboardCont = document.querySelector(".section-dashboard");
 const VitalCont = document.querySelector(".section-vitals");
 
 //! ASIDES BUTTONS
-const dashBoardBtn = document.querySelector(".dashboardbtn");
-const vitalTaskBtn = document.querySelector(".vitaltaskbtn");
-const myTaskBtn = document.querySelector(".myTaskBtn");
-const categoriesBtn = document.querySelector(".categoriesBtn");
-const settingsBtn = document.querySelector(".settingsBtn");
-const helpBtn = document.querySelector(".helpBtn");
+const buttons = document.querySelectorAll(".btn-container");
+const contents = document.querySelectorAll(".content");
 
 //? Dashboard Date
 const date = new Date();
@@ -69,13 +65,17 @@ document.querySelectorAll(".circle-progress").forEach((circle) => {
   progressCircle.style.strokeDashoffset = offset;
 });
 
-/*
 //? ASIDES CONTAINER
-dashBoardBtn.addEventListener("click", function () {
-  dashboardCont.classList.add("dashboard-hidden");
-});
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    buttons.forEach((btn) => btn.classList.remove("active"));
 
-vitalTaskBtn.addEventListener("click", function () {
-  VitalCont.classList.add("vitaltask-hidden");
+    contents.forEach((content) => content.classList.remove("active"));
+
+    button.classList.add("active");
+
+    const targetData = button.getAttribute("data-target");
+
+    document.getElementById(targetData).classList.add("active");
+  });
 });
-*/
