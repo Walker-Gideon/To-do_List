@@ -2,6 +2,19 @@
 
 const todayDay = document.querySelector(".date-day");
 const todayDate = document.querySelector(".date");
+const overlay = document.querySelector(".overlay");
+
+//! SECTIONS
+const dashboardCont = document.querySelector(".section-dashboard");
+const VitalCont = document.querySelector(".section-vitals");
+
+//! ASIDES BUTTONS
+const dashBoardBtn = document.querySelector(".dashboardbtn");
+const vitalTaskBtn = document.querySelector(".vitaltaskbtn");
+const myTaskBtn = document.querySelector(".myTaskBtn");
+const categoriesBtn = document.querySelector(".categoriesBtn");
+const settingsBtn = document.querySelector(".settingsBtn");
+const helpBtn = document.querySelector(".helpBtn");
 
 //? Dashboard Date
 const date = new Date();
@@ -35,3 +48,14 @@ document.querySelectorAll(".circle-progress").forEach((circle) => {
   const offset = circumference - (progress / 100) * circumference;
   progressCircle.style.strokeDashoffset = offset;
 });
+
+/*
+//? ASIDES CONTAINER
+dashBoardBtn.addEventListener("click", function () {
+  dashboardCont.classList.add("dashboard-hidden");
+});
+
+vitalTaskBtn.addEventListener("click", function () {
+  VitalCont.classList.add("vitaltask-hidden");
+});
+*/

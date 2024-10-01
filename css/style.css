@@ -35,7 +35,18 @@ body {
   display: flex;
   align-items: center;
 }
-
+.grid {
+  display: grid;
+}
+.overlay {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
 /*? Main Styling  */
 
 /*? Main Header */
@@ -45,21 +56,17 @@ body {
   background-color: var(--secondary-white-col);
   box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.1);
 }
-
 .dashboard-logo {
   text-decoration: none;
   font-size: 2rem;
   margin-right: 3rem;
 }
-
 .dash {
   color: var(--primary-col);
 }
-
 .board {
   color: var(--primary-black-col);
 }
-
 .searchbar {
   width: 45%;
   display: flex;
@@ -219,9 +226,10 @@ body {
 }
 
 /*? Dashboard Body */
-.dashboard-container {
-  padding: 0 3.2rem;
+.section-dashboard {
   /* display: none; */
+  padding: 0 3.2rem;
+  display: none;
 }
 .dashboard-body-header {
   display: flex;
@@ -345,6 +353,9 @@ body {
 /*? CARDS */
 .task-today {
   padding: 1.2rem;
+}
+.todo-card {
+  display: none;
 }
 .card {
   position: relative;
@@ -499,6 +510,9 @@ circle.progress {
   width: 100%;
   padding: 0 3.2rem;
 }
+.completion-card {
+  display: none;
+}
 .completed-task-header {
   margin-bottom: 3.2rem;
 }
@@ -521,6 +535,133 @@ circle.progress {
 .comp-title-icon,
 .comp-start {
   color: var(--greentwo-col);
+}
+
+/*? SECTION VITALS */
+.section-vitals {
+  display: none;
+  padding: 0 4.8rem;
+  grid-template-columns: 40fr 60fr;
+  gap: 1.2rem;
+}
+.vital-task,
+.vital-details {
+  height: 100vh;
+  border: 1px solid var(--graywhite-col);
+  border-radius: 11px;
+}
+.vital-task {
+  padding: 1.8rem 3.2rem;
+}
+.vital-details {
+  /* background-color: red; */
+}
+.vital-htext {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.vital-htext span {
+  border-bottom: 2px solid var(--mixed-seconday-orange-col);
+}
+.vital-task-container {
+  padding: 1.2rem 0 0.8rem;
+}
+
+/*? Vital Card  */
+.cardVital {
+  position: relative;
+  border: 1px solid var(--graywhite-col);
+  border-radius: 15px;
+  margin-top: 1.2rem;
+  padding: 0.2rem 1rem 1rem;
+}
+.vital-header {
+  justify-content: space-between;
+  font-size: 2rem;
+  font-weight: 700;
+}
+/* .card-title-icon {
+  color: var(--orangered-col);
+  font-weight: 700;
+} */
+/* .btn-option {
+  border: none;
+  font-size: 3.6rem;
+  background-color: transparent;
+  color: var(--graywhite-col);
+  cursor: pointer;
+} */
+.vital-title-text {
+  width: 75%;
+  position: absolute;
+  top: 20px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding-left: 3rem;
+  margin-bottom: 1rem;
+}
+.vital-body {
+  gap: 0.8rem;
+  padding: 0 1rem 1rem 0;
+  margin-top: 1rem;
+}
+.vital-body p {
+  font-size: 1.8rem;
+  padding: 1rem 0 1rem 3rem;
+  color: var(--graywhite-col);
+}
+.card-image {
+  width: 12.8rem;
+  border: 2px solid var(--white-col);
+  border-radius: 8px;
+}
+.vital-status {
+  padding: 1.2rem 0 0 1.2rem;
+  gap: 1rem;
+}
+.vital-status > * {
+  font-weight: 600;
+  font-size: 1.3rem;
+  white-space: nowrap;
+}
+.card-level,
+.card-start {
+  color: var(--primary-black-col);
+}
+.level {
+  color: var(--lightblue-col);
+  font-weight: 500;
+}
+.card-start {
+  margin-right: 1.2rem;
+}
+.start {
+  color: var(--blue-col);
+  font-weight: 500;
+}
+.created-on {
+  color: var(--graywhite-col);
+  font-weight: 500;
+}
+
+/*? SECTION MYTASK */
+.section-mytask {
+  display: none;
+  padding: 0 4.8rem;
+  grid-template-columns: 40fr 60fr;
+  gap: 1.2rem;
+}
+.my-task,
+.my-details {
+  height: 100vh;
+  border: 1px solid var(--graywhite-col);
+  border-radius: 11px;
+}
+.my-task {
+  padding: 1.8rem 3.2rem;
+}
+.my-details {
+  /* background-color: red; */
 }
 /* 
 1. Typography System (font-size)

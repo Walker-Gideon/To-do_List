@@ -1,0 +1,13 @@
+.butt {
+  background-color: var(--white-col);
+  color: var(--primary-col);
+  border-radius: 8px;
+  padding: 1.2rem 3.4rem;
+  transition: all 0.3s;
+}
+.dashboard-hidden {
+  /* display: inline-block; */
+}
+.vitaltask-hidden {
+  /* display: block; */
+}

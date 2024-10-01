@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/js.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -88,32 +89,32 @@
 
         <div class="contain-dashboard-nav">
           <div class="main-btn-container">
-            <button class="btn-container">
+            <button class="btn-container dashboardbtn">
               <ion-icon name="speedometer-outline"></ion-icon>
               <p class="btn dashboard-btn">Dashboard</p>
             </button>
 
-            <button class="btn-container">
+            <button class="btn-container vitaltaskbtn">
               <ion-icon name="alert-outline"></ion-icon>
               <p class="btn vitaltask-btn">Vital Task</p>
             </button>
 
-            <button class="btn-container">
+            <button class="btn-container myTaskBtn">
               <ion-icon name="checkbox-outline"></ion-icon>
               <p class="btn Mytask-btn">My Task</p>
             </button>
 
-            <button class="btn-container">
+            <button class="btn-container categoriesBtn">
               <ion-icon name="list-outline"></ion-icon>
               <p class="btn categories-btn">Task Categories</p>
             </button>
 
-            <button class="btn-container">
+            <button class="btn-container settingsBtn">
               <ion-icon name="settings-outline"></ion-icon>
               <p class="btn settings-btn">Settings</p>
             </button>
 
-            <button class="btn-container">
+            <button class="btn-container helpBtn">
               <ion-icon name="help-circle-outline"></ion-icon>
               <p class="btn help-btn">Help</p>
             </button>
@@ -124,18 +125,12 @@
               <ion-icon name="log-out-outline"></ion-icon>
               <p class="btn logout-btn">Logout</p>
             </button>
-
-            <!-- ? I will use Js to toggle between the two -->
-            <!-- <button class="btn-container logout">
-              <ion-icon name="log-in-outline"></ion-icon>
-              <p class="btn logout-btn">Signin</p>
-            </button> -->
           </div>
         </div>
       </aside>
 
       <!-- ! DASHBOARD START -->
-      <div class="dashboard-container">
+      <section class="section-dashboard">
         <header class="dashboard-body-header">
           <div class="welcome">
             <p>
@@ -207,7 +202,7 @@
 
             <!--? The card will be display in this section-->
             <section class="task-today">
-              <div class="card">
+              <div class="card todo-card">
                 <header class="card-header flex">
                   <ion-icon
                     name="ellipse-outline"
@@ -262,42 +257,42 @@
                 <!-- completed -->
                 <div
                   class="circle-progress"
-                  data-progress="84"
+                  data-progress="0"
                   style="--progress-color: green"
                 >
                   <svg>
                     <circle class="bg" cx="50%" cy="50%" r="40"></circle>
                     <circle class="progress" cx="50%" cy="50%" r="40"></circle>
                   </svg>
-                  <div class="percentage">84%</div>
+                  <div class="percentage">0%</div>
                   <div class="status">Completed</div>
                 </div>
 
                 <!-- In Progress -->
                 <div
                   class="circle-progress"
-                  data-progress="46"
+                  data-progress="0"
                   style="--progress-color: blue"
                 >
                   <svg>
                     <circle class="bg" cx="50%" cy="50%" r="40"></circle>
                     <circle class="progress" cx="50%" cy="50%" r="40"></circle>
                   </svg>
-                  <div class="percentage">46%</div>
+                  <div class="percentage">0%</div>
                   <div class="status">In Progress</div>
                 </div>
 
                 <!-- Not Started -->
                 <div
                   class="circle-progress"
-                  data-progress="13"
+                  data-progress="0"
                   style="--progress-color: red"
                 >
                   <svg>
                     <circle class="bg" cx="50%" cy="50%" r="40"></circle>
                     <circle class="progress" cx="50%" cy="50%" r="40"></circle>
                   </svg>
-                  <div class="percentage">13%</div>
+                  <div class="percentage">0%</div>
                   <div class="status">Not Started</div>
                 </div>
               </div>
@@ -351,8 +346,14 @@
             </div>
           </section>
         </section>
-      </div>
-      <!-- ! DASHBOARD ENDS -->
+      </section>
+
+      <!-- ! Add Task (it is a button display) -->
+      <section class="section-addtask"></section>
+
+      <!-- ! VITALS START -->
+
+      <!-- ! MY TASKS START -->
     </main>
 
     <!-- Sign up -->
@@ -441,5 +442,6 @@
       </div>
     </div>
      -->
+    <div class="overlay"></div>
   </body>
 </html>
