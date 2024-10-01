@@ -2,6 +2,8 @@
 
 const todayDay = document.querySelector(".date-day");
 const todayDate = document.querySelector(".date");
+const presentDate = document.querySelector(".present-date");
+const presentMonth = document.querySelector(".presnt-month");
 const overlay = document.querySelector(".overlay");
 
 //! SECTIONS
@@ -28,15 +30,33 @@ const daysOfWeek = [
   "Saturday",
 ];
 
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 const dayName = daysOfWeek[date.getDay()];
 todayDay.textContent = dayName;
 
-// const day = date.getDate();
+const day = date.getDate().toString();
+const month = monthNames[date.getMonth()];
 // const month = (date.getMonth() + 1).toString();
 // const year = date.getFullYear();
 // todayDate.textContent = `${day}/${month.padStart(2, "0")}/${year}`;
 
 todayDate.textContent = date.toLocaleDateString();
+presentDate.textContent = day.padStart(2, "0");
+presentMonth.textContent = month;
 
 //? PROGRESS on TASK Container
 document.querySelectorAll(".circle-progress").forEach((circle) => {

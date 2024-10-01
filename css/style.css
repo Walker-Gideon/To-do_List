@@ -225,11 +225,9 @@ body {
   padding: 1.2rem 3.4rem;
 }
 
-/*? Dashboard Body */
+/*? SECTION DASHBOARD */
 .section-dashboard {
-  /* display: none; */
   padding: 0 3.2rem;
-  display: none;
 }
 .dashboard-body-header {
   display: flex;
@@ -277,7 +275,8 @@ body {
 
 /*? Dashboard Body */
 .dashboard-body {
-  height: 128vh; /*?get to change this later*/
+  /* height: 703.878px; */
+  height: 95rem;
   margin-top: 1.2rem;
   border-top-width: 1px;
   border-bottom-width: 1px;
@@ -355,13 +354,13 @@ body {
   padding: 1.2rem;
 }
 .todo-card {
-  display: none;
+  /* display: none; */
 }
 .card {
   position: relative;
   border: 1px solid var(--graywhite-col);
   border-radius: 15px;
-  margin-top: 1.2rem;
+  margin-top: 3.2rem;
   padding: 0.2rem 1.2rem 1.2rem;
 }
 .card-header {
@@ -463,22 +462,22 @@ svg {
   position: relative;
   width: 120px;
   height: 120px;
-  transform: rotate(-90deg); /* Rotate to start from the top */
+  transform: rotate(-90deg);
 }
 circle {
   fill: none;
   stroke-width: 8;
-  r: 40; /* Radius of the circle */
+  r: 40;
   cx: 60;
   cy: 60;
 }
 circle.bg {
-  stroke: #e0e0e0; /* Background color */
+  stroke: #e0e0e0;
 }
 circle.progress {
   stroke: var(--progress-color);
-  stroke-dasharray: 251.2; /* Circumference of the circle (2πr) */
-  stroke-dashoffset: 251.2; /* Initially hide the stroke */
+  stroke-dasharray: 251.2;
+  stroke-dashoffset: 251.2;
   transition: stroke-dashoffset 1s ease-out;
 }
 .percentage {
@@ -499,9 +498,9 @@ circle.progress {
 
 /*? Completed Task */
 .completed-task-container {
-  height: 80vh; /*?get to change this later*/
+  height: 60rem;
   margin-top: 3rem;
-  padding: 3.2rem 1.2rem 0;
+  padding: 3.2rem 1.2rem 4.8rem;
   box-shadow: 0.2rem 0.1rem rgba(0, 0, 0, 0.2),
     -0.2rem 0.1rem rgba(0, 0, 0, 0.1), 0 2rem 0.6rem rgba(0, 0, 0, 0.15);
   border-radius: 11px;
@@ -511,7 +510,6 @@ circle.progress {
   padding: 0 3.2rem;
 }
 .completion-card {
-  display: none;
 }
 .completed-task-header {
   margin-bottom: 3.2rem;
@@ -538,8 +536,8 @@ circle.progress {
 }
 
 /*? SECTION VITALS */
+/*
 .section-vitals {
-  display: none;
   padding: 0 4.8rem;
   grid-template-columns: 40fr 60fr;
   gap: 1.2rem;
@@ -554,7 +552,6 @@ circle.progress {
   padding: 1.8rem 3.2rem;
 }
 .vital-details {
-  /* background-color: red; */
 }
 .vital-htext {
   font-size: 1.8rem;
@@ -566,8 +563,10 @@ circle.progress {
 .vital-task-container {
   padding: 1.2rem 0 0.8rem;
 }
+*/
 
 /*? Vital Card  */
+/*
 .cardVital {
   position: relative;
   border: 1px solid var(--graywhite-col);
@@ -580,17 +579,6 @@ circle.progress {
   font-size: 2rem;
   font-weight: 700;
 }
-/* .card-title-icon {
-  color: var(--orangered-col);
-  font-weight: 700;
-} */
-/* .btn-option {
-  border: none;
-  font-size: 3.6rem;
-  background-color: transparent;
-  color: var(--graywhite-col);
-  cursor: pointer;
-} */
 .vital-title-text {
   width: 75%;
   position: absolute;
@@ -643,8 +631,10 @@ circle.progress {
   color: var(--graywhite-col);
   font-weight: 500;
 }
+*/
 
 /*? SECTION MYTASK */
+/*
 .section-mytask {
   display: none;
   padding: 0 4.8rem;
@@ -661,8 +651,9 @@ circle.progress {
   padding: 1.8rem 3.2rem;
 }
 .my-details {
-  /* background-color: red; */
 }
+*/
+
 /* 
 1. Typography System (font-size)
     10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
