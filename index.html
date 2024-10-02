@@ -40,90 +40,156 @@
   </head>
   <body>
     <!-- !SIGN UP -->
-    <div class="container">
-      <div class="left-box"></div>
-      <div class="right-box">
-        <h1>Sign Up</h1>
+    <div class="registration-container">
+      <div class="container-signup content">
+        <section class="section-signup grid">
+          <div class="left-box"></div>
 
-        <form action="">
-          <div>
-            <input
-              type="text"
-              name="firstname"
-              id="firstName"
-              placeholder="Enter First Name"
-              required
-            />
+          <div class="right-box">
+            <h1>Sign Up</h1>
+
+            <form action="" method="post" class="form-container">
+              <div class="input-container">
+                <ion-icon name="person"></ion-icon>
+                <input
+                  type="text"
+                  name="firstname"
+                  id="firstName"
+                  placeholder="Enter First Name"
+                  required
+                />
+              </div>
+
+              <div class="input-container">
+                <ion-icon name="person"></ion-icon>
+                <input
+                  type="text"
+                  name="lastname"
+                  id="lastName"
+                  placeholder="Enter Last Name"
+                  required
+                />
+              </div>
+
+              <div class="input-container">
+                <ion-icon name="person-outline"></ion-icon>
+                <input
+                  type="text"
+                  name="username"
+                  id="userName"
+                  placeholder="Enter Username"
+                  required
+                />
+              </div>
+
+              <div class="input-container">
+                <ion-icon name="mail"></ion-icon>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Enter Email"
+                  required
+                />
+              </div>
+
+              <div class="input-container">
+                <ion-icon name="lock-closed"></ion-icon>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Enter Password"
+                  required
+                />
+              </div>
+
+              <div class="input-container">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input
+                  type="password"
+                  name="password"
+                  id="confPassword"
+                  placeholder="Confirm Password"
+                  required
+                />
+              </div>
+
+              <div class="check-container flex">
+                <input type="checkbox" class="checkbox" />
+                <p>I agree to all terms.</p>
+              </div>
+
+              <div class="submit-container">
+                <input type="submit" value="Register" class="submit-btn" />
+              </div>
+
+              <p class="info-text">
+                Already have an account?
+                <span class="sigin-text">Sign in</span>
+              </p>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <div class="container-signin">
+        <section class="section-signin grid">
+          <div class="left-box">
+            <h1>Sign In</h1>
+
+            <form action="" method="post" class="form-container">
+              <div class="input-container">
+                <ion-icon name="person"></ion-icon>
+                <input
+                  type="text"
+                  name="username"
+                  id="userName"
+                  placeholder="Enter Username"
+                  required
+                />
+              </div>
+
+              <div class="input-container">
+                <ion-icon name="lock-closed"></ion-icon>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Enter Password"
+                  required
+                />
+              </div>
+
+              <div class="check-container flex">
+                <input type="checkbox" class="checkbox" />
+                <p>Remember Me</p>
+              </div>
+
+              <div class="submit-container">
+                <input type="submit" value="Login" class="submit-btn" />
+              </div>
+
+              <div class="icon-info flex">
+                <p class="info-text">Or, Login with</p>
+                <ion-icon name="logo-facebook" class="facebook"></ion-icon>
+                <ion-icon name="logo-linkedin" class="linked"></ion-icon>
+                <ion-icon name="logo-tiktok"></ion-icon>
+              </div>
+
+              <p class="info-text">
+                Don't have an account?
+                <span class="sigin-text">Create One</span>
+              </p>
+            </form>
           </div>
 
-          <div>
-            <input
-              type="text"
-              name="lastname"
-              id="lastName"
-              placeholder="Enter Last Name"
-              required
-            />
-          </div>
-
-          <div>
-            <span><ion-icon name="person"></ion-icon></span>
-            <input
-              type="text"
-              name="username"
-              id="userName"
-              placeholder="Enter Username"
-              required
-            />
-          </div>
-
-          <div>
-            <span><ion-icon name="mail"></ion-icon></span>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter Email"
-              required
-            />
-          </div>
-
-          <div>
-            <span><ion-icon name="lock-closed"></ion-icon></span>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Enter Password"
-              required
-            />
-          </div>
-
-          <div>
-            <span><ion-icon name="lock-closed-outline"></ion-icon></span>
-            <input
-              type="password"
-              name="password"
-              id="confPassword"
-              placeholder="Confirm Password"
-              required
-            />
-          </div>
-
-          <div>
-            <input type="checkbox" />
-            <p>I agree to all terms</p>
-          </div>
-
-          <div class="submit-container">
-            <input type="submit" value="" />
-          </div>
-
-          <p>Already have an account?<a href="">Sign in</a></p>
-        </form>
+          <div class="right-box"></div>
+        </section>
       </div>
     </div>
 
+    <!-- ! ENTIRE WORK -->
     <div class="home-container content">
       <header class="top-header flex">
         <a href="" class="dashboard-logo">
