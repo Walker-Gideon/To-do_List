@@ -4,6 +4,10 @@ const todayDay = document.querySelector(".date-day");
 const todayDate = document.querySelector(".date");
 const presentDate = document.querySelector(".present-date");
 const presentMonth = document.querySelector(".presnt-month");
+const inviteBtn = document.querySelector(".invite-btn");
+const addTaskContent = document.querySelector(".section-addtask");
+const homeContainer = document.querySelector(".home-container");
+const addTaskBackBtn = document.querySelector(".addtask-btn");
 const overlay = document.querySelector(".overlay");
 
 //! SECTIONS
@@ -11,8 +15,13 @@ const dashboardCont = document.querySelector(".section-dashboard");
 const VitalCont = document.querySelector(".section-vitals");
 
 //! ASIDES BUTTONS
+const dashboardBtn = document.querySelector(".dashboardbtn");
 const buttons = document.querySelectorAll(".btn-container");
 const contents = document.querySelectorAll(".content");
+
+//? DEFAULT DISPLAY
+dashboardCont.classList.add("active");
+dashboardBtn.classList.add("active");
 
 //? Dashboard Date
 const date = new Date();
@@ -78,4 +87,19 @@ buttons.forEach((button) => {
 
     document.getElementById(targetData).classList.add("active");
   });
+});
+
+//? INVITE BUTTON
+inviteBtn.addEventListener("click", () => {
+  inviteBtn.classList.add("inviteBtn");
+  overlay.classList.remove("hidden");
+  addTaskContent.classList.add("active");
+  homeContainer.classList.add("aside-index");
+});
+
+addTaskBackBtn.addEventListener("click", () => {
+  inviteBtn.classList.remove("inviteBtn");
+  overlay.classList.add("hidden");
+  addTaskContent.classList.remove("active");
+  homeContainer.classList.remove("aside-index");
 });

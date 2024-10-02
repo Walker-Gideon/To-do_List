@@ -1,5 +1,6 @@
 /* ? REGISTRATION */
 .registration-container {
+  display: none;
   padding: 4.8rem 12.9rem;
   height: 100vh;
   background-color: var(--primary-col);
@@ -41,7 +42,7 @@
 .input-container input {
   width: 100%;
   border: none;
-  padding: 0.8rem 4.8rem 0.8rem 0;
+  padding: 0.8rem 0 0.8rem;
   font-size: 2rem;
 }
 .input-container input:focus {
@@ -111,41 +112,15 @@
   border-bottom: 2px solid var(--blue-col);
 }
 
-/* 
-1. Typography System (font-size)
-    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
-
-2. Spacing System (Padding / Margin)
-    2 / 4 / 8 / 12 / 32 / 48 / 64 / 80 / 96 / 128
-
-3. Font-width
-    default: 400
-    medium: 500
-    semi-large: 600
-    large: 700
-
-4. line-height
-    default: 
-    smaill: 
-    medium: 
-
-5. letter-sapcing
-
-6. Colors
-    primary: #ff6767, #000
-    Tints: 
-    Shade: 
-    Accents: 
-    Grayes:
- */
-
 /*? MAIN STYLING  */
 /*? Main Header */
 .top-header {
+  position: relative;
   justify-content: space-evenly;
   padding: 3.2rem 8rem 3.2rem 9.6rem;
   background-color: var(--secondary-white-col);
   box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.1);
+  z-index: -1;
 }
 .dashboard-logo {
   text-decoration: none;
@@ -737,3 +712,160 @@ circle.progress {
 }
 .my-details {
 }
+
+/* ? ADD TASK setion */
+.section-addtask {
+  position: absolute;
+  top: 20rem;
+  left: 35rem;
+  z-index: 9;
+  width: 60%;
+  background-color: var(--secondary-white-col);
+  border-radius: 5px;
+  padding: 2rem;
+}
+.addtask-header {
+  align-items: center;
+  justify-content: space-between;
+}
+.addtask-header > * {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.addtask-header p span {
+  border-bottom: 2px solid var(--primary-col);
+}
+.addtask-btn {
+  border-bottom: 2px solid var(--lightblue-col);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.addtask-btn:hover {
+  color: var(--blue-col);
+  border-bottom: 2px solid var(--blue-col);
+}
+.addtask-content-container {
+  border: 0.5px solid var(--mixed-gray-col);
+  border-radius: 1px;
+  margin-top: 2rem;
+  padding: 3.2rem 3.5rem;
+}
+.addtask-text {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--primary-black-col);
+}
+.addtask-search-container {
+  margin-top: 1.2rem;
+  align-items: center;
+  gap: 1rem;
+}
+.search-members {
+  width: 75%;
+  border: 2px solid var(--graywhite-col);
+  border-radius: 5px;
+  font-size: 1.6rem;
+  padding: 1.1rem 0.8rem;
+  background-color: transparent;
+}
+.search-members:focus {
+  outline: none;
+}
+.search-members::placeholder {
+  font-size: 1.8rem;
+}
+.search-members-btn {
+  background-color: var(--primary-col);
+  color: var(--white-col);
+  padding: 1.2rem 3.2rem;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.copylink {
+  padding: 1.2rem 3.5rem;
+}
+.search-members-btn:hover {
+  background-color: var(--prihover-col);
+}
+.members {
+  margin-top: 4.8rem;
+}
+.wrap-content {
+  margin: 1.2rem 0 6.4rem;
+  padding-right: 0.8rem;
+}
+.members-content {
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.2rem;
+}
+.member-details {
+  gap: 2rem;
+}
+.member-img {
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: 50%;
+}
+.member-name-container {
+  align-items: center;
+  gap: 1.2rem;
+  color: var(--primary-black-col);
+}
+.member-name {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+.member-emial {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.edit-option {
+  color: var(--primary-black-col);
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.edit-option:hover {
+  border: 0.5px solid var(--primary-black-col);
+  border-radius: 5px;
+  padding: 0.4rem 1.2rem;
+}
+.edit-text {
+  font-size: 1.6rem;
+}
+.downarrow {
+  font-size: 2rem;
+}
+
+/* 
+1. Typography System (font-size)
+    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+2. Spacing System (Padding / Margin)
+    2 / 4 / 8 / 12 / 32 / 48 / 64 / 80 / 96 / 128
+
+3. Font-width
+    default: 400
+    medium: 500
+    semi-large: 600
+    large: 700
+
+4. line-height
+    default: 
+    smaill: 
+    medium: 
+
+5. letter-sapcing
+
+6. Colors
+    primary: #ff6767, #000
+    Tints: 
+    Shade: 
+    Accents: 
+    Grayes:
+ */

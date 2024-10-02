@@ -39,158 +39,8 @@
     <title>To-do List | Web App</title>
   </head>
   <body>
-    <!-- !SIGN UP -->
-    <div class="registration-container">
-      <div class="container-signup content">
-        <section class="section-signup grid">
-          <div class="left-box"></div>
-
-          <div class="right-box">
-            <h1>Sign Up</h1>
-
-            <form action="" method="post" class="form-container">
-              <div class="input-container">
-                <ion-icon name="person"></ion-icon>
-                <input
-                  type="text"
-                  name="firstname"
-                  id="firstName"
-                  placeholder="Enter First Name"
-                  required
-                />
-              </div>
-
-              <div class="input-container">
-                <ion-icon name="person"></ion-icon>
-                <input
-                  type="text"
-                  name="lastname"
-                  id="lastName"
-                  placeholder="Enter Last Name"
-                  required
-                />
-              </div>
-
-              <div class="input-container">
-                <ion-icon name="person-outline"></ion-icon>
-                <input
-                  type="text"
-                  name="username"
-                  id="userName"
-                  placeholder="Enter Username"
-                  required
-                />
-              </div>
-
-              <div class="input-container">
-                <ion-icon name="mail"></ion-icon>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Enter Email"
-                  required
-                />
-              </div>
-
-              <div class="input-container">
-                <ion-icon name="lock-closed"></ion-icon>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Enter Password"
-                  required
-                />
-              </div>
-
-              <div class="input-container">
-                <ion-icon name="lock-closed-outline"></ion-icon>
-                <input
-                  type="password"
-                  name="password"
-                  id="confPassword"
-                  placeholder="Confirm Password"
-                  required
-                />
-              </div>
-
-              <div class="check-container flex">
-                <input type="checkbox" class="checkbox" />
-                <p>I agree to all terms.</p>
-              </div>
-
-              <div class="submit-container">
-                <input type="submit" value="Register" class="submit-btn" />
-              </div>
-
-              <p class="info-text">
-                Already have an account?
-                <span class="sigin-text">Sign in</span>
-              </p>
-            </form>
-          </div>
-        </section>
-      </div>
-
-      <div class="container-signin">
-        <section class="section-signin grid">
-          <div class="left-box">
-            <h1>Sign In</h1>
-
-            <form action="" method="post" class="form-container">
-              <div class="input-container">
-                <ion-icon name="person"></ion-icon>
-                <input
-                  type="text"
-                  name="username"
-                  id="userName"
-                  placeholder="Enter Username"
-                  required
-                />
-              </div>
-
-              <div class="input-container">
-                <ion-icon name="lock-closed"></ion-icon>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Enter Password"
-                  required
-                />
-              </div>
-
-              <div class="check-container flex">
-                <input type="checkbox" class="checkbox" />
-                <p>Remember Me</p>
-              </div>
-
-              <div class="submit-container">
-                <input type="submit" value="Login" class="submit-btn" />
-              </div>
-
-              <div class="icon-info flex">
-                <p class="info-text">Or, Login with</p>
-                <ion-icon name="logo-facebook" class="facebook"></ion-icon>
-                <ion-icon name="logo-linkedin" class="linked"></ion-icon>
-                <ion-icon name="logo-tiktok"></ion-icon>
-              </div>
-
-              <p class="info-text">
-                Don't have an account?
-                <span class="sigin-text">Create One</span>
-              </p>
-            </form>
-          </div>
-
-          <div class="right-box"></div>
-        </section>
-      </div>
-    </div>
-
     <!-- ! ENTIRE WORK -->
-    <div class="home-container content">
+    <div class="home-container">
       <header class="top-header flex">
         <a href="" class="dashboard-logo">
           <h1>
@@ -245,7 +95,7 @@
 
           <div class="contain-dashboard-nav">
             <div class="main-btn-container">
-              <button class="btn-container" data-target="content1">
+              <button class="btn-container dashboardbtn" data-target="content1">
                 <ion-icon name="speedometer-outline"></ion-icon>
                 <p class="btn dashboard-btn">Dashboard</p>
               </button>
@@ -640,9 +490,6 @@
             </div>
           </div>
 
-          <!--  Add Task (it is a button display) -->
-          <div class="section-addtask"></div>
-
           <!-- ! VITALS START -->
           <div id="content2" class="content">
             <div class="section-vitals grid">
@@ -748,8 +595,258 @@
           </div>
         </div>
       </main>
-
-      <div class="overlay"></div>
     </div>
+
+    <!--  !Add Task (it is a button display) -->
+    <div class="section-addtask content">
+      <div class="addtask-header flex">
+        <p><span>Send an invi</span>te to a new member</p>
+        <p class="addtask-btn">Go Back</p>
+      </div>
+
+      <div class="addtask-content-container">
+        <p class="addtask-text">Email</p>
+
+        <div class="addtask-search-container flex">
+          <input class="search-members" placeholder="gideonawortwe@gmail.com" />
+          <p class="search-members-btn">Send Invite</p>
+        </div>
+
+        <div class="members-container">
+          <p class="addtask-text members">Members</p>
+
+          <div class="wrap-content">
+            <!-- content 1 -->
+            <div class="members-content flex">
+              <div class="member-details flex">
+                <img src="img/7.png" alt="" class="member-img" />
+
+                <div class="member-name-container">
+                  <p class="member-name">Essi Music</p>
+                  <p class="member-emial">essimusic@online</p>
+                </div>
+              </div>
+
+              <div class="edit-option flex">
+                <p class="edit-text">Can edit</p>
+                <ion-icon name="chevron-down" class="downarrow"></ion-icon>
+              </div>
+            </div>
+            <!-- content 2 -->
+            <div class="members-content flex">
+              <div class="member-details flex">
+                <img src="img/7.png" alt="" class="member-img" />
+
+                <div class="member-name-container">
+                  <p class="member-name">Essi Music</p>
+                  <p class="member-emial">essimusic@online</p>
+                </div>
+              </div>
+
+              <div class="edit-option flex">
+                <p class="edit-text">Can edit</p>
+                <ion-icon name="chevron-down" class="downarrow"></ion-icon>
+              </div>
+            </div>
+
+            <!-- content 3 -->
+            <div class="members-content flex">
+              <div class="member-details flex">
+                <img src="img/7.png" alt="" class="member-img" />
+
+                <div class="member-name-container">
+                  <p class="member-name">Essi Music</p>
+                  <p class="member-emial">essimusic@online</p>
+                </div>
+              </div>
+
+              <div class="edit-option flex">
+                <p class="edit-text">Can edit</p>
+                <ion-icon name="chevron-down" class="downarrow"></ion-icon>
+              </div>
+            </div>
+
+            <!-- content 4 -->
+            <div class="members-content flex">
+              <div class="member-details flex">
+                <img src="img/7.png" alt="" class="member-img" />
+
+                <div class="member-name-container">
+                  <p class="member-name">Essi Music</p>
+                  <p class="member-emial">essimusic@online</p>
+                </div>
+              </div>
+
+              <div class="edit-option flex">
+                <p class="edit-text">Can edit</p>
+                <ion-icon name="chevron-down" class="downarrow"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="addtask-text">Project Link</p>
+
+        <div class="addtask-search-container projectlink flex">
+          <input
+            class="search-members"
+            placeholder="https://walkergideonhere.com/337550"
+          />
+          <p class="search-members-btn copylink">Copy Link</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- !SIGN UP -->
+    <div class="registration-container content">
+      <div class="container-signup">
+        <section class="section-signup grid">
+          <div class="left-box"></div>
+
+          <div class="right-box">
+            <h1>Sign Up</h1>
+
+            <form action="" method="post" class="form-container">
+              <div class="input-container">
+                <ion-icon name="person"></ion-icon>
+                <input
+                  type="text"
+                  name="firstname"
+                  id="firstName"
+                  placeholder="Enter First Name"
+                  required
+                />
+              </div>
+
+              <div class="input-container">
+                <ion-icon name="person"></ion-icon>
+                <input
+                  type="text"
+                  name="lastname"
+                  id="lastName"
+                  placeholder="Enter Last Name"
+                  required
+                />
+              </div>
+
+              <div class="input-container">
+                <ion-icon name="person-outline"></ion-icon>
+                <input
+                  type="text"
+                  name="username"
+                  id="userName"
+                  placeholder="Enter Username"
+                  required
+                />
+              </div>
+
+              <div class="input-container">
+                <ion-icon name="mail"></ion-icon>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Enter Email"
+                  required
+                />
+              </div>
+
+              <div class="input-container">
+                <ion-icon name="lock-closed"></ion-icon>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Enter Password"
+                  required
+                />
+              </div>
+
+              <div class="input-container">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input
+                  type="password"
+                  name="password"
+                  id="confPassword"
+                  placeholder="Confirm Password"
+                  required
+                />
+              </div>
+
+              <div class="check-container flex">
+                <input type="checkbox" class="checkbox" />
+                <p>I agree to all terms.</p>
+              </div>
+
+              <div class="submit-container">
+                <input type="submit" value="Register" class="submit-btn" />
+              </div>
+
+              <p class="info-text">
+                Already have an account?
+                <span class="sigin-text">Sign in</span>
+              </p>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <div class="container-signin content">
+        <section class="section-signin grid">
+          <div class="left-box">
+            <h1>Sign In</h1>
+
+            <form action="" method="post" class="form-container">
+              <div class="input-container">
+                <ion-icon name="person"></ion-icon>
+                <input
+                  type="text"
+                  name="username"
+                  id="userName"
+                  placeholder="Enter Username"
+                  required
+                />
+              </div>
+
+              <div class="input-container">
+                <ion-icon name="lock-closed"></ion-icon>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Enter Password"
+                  required
+                />
+              </div>
+
+              <div class="check-container flex">
+                <input type="checkbox" class="checkbox" />
+                <p>Remember Me</p>
+              </div>
+
+              <div class="submit-container">
+                <input type="submit" value="Login" class="submit-btn" />
+              </div>
+
+              <div class="icon-info flex">
+                <p class="info-text">Or, Login with</p>
+                <ion-icon name="logo-facebook" class="facebook"></ion-icon>
+                <ion-icon name="logo-linkedin" class="linked"></ion-icon>
+                <ion-icon name="logo-tiktok"></ion-icon>
+              </div>
+
+              <p class="info-text">
+                Don't have an account?
+                <span class="sigin-text">Create One</span>
+              </p>
+            </form>
+          </div>
+
+          <div class="right-box"></div>
+        </section>
+      </div>
+    </div>
+
+    <div class="overlay hidden"></div>
   </body>
 </html>
