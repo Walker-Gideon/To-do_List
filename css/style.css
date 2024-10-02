@@ -713,8 +713,9 @@ circle.progress {
 .my-details {
 }
 
-/* ? ADD TASK setion */
-.section-addtask {
+/* ? INVITE BTN setion */
+.section-addtask,
+.dashTask {
   position: absolute;
   top: 20rem;
   left: 35rem;
@@ -735,14 +736,22 @@ circle.progress {
 .addtask-header p span {
   border-bottom: 2px solid var(--primary-col);
 }
-.addtask-btn {
+.back-container {
   border-bottom: 2px solid var(--lightblue-col);
+}
+.addtask-btn,
+.dashtask-btn {
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding-top: 1.2rem;
+  background-color: transparent;
+  border: none;
   cursor: pointer;
   transition: all 0.3s;
 }
-.addtask-btn:hover {
-  color: var(--blue-col);
-  border-bottom: 2px solid var(--blue-col);
+.addtask-btn:hover,
+.dashtask-btn:hover {
+  color: var(--lightblue-col);
 }
 .addtask-content-container {
   border: 0.5px solid var(--mixed-gray-col);

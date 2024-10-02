@@ -6,8 +6,10 @@ const presentDate = document.querySelector(".present-date");
 const presentMonth = document.querySelector(".presnt-month");
 const inviteBtn = document.querySelector(".invite-btn");
 const addTaskContent = document.querySelector(".section-addtask");
+const dashTaskContent = document.querySelector(".dashTask");
 const homeContainer = document.querySelector(".home-container");
 const addTaskBackBtn = document.querySelector(".addtask-btn");
+const dashboardAddTaskBtn = document.querySelector(".add-task");
 const overlay = document.querySelector(".overlay");
 
 //! SECTIONS
@@ -102,4 +104,11 @@ addTaskBackBtn.addEventListener("click", () => {
   overlay.classList.add("hidden");
   addTaskContent.classList.remove("active");
   homeContainer.classList.remove("aside-index");
+});
+
+//? DASHBOARD ADD TASK
+dashboardAddTaskBtn.addEventListener("click", () => {
+  overlay.classList.remove("hidden");
+  homeContainer.classList.add("aside-index");
+  dashTaskContent.classList.add("active");
 });

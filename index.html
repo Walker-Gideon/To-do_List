@@ -597,11 +597,14 @@
       </main>
     </div>
 
-    <!--  !Add Task (it is a button display) -->
+    <!--  !Invite button (it is a button display) -->
     <div class="section-addtask content">
       <div class="addtask-header flex">
         <p><span>Send an invi</span>te to a new member</p>
-        <p class="addtask-btn">Go Back</p>
+
+        <div class="back-container">
+          <button class="addtask-btn">Go Back</button>
+        </div>
       </div>
 
       <div class="addtask-content-container">
@@ -695,6 +698,71 @@
           <p class="search-members-btn copylink">Copy Link</p>
         </div>
       </div>
+    </div>
+
+    <!--  !Add Task (it is a button display) -->
+    <div class="dashTask content">
+      <div class="addtask-header flex">
+        <p><span>Add New T</span>ask</p>
+        <p class="dashtask-btn">Go Back</p>
+      </div>
+
+      <div class="addtask-content-container">
+        <p class="addtask-text">Title</p>
+        <div class="addtask-search-container">
+          <input class="search-members" />
+        </div>
+
+        <p class="addtask-text">Date</p>
+        <div class="addtask-search-container">
+          <input class="search-members" />
+          <ion-icon name="calendar-outline" class="addtask-calendar"></ion-icon>
+        </div>
+
+        <p class="addtask-text">Priority</p>
+        <div class="priority-container flex">
+          <div class="priority-sub flex">
+            <ion-icon name="ellipse" class="priority-red"></ion-icon>
+            <p>Extreme</p>
+            <input type="checkbox" />
+          </div>
+
+          <div class="priority-sub flex">
+            <ion-icon name="ellipse" class="priority-blue"></ion-icon>
+            <p>Moderate</p>
+            <input type="checkbox" />
+          </div>
+
+          <div class="priority-sub flex">
+            <ion-icon name="ellipse" class="priority-green"></ion-icon>
+            <p>Low</p>
+            <input type="checkbox" />
+          </div>
+        </div>
+
+        <div class="description-img-container grid">
+          <div class="description-container">
+            <p class="addtask-text">Text Description</p>
+            <input
+              type="text"
+              placeholder="Start writing here....."
+              class="input-description"
+            />
+          </div>
+
+          <div class="img-container">
+            <p class="addtask-text">Project Link</p>
+            <div class="img-sub">
+              <img src="" alt="" />
+              <p class="img-text">Drag&Drop file here</p>
+              <p class="img-text">or</p>
+              <p class="img-browser-btn">Browse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="search-members-btn done">Done</p>
     </div>
 
     <!-- !SIGN UP -->
