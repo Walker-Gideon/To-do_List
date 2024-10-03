@@ -759,10 +759,15 @@ circle.progress {
   margin-top: 2rem;
   padding: 3.2rem 3.5rem;
 }
+.content-container {
+}
 .addtask-text {
   font-size: 1.8rem;
   font-weight: 500;
   color: var(--primary-black-col);
+}
+.addtask-date {
+  margin: 2rem 0 1.2rem;
 }
 .addtask-search-container {
   margin-top: 1.2rem;
@@ -770,12 +775,25 @@ circle.progress {
   gap: 1rem;
 }
 .search-members {
-  width: 75%;
+  width: 81%;
   border: 2px solid var(--graywhite-col);
   border-radius: 5px;
   font-size: 1.6rem;
   padding: 1.1rem 0.8rem;
   background-color: transparent;
+}
+.search-contain {
+  position: relative;
+}
+.search-me {
+  width: 70%;
+}
+.addtask-calendar {
+  position: absolute;
+  top: 7px;
+  left: 56rem;
+  font-size: 2.4rem;
+  color: var(--mixed-gray-col);
 }
 .search-members:focus {
   outline: none;
@@ -794,6 +812,10 @@ circle.progress {
 }
 .copylink {
   padding: 1.2rem 3.5rem;
+}
+.done-btn {
+  margin: 3.2rem;
+  border: none;
 }
 .search-members-btn:hover {
   background-color: var(--prihover-col);
@@ -849,6 +871,79 @@ circle.progress {
 }
 .downarrow {
   font-size: 2rem;
+}
+.priority-container {
+  width: 100%;
+  align-items: center;
+  gap: 8rem;
+}
+.priority-sub {
+  align-items: center;
+  gap: 0.8rem;
+}
+.priority-sub p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--graywhite-col);
+}
+.priority-icon {
+  font-size: 1.2rem;
+}
+.priority-red {
+  color: var(--orangered-col);
+}
+.priority-blue {
+  color: var(--lightblue-col);
+}
+.priority-green {
+  color: var(--greentwo-col);
+}
+.description-img-container {
+  grid-template-columns: 70fr 30fr;
+  gap: 1.2rem;
+}
+.input-description {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  border: 1px solid var(--mixed-gray-col);
+  border-radius: 8px;
+  background-color: transparent;
+  resize: none;
+}
+.input-description:focus {
+  outline: none;
+}
+.input-description::placeholder {
+  color: var(--mixed-gray-col);
+}
+.img-container {
+}
+.img-sub {
+  width: 100%;
+  height: 83%;
+  border: 1px solid var(--mixed-gray-col);
+  border-radius: 8px;
+  padding: 1.2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+.addtask-img {
+  width: 50%;
+}
+.img-text {
+  font-size: 1.8rem;
+  color: var(--mixed-gray-col);
+}
+.img-browser-btn {
+  border: 1px solid var(--mixed-gray-col);
+  border-radius: 15px;
+  padding: 0.8rem 3.4rem;
+  font-size: 1.6rem;
+  color: var(--mixed-gray-col);
+  cursor: pointer;
 }
 
 /* 

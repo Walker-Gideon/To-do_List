@@ -5,10 +5,12 @@ const todayDate = document.querySelector(".date");
 const presentDate = document.querySelector(".present-date");
 const presentMonth = document.querySelector(".presnt-month");
 const inviteBtn = document.querySelector(".invite-btn");
-const addTaskContent = document.querySelector(".section-addtask");
+const intiteContent = document.querySelector(".section-addtask");
+const addTaskContent = document.querySelector(".dashTask");
 const dashTaskContent = document.querySelector(".dashTask");
 const homeContainer = document.querySelector(".home-container");
-const addTaskBackBtn = document.querySelector(".addtask-btn");
+const inviteBackBtn = document.querySelector(".addtask-btn");
+const addTaskBackBtn = document.querySelector(".dashtask-btn");
 const dashboardAddTaskBtn = document.querySelector(".add-task");
 const overlay = document.querySelector(".overlay");
 
@@ -95,14 +97,14 @@ buttons.forEach((button) => {
 inviteBtn.addEventListener("click", () => {
   inviteBtn.classList.add("inviteBtn");
   overlay.classList.remove("hidden");
-  addTaskContent.classList.add("active");
+  intiteContent.classList.add("active");
   homeContainer.classList.add("aside-index");
 });
 
-addTaskBackBtn.addEventListener("click", () => {
+inviteBackBtn.addEventListener("click", () => {
   inviteBtn.classList.remove("inviteBtn");
   overlay.classList.add("hidden");
-  addTaskContent.classList.remove("active");
+  intiteContent.classList.remove("active");
   homeContainer.classList.remove("aside-index");
 });
 
@@ -111,4 +113,11 @@ dashboardAddTaskBtn.addEventListener("click", () => {
   overlay.classList.remove("hidden");
   homeContainer.classList.add("aside-index");
   dashTaskContent.classList.add("active");
+});
+
+addTaskBackBtn.addEventListener("click", () => {
+  inviteBtn.classList.remove("inviteBtn");
+  overlay.classList.add("hidden");
+  addTaskContent.classList.remove("active");
+  homeContainer.classList.remove("aside-index");
 });

@@ -704,56 +704,74 @@
     <div class="dashTask content">
       <div class="addtask-header flex">
         <p><span>Add New T</span>ask</p>
-        <p class="dashtask-btn">Go Back</p>
+        <div class="back-container">
+          <p class="dashtask-btn">Go Back</p>
+        </div>
       </div>
 
-      <div class="addtask-content-container">
+      <div class="addtask-content-container content-container">
         <p class="addtask-text">Title</p>
         <div class="addtask-search-container">
-          <input class="search-members" />
+          <input class="search-members search-me" />
         </div>
 
-        <p class="addtask-text">Date</p>
-        <div class="addtask-search-container">
-          <input class="search-members" />
+        <p class="addtask-text addtask-date">Date</p>
+        <div class="addtask-search-container search-contain">
+          <input class="search-members search-me" />
           <ion-icon name="calendar-outline" class="addtask-calendar"></ion-icon>
         </div>
 
-        <p class="addtask-text">Priority</p>
+        <p class="addtask-text addtask-date">Priority</p>
         <div class="priority-container flex">
           <div class="priority-sub flex">
-            <ion-icon name="ellipse" class="priority-red"></ion-icon>
+            <ion-icon
+              name="ellipse"
+              class="priority-icon priority-red"
+            ></ion-icon>
             <p>Extreme</p>
-            <input type="checkbox" />
+            <input type="checkbox" class="checkbox checkbox-red" />
           </div>
 
           <div class="priority-sub flex">
-            <ion-icon name="ellipse" class="priority-blue"></ion-icon>
+            <ion-icon
+              name="ellipse"
+              class="priority-icon priority-blue"
+            ></ion-icon>
             <p>Moderate</p>
-            <input type="checkbox" />
+            <input type="checkbox" class="checkbox checkbox-blue" />
           </div>
 
           <div class="priority-sub flex">
-            <ion-icon name="ellipse" class="priority-green"></ion-icon>
+            <ion-icon
+              name="ellipse"
+              class="priority-icon priority-green"
+            ></ion-icon>
             <p>Low</p>
-            <input type="checkbox" />
+            <input type="checkbox" class="checkbox checkbox-green" />
           </div>
         </div>
 
         <div class="description-img-container grid">
-          <div class="description-container">
-            <p class="addtask-text">Text Description</p>
-            <input
-              type="text"
+          <form class="description-container">
+            <p class="addtask-text addtask-date">Text Description</p>
+            <textarea
+              id="description"
+              name="description"
+              rows="12"
+              cols="40"
               placeholder="Start writing here....."
               class="input-description"
-            />
-          </div>
+            ></textarea>
+          </form>
 
           <div class="img-container">
-            <p class="addtask-text">Project Link</p>
-            <div class="img-sub">
-              <img src="" alt="" />
+            <p class="addtask-text addtask-date">Project Link</p>
+            <div class="img-sub flex">
+              <img
+                src="img/dragd.png"
+                alt="image of drag and drop"
+                class="addtask-img"
+              />
               <p class="img-text">Drag&Drop file here</p>
               <p class="img-text">or</p>
               <p class="img-browser-btn">Browse</p>
@@ -762,7 +780,7 @@
         </div>
       </div>
 
-      <p class="search-members-btn done">Done</p>
+      <button class="search-members-btn done-btn">Done</button>
     </div>
 
     <!-- !SIGN UP -->
