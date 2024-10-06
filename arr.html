@@ -1,0 +1,79 @@
+<!--
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag and Drop Image</title>
+  <style>
+    .dropzone {
+      width: 300px;
+      height: 200px;
+      border: 2px dashed #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 20px;
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<div class="dropzone" id="dropzone">
+  Drag and Drop an image here or click to upload
+</div>
+
+<script>
+  const dropzone = document.getElementById('dropzone');
+
+  dropzone.addEventListener('dragover', (e) => {
+    e.preventDefault();  // Prevent default behavior to allow drop
+    dropzone.style.borderColor = '#000';  // Highlight dropzone on drag
+  });
+
+  dropzone.addEventListener('dragleave', () => {
+    dropzone.style.borderColor = '#ccc';  // Reset border on leave
+  });
+
+  dropzone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropzone.style.borderColor = '#ccc';  // Reset border after drop
+
+    const files = e.dataTransfer.files;
+    if (files.length > 0 && files[0].type.startsWith('image/')) {
+      const img = document.createElement('img');
+      img.src = URL.createObjectURL(files[0]);
+      dropzone.innerHTML = '';  // Clear dropzone text
+      dropzone.appendChild(img);  // Add image to dropzone
+    }
+  });
+
+  // Optional: allow clicking to upload
+  dropzone.addEventListener('click', () => {
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = 'image/*';
+    fileInput.click();
+
+    fileInput.onchange = () => {
+      const file = fileInput.files[0];
+      if (file && file.type.startsWith('image/')) {
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(file);
+        dropzone.innerHTML = '';  // Clear dropzone text
+        dropzone.appendChild(img);  // Add image to dropzone
+      }
+    };
+  });
+</script>
+
+</body>
+</html>
+
+ -->

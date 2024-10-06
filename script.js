@@ -23,6 +23,12 @@ const dashboardBtn = document.querySelector(".dashboardbtn");
 const buttons = document.querySelectorAll(".btn-container");
 const contents = document.querySelectorAll(".content");
 
+//! REGISTRATION
+const swapToSignin = document.querySelector(".sigin-text");
+const swapToSignUp = document.querySelector(".signup-text");
+const signupContainer = document.querySelector(".container-signup");
+const siginContainer = document.querySelector(".container-signin");
+
 //? DEFAULT DISPLAY
 dashboardCont.classList.add("active");
 dashboardBtn.classList.add("active");
@@ -120,4 +126,23 @@ addTaskBackBtn.addEventListener("click", () => {
   overlay.classList.add("hidden");
   addTaskContent.classList.remove("active");
   homeContainer.classList.remove("aside-index");
+});
+
+//? REGISTRATION
+swapToSignin.addEventListener("click", (e) => {
+  e.preventDefault();
+  siginContainer.classList.add("activereg");
+  // siginContainer.classList.remove("contentreg");
+
+  signupContainer.classList.add("contentreg");
+  // signupContainer.classList.remove("activereg");
+});
+
+swapToSignUp.addEventListener("click", (e) => {
+  e.preventDefault();
+  siginContainer.classList.remove("activereg");
+  // siginContainer.classList.add("contentreg");
+
+  signupContainer.classList.add("activereg");
+  // signupContainer.classList.remove("contentreg");
 });

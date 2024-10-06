@@ -40,7 +40,7 @@
   </head>
   <body>
     <!-- ! ENTIRE WORK -->
-    <div class="home-container">
+    <div class="home-container content">
       <header class="top-header flex">
         <a href="" class="dashboard-logo">
           <h1>
@@ -612,7 +612,7 @@
 
         <div class="addtask-search-container flex">
           <input class="search-members" placeholder="gideonawortwe@gmail.com" />
-          <p class="search-members-btn">Send Invite</p>
+          <button class="search-members-btn">Send Invite</button>
         </div>
 
         <div class="members-container">
@@ -695,7 +695,7 @@
             class="search-members"
             placeholder="https://walkergideonhere.com/337550"
           />
-          <p class="search-members-btn copylink">Copy Link</p>
+          <button class="search-members-btn copylink">Copy Link</button>
         </div>
       </div>
     </div>
@@ -705,7 +705,7 @@
       <div class="addtask-header flex">
         <p><span>Add New T</span>ask</p>
         <div class="back-container">
-          <p class="dashtask-btn">Go Back</p>
+          <button class="dashtask-btn">Go Back</button>
         </div>
       </div>
 
@@ -774,7 +774,7 @@
               />
               <p class="img-text">Drag&Drop file here</p>
               <p class="img-text">or</p>
-              <p class="img-browser-btn">Browse</p>
+              <button class="img-browser-btn">Browse</button>
             </div>
           </div>
         </div>
@@ -784,10 +784,16 @@
     </div>
 
     <!-- !SIGN UP -->
-    <div class="registration-container content">
+    <div class="registration-container">
       <div class="container-signup">
         <section class="section-signup grid">
-          <div class="left-box"></div>
+          <div class="left-box">
+            <img
+              class="image"
+              src="img/signin2.png"
+              alt="An image of signing up"
+            />
+          </div>
 
           <div class="right-box">
             <h1>Sign Up</h1>
@@ -865,7 +871,7 @@
               </div>
 
               <div class="submit-container">
-                <input type="submit" value="Register" class="submit-btn" />
+                <button class="submit-btn">Register</button>
               </div>
 
               <p class="info-text">
@@ -877,7 +883,7 @@
         </section>
       </div>
 
-      <div class="container-signin content">
+      <div class="container-signin contentreg">
         <section class="section-signin grid">
           <div class="left-box">
             <h1>Sign In</h1>
@@ -911,7 +917,7 @@
               </div>
 
               <div class="submit-container">
-                <input type="submit" value="Login" class="submit-btn" />
+                <button class="submit-btn">Login</button>
               </div>
 
               <div class="icon-info flex">
@@ -923,12 +929,18 @@
 
               <p class="info-text">
                 Don't have an account?
-                <span class="sigin-text">Create One</span>
+                <span class="sigin-text signup-text">Create One</span>
               </p>
             </form>
           </div>
 
-          <div class="right-box"></div>
+          <div class="right-box">
+            <img
+              class="inimage"
+              src="img/signup2.png"
+              alt=";Image of signing in"
+            />
+          </div>
         </section>
       </div>
     </div>
