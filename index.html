@@ -40,7 +40,7 @@
   </head>
   <body>
     <!-- ! ENTIRE WORK -->
-    <div class="home-container content">
+    <div class="home-container">
       <header class="top-header flex">
         <a href="" class="dashboard-logo">
           <h1>
@@ -211,7 +211,7 @@
                 <!--? The card will be display in this section-->
                 <div class="task-today">
                   <!-- card 1 -->
-                  <div class="card todo-card">
+                  <!-- <div class="card todo-card">
                     <header class="card-header flex">
                       <ion-icon
                         name="ellipse-outline"
@@ -247,7 +247,7 @@
                         Created on: <span class="created">20/06/2023</span>
                       </p>
                     </div>
-                  </div>
+                  </div> -->
 
                   <!-- card 2 -->
                   <!-- <div class="card todo-card">
@@ -357,7 +357,14 @@
                         ></circle>
                       </svg>
                       <div class="percentage">0%</div>
-                      <div class="status">Completed</div>
+
+                      <div class="stat-container flex">
+                        <ion-icon
+                          name="ellipse"
+                          class="status-green"
+                        ></ion-icon>
+                        <p class="status">Completed</p>
+                      </div>
                     </div>
 
                     <!-- In Progress -->
@@ -376,7 +383,11 @@
                         ></circle>
                       </svg>
                       <div class="percentage">0%</div>
-                      <div class="status">In Progress</div>
+
+                      <div class="stat-container flex">
+                        <ion-icon name="ellipse" class="status-blue"></ion-icon>
+                        <p class="status">In Progress</p>
+                      </div>
                     </div>
 
                     <!-- Not Started -->
@@ -395,7 +406,11 @@
                         ></circle>
                       </svg>
                       <div class="percentage">0%</div>
-                      <div class="status">Not Started</div>
+
+                      <div class="stat-container flex">
+                        <ion-icon name="ellipse" class="status-red"></ion-icon>
+                        <p class="status">Not Started</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -411,7 +426,7 @@
 
                   <div class="completed-card-container">
                     <!-- completed card 1 -->
-                    <div class="card completion-card">
+                    <!-- <div class="card completion-card">
                       <div class="card-header flex">
                         <ion-icon
                           name="ellipse-outline"
@@ -438,7 +453,7 @@
                           </p>
                           <p class="card-start start-comp">
                             Status:
-                            <span class="start comp-start">Completed</span>
+                            <span class="comp-start">Completed</span>
                           </p>
                         </div>
                         <img src="./img/user2.jpg" alt="" class="card-image" />
@@ -447,7 +462,7 @@
                       <div class="card-status">
                         <p class="created-on comp-on">Completed 2 days ago</p>
                       </div>
-                    </div>
+                    </div> -->
 
                     <!-- completed card 2 -->
                     <!-- <div class="card completion-card">
@@ -496,7 +511,7 @@
               <section class="vital-task">
                 <p class="vital-htext"><span>Vital </span>Tasks</p>
 
-                <div class="vital-task-container">
+                <!-- <div class="vital-task-container">
                   <div class="cardVital vital-card">
                     <div class="vital-header flex">
                       <ion-icon
@@ -534,10 +549,13 @@
                       </p>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </section>
 
-              <section class="vital-details"></section>
+              <section class="vital-details">
+                <!-- <ion-icon name="trash"></ion-icon> -->
+                <!-- <ion-icon name="create"></ion-icon> -->
+              </section>
             </div>
           </div>
 
@@ -547,7 +565,7 @@
               <section class="my-task">
                 <p class="vital-htext"><span>My </span>Tasks</p>
 
-                <div class="vital-task-container">
+                <!-- <div class="vital-task-container">
                   <div class="cardVital vital-card">
                     <div class="vital-header flex">
                       <ion-icon
@@ -585,12 +603,134 @@
                       </p>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </section>
 
               <section class="my-details">
-                <div class="details"></div>
+                <div class="details">
+                  <!-- <ion-icon name="trash"></ion-icon> -->
+                  <!-- <ion-icon name="create"></ion-icon> -->
+                </div>
               </section>
+            </div>
+          </div>
+
+          <!-- ! TASK CATEGORIES -->
+          <div id="content4" class="content">
+            <div class="categories-container">
+              <div class="categories-header flex">
+                <h1 class="cat-header-title"><span>Task</span> Categories</h1>
+
+                <div class="back-container">
+                  <button class="cat-btn-back">Go Back</button>
+                </div>
+              </div>
+
+              <button class="search-members-btn cat-btn-addcat">
+                Add Category
+              </button>
+
+              <!-- Categories display -->
+              <div class="categories-display-container">
+                <div class="categories-display">
+                  <div class="cat-display-heaader flex">
+                    <h2 class="display-title-cat"><span>Task S</span>tatus</h2>
+
+                    <div class="cat-status-container flex">
+                      <ion-icon name="add" class="cat-add-icon"></ion-icon>
+                      <p class="status-text-cat">Add Task Status</p>
+                    </div>
+                  </div>
+
+                  <div class="cat-display-body">
+                    <table>
+                      <!-- table header -->
+                      <tr>
+                        <th>SN</th>
+                        <th>Task Status</th>
+                        <th>Action</th>
+                      </tr>
+
+                      <!-- table data -->
+                      <tr>
+                        <td rowspan="3">
+                          <div class="sn-container">
+                            <p>1</p>
+                            <p>2</p>
+                            <p>3</p>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td rowspan="3">
+                          <div class="tast-status-container">
+                            <p>Completed</p>
+                            <p>In Progress</p>
+                            <p>Not Started</p>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td rowspan="3">
+                          <div class="action-container">
+                            <div class="editdel-container flex">
+                              <div class="edi-container flex">
+                                <ion-icon name="trash"></ion-icon>
+                                <p class="edi-text">Edit</p>
+                              </div>
+
+                              <div class="delete-contsiner flex">
+                                <ion-icon name="create"></ion-icon>
+                                <p class="delete-text">Delete</p>
+                              </div>
+                            </div>
+
+                            <div class="editdel-container flex">
+                              <div class="edi-container flex">
+                                <ion-icon name="trash"></ion-icon>
+                                <p class="edi-text">Edit</p>
+                              </div>
+
+                              <div class="delete-contsiner flex">
+                                <ion-icon name="create"></ion-icon>
+                                <p class="delete-text">Delete</p>
+                              </div>
+                            </div>
+
+                            <div class="editdel-container flex">
+                              <div class="edi-container flex">
+                                <ion-icon name="trash"></ion-icon>
+                                <p class="edi-text">Edit</p>
+                              </div>
+
+                              <div class="delete-contsiner flex">
+                                <ion-icon name="create"></ion-icon>
+                                <p class="delete-text">Delete</p>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ! SETTIGNS -->
+          <div id="content5" class="content">
+            <div class="setting-container">
+              <h1>setting</h1>
+            </div>
+          </div>
+
+          <!-- ! HELP -->
+          <div id="content6" class="content">
+            <div class="help-container">
+              <h1>help</h1>
             </div>
           </div>
         </div>
@@ -784,7 +924,7 @@
     </div>
 
     <!-- !SIGN UP -->
-    <div class="registration-container">
+    <div class="registration-container contentreg content">
       <div class="container-signup">
         <section class="section-signup grid">
           <div class="left-box">
@@ -883,7 +1023,7 @@
         </section>
       </div>
 
-      <div class="container-signin contentreg">
+      <div class="container-signin contentreg content">
         <section class="section-signin grid">
           <div class="left-box">
             <h1>Sign In</h1>
