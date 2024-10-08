@@ -11,7 +11,6 @@ html {
   /* Colors */
   --primary-col: #ff6767;
   --prihover-col: #ff7676;
-  --secondary-orange-col: #f24e1e;
   --primary-black-col: #000;
   --topheader-col: #f8f8f8;
   --white-col: #fff;
@@ -27,6 +26,7 @@ html {
   --primary-gray-col: #888888;
   --mixed-gray-col: #a1a3ab;
   --mixed-seconday-orange-col: #f24e1e;
+  --mixed-seconday-hover-col: #f5714b;
 }
 body {
   font-family: "Rubik", "Roboto", sans-serif;
@@ -84,6 +84,12 @@ body {
 }
 .aside-index {
   z-index: -2;
+}
+
+/** Task Category */
+.content.category {
+  opacity: 1;
+  height: 100rem;
 }
 
 /** Registration */

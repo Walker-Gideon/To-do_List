@@ -617,6 +617,7 @@
 
           <!-- ! TASK CATEGORIES -->
           <div id="content4" class="content">
+            <!-- Categories main display 1 -->
             <div class="categories-container">
               <div class="categories-header flex">
                 <h1 class="cat-header-title"><span>Task</span> Categories</h1>
@@ -626,95 +627,224 @@
                 </div>
               </div>
 
-              <button class="search-members-btn cat-btn-addcat">
-                Add Category
-              </button>
+              <div class="addcat-btn-container">
+                <button class="search-members-btn cat-btn-addcat addcategory">
+                  Add Category
+                </button>
+              </div>
 
               <!-- Categories display -->
               <div class="categories-display-container">
+                <!-- Categories Display 1 -->
                 <div class="categories-display">
                   <div class="cat-display-heaader flex">
                     <h2 class="display-title-cat"><span>Task S</span>tatus</h2>
 
-                    <div class="cat-status-container flex">
+                    <button class="cat-status-container flex">
                       <ion-icon name="add" class="cat-add-icon"></ion-icon>
                       <p class="status-text-cat">Add Task Status</p>
-                    </div>
+                    </button>
                   </div>
 
                   <div class="cat-display-body">
-                    <table>
-                      <!-- table header -->
-                      <tr>
-                        <th>SN</th>
-                        <th>Task Status</th>
-                        <th>Action</th>
-                      </tr>
+                    <div class="table-container grid">
+                      <div class="table1 col-1">
+                        <div class="table-header-container">
+                          <h2 class="table-header flex">SN</h2>
+                        </div>
 
-                      <!-- table data -->
-                      <tr>
-                        <td rowspan="3">
-                          <div class="sn-container">
+                        <div class="table-body">
+                          <div class="sn-container flex">
                             <p>1</p>
                             <p>2</p>
                             <p>3</p>
                           </div>
-                        </td>
-                      </tr>
+                        </div>
+                      </div>
 
-                      <tr>
-                        <td rowspan="3">
-                          <div class="tast-status-container">
+                      <div class="table2 col-1">
+                        <div class="table-header-container">
+                          <h2 class="table-header flex">Task Status</h2>
+                        </div>
+
+                        <div class="table-body">
+                          <div class="tast-status-container flex">
                             <p>Completed</p>
                             <p>In Progress</p>
                             <p>Not Started</p>
                           </div>
-                        </td>
-                      </tr>
+                        </div>
+                      </div>
 
-                      <tr>
-                        <td rowspan="3">
-                          <div class="action-container">
+                      <div class="table3 col-1">
+                        <div class="table-header-container action-container">
+                          <h2 class="table-header flex">Action</h2>
+                        </div>
+
+                        <div class="table-body action-body">
+                          <div class="act-container flex">
                             <div class="editdel-container flex">
-                              <div class="edi-container flex">
-                                <ion-icon name="trash"></ion-icon>
-                                <p class="edi-text">Edit</p>
-                              </div>
-
-                              <div class="delete-contsiner flex">
+                              <button class="edi-container flex">
                                 <ion-icon name="create"></ion-icon>
+                                <p class="edi-text">Edit</p>
+                              </button>
+
+                              <button class="delete-contsiner flex">
+                                <ion-icon name="trash"></ion-icon>
                                 <p class="delete-text">Delete</p>
-                              </div>
+                              </button>
                             </div>
 
                             <div class="editdel-container flex">
-                              <div class="edi-container flex">
-                                <ion-icon name="trash"></ion-icon>
-                                <p class="edi-text">Edit</p>
-                              </div>
-
-                              <div class="delete-contsiner flex">
+                              <button class="edi-container flex">
                                 <ion-icon name="create"></ion-icon>
+                                <p class="edi-text">Edit</p>
+                              </button>
+
+                              <button class="delete-contsiner flex">
+                                <ion-icon name="trash"></ion-icon>
                                 <p class="delete-text">Delete</p>
-                              </div>
+                              </button>
                             </div>
 
                             <div class="editdel-container flex">
-                              <div class="edi-container flex">
-                                <ion-icon name="trash"></ion-icon>
-                                <p class="edi-text">Edit</p>
-                              </div>
-
-                              <div class="delete-contsiner flex">
+                              <button class="edi-container flex">
                                 <ion-icon name="create"></ion-icon>
+                                <p class="edi-text">Edit</p>
+                              </button>
+
+                              <button class="delete-contsiner flex">
+                                <ion-icon name="trash"></ion-icon>
                                 <p class="delete-text">Delete</p>
-                              </div>
+                              </button>
                             </div>
                           </div>
-                        </td>
-                      </tr>
-                    </table>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                </div>
+
+                <!-- Categories Display 2 -->
+                <div class="category-display">
+                  <div class="cat-display-heaader flex">
+                    <h2 class="display-title-cat"><span>Task S</span>tatus</h2>
+
+                    <button class="cat-status-container flex">
+                      <ion-icon name="add" class="cat-add-icon"></ion-icon>
+                      <p class="status-text-cat">Add Task Status</p>
+                    </button>
+                  </div>
+
+                  <div class="cat-display-body">
+                    <div class="table-container grid">
+                      <div class="table1 col-1">
+                        <div class="table-header-container">
+                          <h2 class="table-header flex">SN</h2>
+                        </div>
+
+                        <div class="table-body">
+                          <div class="sn-container flex">
+                            <p>1</p>
+                            <p>2</p>
+                            <p>3</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="table2 col-1">
+                        <div class="table-header-container">
+                          <h2 class="table-header flex">Task Status</h2>
+                        </div>
+
+                        <div class="table-body">
+                          <div class="tast-status-container flex">
+                            <p>Completed</p>
+                            <p>In Progress</p>
+                            <p>Not Started</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="table3 col-1">
+                        <div class="table-header-container action-container">
+                          <h2 class="table-header flex">Action</h2>
+                        </div>
+
+                        <div class="table-body action-body">
+                          <div class="act-container flex">
+                            <div class="editdel-container flex">
+                              <button class="edi-container flex">
+                                <ion-icon name="create"></ion-icon>
+                                <p class="edi-text">Edit</p>
+                              </button>
+
+                              <button class="delete-contsiner flex">
+                                <ion-icon name="trash"></ion-icon>
+                                <p class="delete-text">Delete</p>
+                              </button>
+                            </div>
+
+                            <div class="editdel-container flex">
+                              <button class="edi-container flex">
+                                <ion-icon name="create"></ion-icon>
+                                <p class="edi-text">Edit</p>
+                              </button>
+
+                              <button class="delete-contsiner flex">
+                                <ion-icon name="trash"></ion-icon>
+                                <p class="delete-text">Delete</p>
+                              </button>
+                            </div>
+
+                            <div class="editdel-container flex">
+                              <button class="edi-container flex">
+                                <ion-icon name="create"></ion-icon>
+                                <p class="edi-text">Edit</p>
+                              </button>
+
+                              <button class="delete-contsiner flex">
+                                <ion-icon name="trash"></ion-icon>
+                                <p class="delete-text">Delete</p>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Create Category main display -->
+            <div class="create-category-container content">
+              <div class="inner-category-container">
+                <div class="categories-header flex">
+                  <h1 class="cat-header-title">
+                    <span>Crea</span>te Categories
+                  </h1>
+
+                  <div class="back-container">
+                    <button class="cat-btn-back create-category-backbtn">
+                      Go Back
+                    </button>
+                  </div>
+                </div>
+
+                <div class="cat-create-box">
+                  <h2 class="display-title-cat">Category Name</h2>
+                  <input type="text" class="cat-name-input" />
+                </div>
+
+                <div class="addcat-btn-container flex">
+                  <button class="search-members-btn cat-btn-addcat">
+                    Create
+                  </button>
+
+                  <button class="search-members-btn cat-btn-addcat">
+                    Cancel
+                  </button>
                 </div>
               </div>
             </div>

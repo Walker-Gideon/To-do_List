@@ -12,6 +12,10 @@ const homeContainer = document.querySelector(".home-container");
 const inviteBackBtn = document.querySelector(".addtask-btn");
 const addTaskBackBtn = document.querySelector(".dashtask-btn");
 const dashboardAddTaskBtn = document.querySelector(".add-task");
+const createCategory = document.querySelector(".create-category-container");
+const categoryMainDisplay = document.querySelector(".categories-container");
+const addCategoryBtn = document.querySelector(".addcategory");
+const backBtnCategory = document.querySelector(".create-category-backbtn");
 const overlay = document.querySelector(".overlay");
 
 //! SECTIONS
@@ -126,6 +130,19 @@ addTaskBackBtn.addEventListener("click", () => {
   overlay.classList.add("hidden");
   addTaskContent.classList.remove("active");
   homeContainer.classList.remove("aside-index");
+});
+
+//? TASK CATEGORY
+addCategoryBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  categoryMainDisplay.classList.add("content");
+  createCategory.classList.add("category");
+});
+
+backBtnCategory.addEventListener("click", (e) => {
+  e.preventDefault();
+  categoryMainDisplay.classList.add("category");
+  createCategory.classList.remove("category");
 });
 
 //? REGISTRATION
