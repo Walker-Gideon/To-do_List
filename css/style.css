@@ -428,6 +428,11 @@
 /*? CARDS */
 .task-today {
   padding: 1.2rem;
+  height: 81rem;
+  overflow-y: auto;
+}
+.task-today::-webkit-scrollbar {
+  display: none;
 }
 .card {
   position: relative;
@@ -596,6 +601,11 @@ circle.progress {
 .completed-card-container {
   width: 100%;
   padding: 0 3.2rem;
+  overflow-y: auto;
+  height: 50rem;
+}
+.completed-card-container::-webkit-scrollbar {
+  display: none;
 }
 .completed-task-header {
   margin-bottom: 3.2rem;
@@ -635,8 +645,6 @@ circle.progress {
 }
 .vital-task {
   padding: 1.8rem 3.2rem;
-}
-.vital-details {
 }
 .vital-htext {
   font-size: 1.8rem;
@@ -730,8 +738,6 @@ circle.progress {
 .my-task {
   padding: 1.8rem 3.2rem;
 }
-.my-details {
-}
 
 /* ? INVITE BTN setion */
 .section-addtask,
@@ -769,6 +775,7 @@ circle.progress {
   cursor: pointer;
   transition: all 0.3s;
 }
+.back-container:hover,
 .addtask-btn:hover,
 .dashtask-btn:hover {
   color: var(--lightblue-col);

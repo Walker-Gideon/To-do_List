@@ -133,21 +133,18 @@ addTaskBackBtn.addEventListener("click", () => {
 });
 
 //? TASK CATEGORY
-addCategoryBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+addCategoryBtn.addEventListener("click", () => {
   categoryMainDisplay.classList.add("content");
   createCategory.classList.add("category");
 });
 
-backBtnCategory.addEventListener("click", (e) => {
-  e.preventDefault();
+backBtnCategory.addEventListener("click", () => {
   categoryMainDisplay.classList.add("category");
   createCategory.classList.remove("category");
 });
 
 //? REGISTRATION
-swapToSignin.addEventListener("click", (e) => {
-  e.preventDefault();
+swapToSignin.addEventListener("click", () => {
   siginContainer.classList.add("activereg");
   // siginContainer.classList.remove("contentreg");
 
@@ -155,11 +152,113 @@ swapToSignin.addEventListener("click", (e) => {
   // signupContainer.classList.remove("activereg");
 });
 
-swapToSignUp.addEventListener("click", (e) => {
-  e.preventDefault();
+swapToSignUp.addEventListener("click", () => {
   siginContainer.classList.remove("activereg");
   // siginContainer.classList.add("contentreg");
 
   signupContainer.classList.add("activereg");
   // signupContainer.classList.remove("contentreg");
 });
+
+//! Adding a task in the card of the dashboard
+
+function getCurrentDate() {
+  const currentDate = new Date();
+  return `${currentDate.getDate().toString().padStart(2, "0")}/${(
+    currentDate.getMonth() + 1
+  )
+    .toString()
+    .padStart(2, "0")}/${currentDate.getFullYear()}`;
+}
+
+function closeAddTask() {
+  inviteBtn.classList.remove("inviteBtn");
+  overlay.classList.add("hidden");
+  addTaskContent.classList.remove("active");
+  homeContainer.classList.remove("aside-index");
+}
+
+function addTask(title, date, priority, textDescription, projectLink) {
+  const todoList = document.getElementById("toda-list");
+
+  const card = document.createElement("div");
+  card.classList.add("card", "todo-card");
+
+  card.innerHTML = `
+    <header class="card-header flex">
+      <ion-icon name="ellipse-outline" class="card-title-icon"></ion-icon>
+
+      <button class="btn-option">
+        <ion-icon name="ellipsis-horizontal-outline" class="option-icon"></ion-icon>
+      </button>
+    </header>
+
+    <p class="card-title-text">${title}</p>
+
+    <div class="card-body flex">
+      <p>${textDescription}</p>
+      
+      <img src="./img/user2.jpg" alt="" class="card-image" />
+    </div>
+
+    <div class="card-status flex">
+      <p class="card-level">
+        Priority: <span class="level">${priority}</span>
+      </p>
+                        
+      <p class="card-start">
+        Status: <span class="start">Not Started</span>
+      </p>
+                        
+      <p class="created-on">
+        Created on: <span class="created">${getCurrentDate(date)}</span>
+      </p>
+    </div>
+  `;
+
+  todoList.appendChild(card);
+}
+
+function loadTask() {
+  const tasks = JSON.parse(localStorage.getItem("tasks") || []);
+  tasks.forEach((task) => {
+    addTask(
+      task.title,
+      task.date,
+      task.priority,
+      task.textDescription,
+      task.projectLink
+    );
+  });
+}
+
+function saveTask(title, date, priority, textDescription, projectLink) {
+  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  tasks.push({ title, date, priority, textDescription, projectLink });
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+document.getElementById("addTaskBtn").addEventListener("click", () => {
+  const title = document.getElementById("taskTitle").value.trim();
+  const date = document.getElementById("taskDate").value;
+  const priority =
+    document.querySelector('input[name="priority"]:checked')?.value || "Low";
+  const textDescription = document.getElementById("description").value.trim();
+  const projectLink = document.getElementById("taskProjectLink");
+
+  if (title || date || textDescription || projectLink) {
+    addTask(title, date, priority, textDescription, projectLink);
+    saveTask(title, date, priority, textDescription, projectLink);
+
+    document.getElementById("taskTitle").value = "";
+    document.getElementById("taskDate").value = "";
+    document.querySelector('input[name="priority"]:checked').checked = false;
+    document.getElementById("description").value = "";
+    document.getElementById("taskProjectLink");
+    closeAddTask();
+  } else {
+    closeAddTask();
+  }
+});
+
+// window.onload = loadTask;
