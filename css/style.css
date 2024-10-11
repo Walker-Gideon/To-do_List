@@ -459,6 +459,36 @@
   color: var(--graywhite-col);
   cursor: pointer;
 }
+.option-action {
+  position: absolute;
+  top: 20%;
+  left: 82%;
+  background-color: var(--white-col);
+  border: 1px solid var(--graywhite-col);
+  border-radius: 5px;
+  padding: 1.2rem;
+  z-index: 10;
+}
+.inner-option-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: end;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: left;
+}
+.option-btn {
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  padding: 0.4rem 0.8rem 0.4rem 0;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.option-btn:hover {
+  color: var(--primary-col);
+}
 .card-title-text {
   width: 75%;
   position: absolute;
@@ -534,20 +564,28 @@
   position: relative;
   width: 120px;
   height: 120px;
+  /* width: 8rem; */
+  /* height: 8rem; */
   display: grid;
 }
 svg {
   position: relative;
   width: 120px;
   height: 120px;
+  /* width: 8rem; */
+  /* height: 8rem; */
   transform: rotate(-90deg);
 }
 circle {
   fill: none;
   stroke-width: 8;
+  /* stroke-width: 0.5rem; */
   r: 40;
   cx: 60;
   cy: 60;
+  /* r: 3rem; */
+  /* cx: 4rem; */
+  /* cy: 4rem; */
 }
 circle.bg {
   stroke: #e0e0e0;
@@ -556,6 +594,8 @@ circle.progress {
   stroke: var(--progress-color);
   stroke-dasharray: 251.2;
   stroke-dashoffset: 251.2;
+  /* stroke-dasharray: 16rem; */
+  /* stroke-dashoffset: 16rem; */
   transition: stroke-dashoffset 1s ease-out;
 }
 .percentage {

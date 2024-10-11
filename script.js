@@ -119,6 +119,13 @@ inviteBackBtn.addEventListener("click", () => {
 });
 
 //? DASHBOARD ADD TASK
+function closeAddTask() {
+  inviteBtn.classList.remove("inviteBtn");
+  overlay.classList.add("hidden");
+  addTaskContent.classList.remove("active");
+  homeContainer.classList.remove("aside-index");
+}
+
 dashboardAddTaskBtn.addEventListener("click", () => {
   overlay.classList.remove("hidden");
   homeContainer.classList.add("aside-index");
@@ -126,10 +133,12 @@ dashboardAddTaskBtn.addEventListener("click", () => {
 });
 
 addTaskBackBtn.addEventListener("click", () => {
-  inviteBtn.classList.remove("inviteBtn");
-  overlay.classList.add("hidden");
-  addTaskContent.classList.remove("active");
-  homeContainer.classList.remove("aside-index");
+  // inviteBtn.classList.remove("inviteBtn");
+  // overlay.classList.add("hidden");
+  // addTaskContent.classList.remove("active");
+  // homeContainer.classList.remove("aside-index");
+
+  closeAddTask();
 });
 
 //? TASK CATEGORY
@@ -161,21 +170,12 @@ swapToSignUp.addEventListener("click", () => {
 });
 
 //! Adding a task in the card of the dashboard
+function getCurrentDate(currentDate) {
+  const day = currentDate.getDate().toString().padStart(2, "0");
+  const month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
+  const year = currentDate.getFullYear();
 
-function getCurrentDate() {
-  const currentDate = new Date();
-  return `${currentDate.getDate().toString().padStart(2, "0")}/${(
-    currentDate.getMonth() + 1
-  )
-    .toString()
-    .padStart(2, "0")}/${currentDate.getFullYear()}`;
-}
-
-function closeAddTask() {
-  inviteBtn.classList.remove("inviteBtn");
-  overlay.classList.add("hidden");
-  addTaskContent.classList.remove("active");
-  homeContainer.classList.remove("aside-index");
+  return `${day}/${month}/${year}`;
 }
 
 function addTask(title, date, priority, textDescription, projectLink) {
@@ -191,6 +191,15 @@ function addTask(title, date, priority, textDescription, projectLink) {
       <button class="btn-option">
         <ion-icon name="ellipsis-horizontal-outline" class="option-icon"></ion-icon>
       </button>
+
+      <div class="option-action hidden">
+        <div class="inner-option-container">
+          <button class="option-btn vital">Vital</button>
+          <button class="option-btn edit">Edit</button>
+          <button class="option-btn delete">Delete</button>
+          <button class="option-btn finish">Finish</button>
+        </div>
+      </div>
     </header>
 
     <p class="card-title-text">${title}</p>
@@ -211,12 +220,24 @@ function addTask(title, date, priority, textDescription, projectLink) {
       </p>
                         
       <p class="created-on">
-        Created on: <span class="created">${getCurrentDate(date)}</span>
+        Created on: <span class="created">${date}</span>
       </p>
     </div>
   `;
 
   todoList.appendChild(card);
+
+  // option button in the card
+  const optionBtn = card.querySelector(".btn-option");
+  const actionOption = card.querySelector(".option-action");
+
+  optionBtn.addEventListener("click", () => {
+    actionOption.classList.toggle("hidden");
+  });
+
+  actionOption.querySelector(".delete").addEventListener("click", () => {
+    console.log("delete");
+  });
 }
 
 function loadTask() {
@@ -247,8 +268,11 @@ document.getElementById("addTaskBtn").addEventListener("click", () => {
   const projectLink = document.getElementById("taskProjectLink");
 
   if (title || date || textDescription || projectLink) {
-    addTask(title, date, priority, textDescription, projectLink);
-    saveTask(title, date, priority, textDescription, projectLink);
+    const userDate = new Date(date);
+    const formatDate = getCurrentDate(userDate);
+
+    addTask(title, formatDate, priority, textDescription, projectLink);
+    saveTask(title, formatDate, priority, textDescription, projectLink);
 
     document.getElementById("taskTitle").value = "";
     document.getElementById("taskDate").value = "";
@@ -261,4 +285,4 @@ document.getElementById("addTaskBtn").addEventListener("click", () => {
   }
 });
 
-// window.onload = loadTask;
+window.onload = loadTask;
