@@ -27,12 +27,6 @@ const dashboardBtn = document.querySelector(".dashboardbtn");
 const buttons = document.querySelectorAll(".btn-container");
 const contents = document.querySelectorAll(".content");
 
-//! REGISTRATION
-const swapToSignin = document.querySelector(".sigin-text");
-const swapToSignUp = document.querySelector(".signup-text");
-const signupContainer = document.querySelector(".container-signup");
-const siginContainer = document.querySelector(".container-signin");
-
 //? DEFAULT DISPLAY
 dashboardCont.classList.add("active");
 dashboardBtn.classList.add("active");
@@ -153,20 +147,21 @@ backBtnCategory.addEventListener("click", () => {
 });
 
 //? REGISTRATION
-swapToSignin.addEventListener("click", () => {
-  siginContainer.classList.add("activereg");
-  // siginContainer.classList.remove("contentreg");
+//! REGISTRATION
+const swapToSignin = document.querySelector(".sigin-text");
+const swapToSignUp = document.querySelector(".signup-text");
+const signupContainer = document.querySelector(".container-signup");
+const siginContainer = document.querySelector(".container-signin");
 
-  signupContainer.classList.add("contentreg");
-  // signupContainer.classList.remove("activereg");
+swapToSignin.addEventListener("click", () => {
+  // signupContainer.querySelector(".content")?.classList.remove("content");
+  signupContainer.classList.add("content");
+  siginContainer.classList.add("category");
 });
 
 swapToSignUp.addEventListener("click", () => {
-  siginContainer.classList.remove("activereg");
-  // siginContainer.classList.add("contentreg");
-
-  signupContainer.classList.add("activereg");
-  // signupContainer.classList.remove("contentreg");
+  siginContainer.classList.remove("category");
+  signupContainer.classList.add("category");
 });
 
 //! Adding a task in the card of the dashboard
@@ -180,9 +175,11 @@ function getCurrentDate(currentDate) {
 
 function addTask(title, date, priority, textDescription, projectLink) {
   const todoList = document.getElementById("toda-list");
+  const taskId = Date.now();
 
   const card = document.createElement("div");
   card.classList.add("card", "todo-card");
+  card.dataset.id = taskId;
 
   card.innerHTML = `
     <header class="card-header flex">
@@ -225,8 +222,6 @@ function addTask(title, date, priority, textDescription, projectLink) {
     </div>
   `;
 
-  todoList.appendChild(card);
-
   // option button in the card
   const optionBtn = card.querySelector(".btn-option");
   const actionOption = card.querySelector(".option-action");
@@ -235,9 +230,36 @@ function addTask(title, date, priority, textDescription, projectLink) {
     actionOption.classList.toggle("hidden");
   });
 
-  actionOption.querySelector(".delete").addEventListener("click", () => {
-    console.log("delete");
+  actionOption.querySelector(".vital").addEventListener("click", () => {
+    // Code here will send the card to the vital section
+    console.log("vital button click");
+    actionOption.classList.add("hidden");
   });
+
+  actionOption.querySelector(".edit").addEventListener("click", () => {
+    // Code here will pop up the add task window and display the same information for editing
+    console.log("edit button click");
+    actionOption.classList.add("hidden");
+  });
+
+  actionOption.querySelector(".delete").addEventListener("click", () => {
+    // Deleting that card
+    const taskId = card.dataset.id;
+    card.remove();
+    actionOption.classList.add("hidden");
+
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    const upDatedTask = tasks.filter((task) => task.id !== Number(taskId));
+    localStorage.setItem("tasks", JSON.stringify(upDatedTask));
+  });
+
+  actionOption.querySelector(".finish").addEventListener("click", () => {
+    // will disply the card in the complete section and the format it in different form
+    console.log("are you sure the task is completed");
+    actionOption.classList.add("hidden");
+  });
+
+  todoList.appendChild(card);
 }
 
 function loadTask() {
@@ -255,7 +277,15 @@ function loadTask() {
 
 function saveTask(title, date, priority, textDescription, projectLink) {
   const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  tasks.push({ title, date, priority, textDescription, projectLink });
+  const taskId = Date.now();
+  tasks.push({
+    id: taskId,
+    title,
+    date,
+    priority,
+    textDescription,
+    projectLink,
+  });
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
@@ -267,7 +297,7 @@ document.getElementById("addTaskBtn").addEventListener("click", () => {
   const textDescription = document.getElementById("description").value.trim();
   const projectLink = document.getElementById("taskProjectLink");
 
-  if (title || date || textDescription || projectLink) {
+  if (title && date && textDescription) {
     const userDate = new Date(date);
     const formatDate = getCurrentDate(userDate);
 
@@ -278,7 +308,7 @@ document.getElementById("addTaskBtn").addEventListener("click", () => {
     document.getElementById("taskDate").value = "";
     document.querySelector('input[name="priority"]:checked').checked = false;
     document.getElementById("description").value = "";
-    document.getElementById("taskProjectLink");
+    // document.getElementById("taskProjectLink");
     closeAddTask();
   } else {
     closeAddTask();

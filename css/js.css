@@ -87,8 +87,7 @@ body {
 }
 
 /** Task Category */
-/* .content */
-.category {
+.content.category {
   opacity: 1;
   height: 100rem;
 }
