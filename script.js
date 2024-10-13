@@ -21,14 +21,16 @@ const overlay = document.querySelector(".overlay");
 //! SECTIONS
 const dashboardCont = document.querySelector(".section-dashboard");
 const VitalCont = document.querySelector(".section-vitals");
-
-//! ASIDES BUTTONS
 const dashboardBtn = document.querySelector(".dashboardbtn");
 const buttons = document.querySelectorAll(".btn-container");
 const contents = document.querySelectorAll(".content");
 
 //? REGISTRATION
 const registrationContainer = document.querySelector(".registration-container");
+
+//* For my coding purpose I  place it here
+dashboardCont.classList.add("active");
+dashboardBtn.classList.add("active");
 
 // Sign Up data
 const firstNameInput = document.getElementById("firstName");
@@ -101,6 +103,10 @@ function getUserInfo() {
     document.querySelector(".dashboard-email").textContent = email;
     document.querySelector(".user-name").textContent = username;
   }
+
+  //? DEFAULT DISPLAY
+  dashboardCont.classList.add("active");
+  dashboardBtn.classList.add("active");
 }
 
 window.onload = getUserInfo;
@@ -140,10 +146,6 @@ swapToSignUp.addEventListener("click", () => {
   siginContainer.classList.remove("category");
   signupContainer.classList.add("category");
 });
-
-//? DEFAULT DISPLAY
-dashboardCont.classList.add("active");
-dashboardBtn.classList.add("active");
 
 //? Dashboard Date
 const date = new Date();
@@ -185,7 +187,6 @@ todayDate.textContent = date.toLocaleDateString();
 presentDate.textContent = day.padStart(2, "0");
 presentMonth.textContent = month;
 
-/*
 //? PROGRESS on TASK Container
 document.querySelectorAll(".circle-progress").forEach((circle) => {
   const progress = circle.getAttribute("data-progress");
@@ -197,12 +198,14 @@ document.querySelectorAll(".circle-progress").forEach((circle) => {
   progressCircle.style.strokeDashoffset = offset;
 });
 
-//? ASIDES CONTAINER
+//? ASIDES BUTTONS
+
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     buttons.forEach((btn) => btn.classList.remove("active"));
 
     contents.forEach((content) => content.classList.remove("active"));
+    document.querySelector(".home-container").classList.add("active");
 
     button.classList.add("active");
 
@@ -227,29 +230,6 @@ inviteBackBtn.addEventListener("click", () => {
   homeContainer.classList.remove("aside-index");
 });
 
-//? DASHBOARD ADD TASK
-function closeAddTask() {
-  inviteBtn.classList.remove("inviteBtn");
-  overlay.classList.add("hidden");
-  addTaskContent.classList.remove("active");
-  homeContainer.classList.remove("aside-index");
-}
-
-dashboardAddTaskBtn.addEventListener("click", () => {
-  overlay.classList.remove("hidden");
-  homeContainer.classList.add("aside-index");
-  dashTaskContent.classList.add("active");
-});
-
-addTaskBackBtn.addEventListener("click", () => {
-  // inviteBtn.classList.remove("inviteBtn");
-  // overlay.classList.add("hidden");
-  // addTaskContent.classList.remove("active");
-  // homeContainer.classList.remove("aside-index");
-
-  closeAddTask();
-});
-
 //? TASK CATEGORY
 addCategoryBtn.addEventListener("click", () => {
   categoryMainDisplay.classList.add("content");
@@ -262,6 +242,17 @@ backBtnCategory.addEventListener("click", () => {
 });
 
 //! Adding a task in the card of the dashboard
+const checkboxes = document.querySelectorAll(".checkbox");
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("click", () => {
+    checkboxes.forEach((otherCheck) => {
+      if (otherCheck !== checkbox) {
+        otherCheck.checked = false;
+      }
+    });
+  });
+});
+
 function getCurrentDate(currentDate) {
   const day = currentDate.getDate().toString().padStart(2, "0");
   const month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
@@ -274,13 +265,26 @@ function addTask(title, date, priority, textDescription, projectLink) {
   const todoList = document.getElementById("toda-list");
   const taskId = Date.now();
 
+  let priorityColor;
+  let ellipseColor;
+  if (priority === "Extreme") {
+    priorityColor = "#f21e1e";
+    ellipseColor = "#f21e1e";
+  } else if (priority === "Moderate") {
+    priorityColor = "#42ade2";
+    ellipseColor = "#42ade2";
+  } else if (priority === "Low") {
+    priorityColor = "#04c400";
+    ellipseColor = "#04c400";
+  }
+
   const card = document.createElement("div");
   card.classList.add("card", "todo-card");
   card.dataset.id = taskId;
 
   card.innerHTML = `
     <header class="card-header flex">
-      <ion-icon name="ellipse-outline" class="card-title-icon"></ion-icon>
+      <ion-icon name="ellipse-outline" class="card-title-icon" style="color: ${ellipseColor};"></ion-icon>
 
       <button class="btn-option">
         <ion-icon name="ellipsis-horizontal-outline" class="option-icon"></ion-icon>
@@ -298,7 +302,7 @@ function addTask(title, date, priority, textDescription, projectLink) {
 
     <p class="card-title-text">${title}</p>
 
-    <div class="card-body flex">
+    <div class="card-body grid">
       <p>${textDescription}</p>
       
       <img src="./img/user2.jpg" alt="" class="card-image" />
@@ -306,7 +310,7 @@ function addTask(title, date, priority, textDescription, projectLink) {
 
     <div class="card-status flex">
       <p class="card-level">
-        Priority: <span class="level">${priority}</span>
+        Priority: <span class="level" style="color: ${priorityColor};">${priority}</span>
       </p>
                         
       <p class="card-start">
@@ -396,7 +400,13 @@ document.getElementById("addTaskBtn").addEventListener("click", () => {
 
   if (title && date && textDescription) {
     const userDate = new Date(date);
-    const formatDate = getCurrentDate(userDate);
+    let formatDate;
+
+    if (isNaN(userDate)) {
+      alert("Please enter a valid date.");
+    } else {
+      formatDate = getCurrentDate(userDate);
+    }
 
     addTask(title, formatDate, priority, textDescription, projectLink);
     saveTask(title, formatDate, priority, textDescription, projectLink);
@@ -406,11 +416,34 @@ document.getElementById("addTaskBtn").addEventListener("click", () => {
     document.querySelector('input[name="priority"]:checked').checked = false;
     document.getElementById("description").value = "";
     // document.getElementById("taskProjectLink");
+
     closeAddTask();
   } else {
-    closeAddTask();
+    alert("Please fill in all the fields correctly.");
   }
 });
 
+//? DASHBOARD ADD TASK
+function closeAddTask() {
+  inviteBtn.classList.remove("inviteBtn");
+  overlay.classList.add("hidden");
+  addTaskContent.classList.remove("active");
+  homeContainer.classList.remove("aside-index");
+}
+
+dashboardAddTaskBtn.addEventListener("click", () => {
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = false;
+  });
+  document.getElementById("taskTitle").value = "";
+  document.getElementById("taskDate").value = "";
+  document.getElementById("description").value = "";
+
+  overlay.classList.remove("hidden");
+  homeContainer.classList.add("aside-index");
+  dashTaskContent.classList.add("active");
+});
+
+addTaskBackBtn.addEventListener("click", closeAddTask);
+
 window.onload = loadTask;
-*/

@@ -280,7 +280,8 @@
 .next-btn-comtainer {
   width: 100%;
 }
-.btn-container {
+.btn-container,
+.logout_btn {
   width: 100%;
   border: none;
   background-color: transparent;
@@ -298,10 +299,12 @@
 .btn-container:not(:first-child) {
   margin-top: 3rem;
 }
-.btn-container ion-icon {
+.btn-container ion-icon,
+.logout_btn ion-icon {
   font-size: 3rem;
 }
-.btn-container:hover {
+.btn-container:hover,
+.logout_btn:hover {
   background-color: var(--white-col);
   color: var(--primary-col);
   border-radius: 8px;
@@ -505,6 +508,7 @@
   margin-bottom: 1.2rem;
 }
 .card-body {
+  grid-template-columns: 90fr 10fr;
   gap: 1rem;
   padding-bottom: 1.2rem;
   margin-top: 1.2rem;

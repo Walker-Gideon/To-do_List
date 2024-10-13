@@ -84,6 +84,9 @@
           <div class="holder">
             <p class="text">Already have an account?</p>
             <button class="signin-text">Sign in</button>
+            <input type="radio" />
+            <input type="radio" />
+            <input type="radio" />
           </div>
         </div>
 
@@ -107,13 +110,9 @@
         document.querySelector(".signin-container").classList.remove("visible");
       });
 
-      let christainName = "Gideon";
-      let lastName = "Awortwe";
-      const fullName = [christainName, lastName];
-      console.log(fullName.join(" "));
-
-      const newName = fullName.slice();
-      console.log(newName);
+      const date = new Date();
+      const time = date.getTime();
+      console.log(time);
     </script>
   </body>
 </html>
