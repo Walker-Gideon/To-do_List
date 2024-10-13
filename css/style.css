@@ -1,6 +1,5 @@
 /* ? REGISTRATION */
 .registration-container {
-  margin-top: 0;
   overflow: hidden;
   padding: 4.8rem 12.9rem;
   height: 100vh;
@@ -88,9 +87,6 @@
   font-size: 1.6rem;
   font-weight: 500;
 }
-.submit-container {
-  padding: 1.2rem 0 1.2rem;
-}
 .submit-btn {
   border: none;
   background-color: var(--primary-col);
@@ -100,9 +96,6 @@
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s;
-}
-.submit-btn:focus {
-  outline: none;
 }
 .submit-btn:hover {
   background-color: var(--prihover-col);

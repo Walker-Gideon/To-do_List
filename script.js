@@ -27,6 +27,120 @@ const dashboardBtn = document.querySelector(".dashboardbtn");
 const buttons = document.querySelectorAll(".btn-container");
 const contents = document.querySelectorAll(".content");
 
+//? REGISTRATION
+const registrationContainer = document.querySelector(".registration-container");
+
+// Sign Up data
+const firstNameInput = document.getElementById("firstName");
+const lastNameInput = document.getElementById("userName");
+const usernameInput = document.getElementById("userName");
+const useremailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
+const confPasswordInput = document.getElementById("confPassword");
+const signInCheck = document.getElementById("sign_in_check");
+const signUpForm = document.getElementById("form_signup");
+
+// sign in data
+const signInUserNameInput = document.getElementById("userName");
+const signInPasswordInput = document.getElementById("password");
+const logInBtn = document.getElementById("login");
+
+function saveUserInfo(name, username, email) {
+  localStorage.setItem("name", name);
+  localStorage.setItem("username", username);
+  localStorage.setItem("email", email);
+  localStorage.setItem("isLoggedIn", "true");
+}
+
+signUpForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const firstName = firstNameInput.value.trim();
+  const lastName = lastNameInput.value.trim();
+  const email = useremailInput.value.trim();
+  const username = usernameInput.value.trim();
+  const password = passwordInput.value;
+  const confPassword = confPasswordInput.value;
+
+  const fullName = `${firstName} ${lastName}`;
+
+  if (password !== confPassword) {
+    alert("Password do not match! Please try again");
+    return;
+  }
+
+  if (!signInCheck.checked) {
+    alert("Please accept our terms by clicking on the checkbox");
+    return;
+  }
+
+  saveUserInfo(fullName, username, email);
+  getUserInfo();
+
+  registrationContainer.classList.add("hidden");
+  document.querySelector(".home-container").classList.add("active");
+});
+
+function getUserInfo() {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+  if (isLoggedIn) {
+    registrationContainer.classList.add("hidden");
+    document.querySelector(".home-container").classList.add("active");
+  } else {
+    registrationContainer.classList.remove("hidden");
+    document.querySelector(".home-container").classList.remove("active");
+  }
+
+  const name = localStorage.getItem("name");
+  const username = localStorage.getItem("username");
+  const email = localStorage.getItem("email");
+
+  if (name) {
+    document.querySelector(".dashboard-name").textContent = name;
+    document.querySelector(".dashboard-email").textContent = email;
+    document.querySelector(".user-name").textContent = username;
+  }
+}
+
+window.onload = getUserInfo;
+
+function logout() {
+  localStorage.removeItem("isLoggedIn");
+  localStorage.removeItem("name");
+  localStorage.removeItem("username");
+  localStorage.removeItem("email");
+
+  firstNameInput.value = "";
+  lastNameInput.value = "";
+  useremailInput.value = "";
+  usernameInput.value = "";
+  passwordInput.value = "";
+  confPasswordInput.value = "";
+  signInCheck.checked = false;
+
+  registrationContainer.classList.remove("hidden");
+  document.querySelector(".home-container").classList.remove("active");
+}
+
+//logout
+document.getElementById("log_out_btn").addEventListener("click", logout);
+
+const swapToSignin = document.querySelector(".sigin-text");
+const swapToSignUp = document.querySelector(".signup-text");
+const signupContainer = document.querySelector(".container-signup");
+const siginContainer = document.querySelector(".container-signin");
+
+swapToSignin.addEventListener("click", () => {
+  signupContainer.classList.add("content");
+  siginContainer.classList.add("category");
+});
+
+swapToSignUp.addEventListener("click", () => {
+  siginContainer.classList.remove("category");
+  signupContainer.classList.add("category");
+});
+
 //? DEFAULT DISPLAY
 dashboardCont.classList.add("active");
 dashboardBtn.classList.add("active");
@@ -71,6 +185,7 @@ todayDate.textContent = date.toLocaleDateString();
 presentDate.textContent = day.padStart(2, "0");
 presentMonth.textContent = month;
 
+/*
 //? PROGRESS on TASK Container
 document.querySelectorAll(".circle-progress").forEach((circle) => {
   const progress = circle.getAttribute("data-progress");
@@ -144,24 +259,6 @@ addCategoryBtn.addEventListener("click", () => {
 backBtnCategory.addEventListener("click", () => {
   categoryMainDisplay.classList.add("category");
   createCategory.classList.remove("category");
-});
-
-//? REGISTRATION
-//! REGISTRATION
-const swapToSignin = document.querySelector(".sigin-text");
-const swapToSignUp = document.querySelector(".signup-text");
-const signupContainer = document.querySelector(".container-signup");
-const siginContainer = document.querySelector(".container-signin");
-
-swapToSignin.addEventListener("click", () => {
-  // signupContainer.querySelector(".content")?.classList.remove("content");
-  signupContainer.classList.add("content");
-  siginContainer.classList.add("category");
-});
-
-swapToSignUp.addEventListener("click", () => {
-  siginContainer.classList.remove("category");
-  signupContainer.classList.add("category");
 });
 
 //! Adding a task in the card of the dashboard
@@ -316,3 +413,4 @@ document.getElementById("addTaskBtn").addEventListener("click", () => {
 });
 
 window.onload = loadTask;
+*/
