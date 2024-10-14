@@ -261,7 +261,7 @@ function getCurrentDate(currentDate) {
   return `${day}/${month}/${year}`;
 }
 
-function addTask(title, date, priority, textDescription, projectLink) {
+function addTask(title, date, priority, textDescription, taskImage) {
   const todoList = document.getElementById("toda-list");
   const taskId = Date.now();
 
@@ -332,8 +332,19 @@ function addTask(title, date, priority, textDescription, projectLink) {
   });
 
   actionOption.querySelector(".vital").addEventListener("click", () => {
-    // Code here will send the card to the vital section
-    console.log("vital button click");
+    const vitalContent = {
+      title: card.querySelector(".card-title-text").textContent,
+      textDescription: card.querySelector(".card-body p").textContent,
+      // image: card.querySelector(".card-image").src,
+      priority: card.querySelector(".level").textContent,
+      status: card.querySelector(".start").textContent,
+      date: card.querySelector(".created").textContent,
+    };
+
+    const vitalCard = vitalTask(vitalContent);
+    document.querySelector("#vital_card").appendChild(vitalCard);
+
+    card.remove();
     actionOption.classList.add("hidden");
   });
 
@@ -344,7 +355,6 @@ function addTask(title, date, priority, textDescription, projectLink) {
   });
 
   actionOption.querySelector(".delete").addEventListener("click", () => {
-    // Deleting that card
     const taskId = card.dataset.id;
     card.remove();
     actionOption.classList.add("hidden");
@@ -355,12 +365,182 @@ function addTask(title, date, priority, textDescription, projectLink) {
   });
 
   actionOption.querySelector(".finish").addEventListener("click", () => {
-    // will disply the card in the complete section and the format it in different form
-    console.log("are you sure the task is completed");
+    const cardContent = {
+      title: card.querySelector(".card-title-text").textContent,
+      textDescription: card.querySelector(".card-body p").textContent,
+      // image: card.querySelector(".card-image").src,
+      date: card.querySelector(".created").textContent,
+    };
+
+    const completeCard = completedTask(cardContent);
+    document
+      .querySelector("#completed-card-container")
+      .appendChild(completeCard);
+
+    card.remove();
     actionOption.classList.add("hidden");
   });
 
   todoList.appendChild(card);
+}
+
+// Completed Task function
+function completedTask(cardContent) {
+  const completedCard = document.createElement("div");
+  completedCard.classList.add("card", "completion-card");
+  completedCard.dataset.id = cardContent.id;
+
+  completedCard.innerHTML = `
+      <div class="card-header flex">
+        <ion-icon name="ellipse-outline" class="card-title-icon comp-title-icon"></ion-icon>
+
+        <button class="btn-option">
+          <ion-icon name="ellipsis-horizontal-outline" class="option-icon"></ion-icon>
+        </button>
+
+        <div class="option-action hidden">
+          <div class="inner-option-container">
+            <button class="option-btn edit">Edit</button>
+            <button class="option-btn delete">Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="card-title-text">${cardContent.title}</p>
+
+      <div class="grid comp-body">
+        <div class="completed-text-cont">
+          <p>${cardContent.textDescription}</p>
+
+          <p class="card-start start-comp">Status: <span class="comp-start">Completed</span></p>
+        </div>
+
+        <img src="./img/user2.jpg" alt="" class="card-image" />
+      </div>
+
+      <div class="card-status">
+        <p class="created-on comp-on">Completed on ${cardContent.date}</p>
+      </div>
+  `;
+
+  const optionBtn = completedCard.querySelector(".btn-option");
+  const actionOption = completedCard.querySelector(".option-action");
+
+  optionBtn.addEventListener("click", () => {
+    actionOption.classList.toggle("hidden");
+  });
+
+  actionOption.querySelector(".edit").addEventListener("click", () => {
+    // Code here will pop up the add task window and display the same information for editing
+    console.log("edit button click");
+    actionOption.classList.add("hidden");
+  });
+
+  actionOption.querySelector(".delete").addEventListener("click", () => {
+    const taskId = completedCard.dataset.id;
+    completedCard.remove();
+    actionOption.classList.add("hidden");
+
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    const upDatedTask = tasks.filter((task) => task.id !== Number(taskId));
+    localStorage.setItem("tasks", JSON.stringify(upDatedTask));
+  });
+
+  return completedCard;
+}
+
+// Vital Task function
+function vitalTask(vitalContent) {
+  const vitalCard = document.createElement("div");
+  vitalCard.classList.add("cardVital", "vital-card");
+  vitalCard.dataset.id = vitalContent.id;
+
+  vitalCard.innerHTML = `
+      <div class="vital-header flex">
+        <ion-icon name="ellipse-outline" class="card-title-icon"></ion-icon>
+         
+        <button class="btn-option">
+          <ion-icon name="ellipsis-horizontal-outline" class="option-icon"></ion-icon>
+        </button>
+
+        <div class="option-action hidden">
+          <div class="inner-option-container">
+            <button class="option-btn task">Task</button>
+            <button class="option-btn edit">Edit</button>
+            <button class="option-btn delete">Delete</button>
+            <button class="option-btn finish">Finish</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="vital-title-text">${vitalContent.title}</p>
+
+      <div class="grid vital-body">
+          <p>${vitalContent.textDescription}</p>
+
+        <img src="./img/user2.jpg" alt="" class="card-image" />
+      </div>
+
+      <div class="vital-status flex">
+        <p class="card-level">
+          Priority: <span class="level">${vitalContent.priority}</span>
+        </p>
+        <p class="card-start">
+          Status: <span class="start">${vitalContent.status}</span>
+        </p>
+        <p class="created-on">
+          Created on: <span class="created">${vitalContent.date}</span>
+        </p>
+      </div>
+  `;
+
+  const optionBtn = vitalCard.querySelector(".btn-option");
+  const actionOption = vitalCard.querySelector(".option-action");
+
+  optionBtn.addEventListener("click", () => {
+    actionOption.classList.toggle("hidden");
+  });
+
+  actionOption.querySelector(".task").addEventListener("click", () => {
+    // Code here will pop up the add task window and display the same information for editing
+    console.log("task button click");
+    actionOption.classList.add("hidden");
+  });
+
+  actionOption.querySelector(".edit").addEventListener("click", () => {
+    // Code here will pop up the add task window and display the same information for editing
+    console.log("edit button click");
+    actionOption.classList.add("hidden");
+  });
+
+  actionOption.querySelector(".delete").addEventListener("click", () => {
+    const taskId = vitalCard.dataset.id;
+    vitalCard.remove();
+    actionOption.classList.add("hidden");
+
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    const upDatedTask = tasks.filter((task) => task.id !== Number(taskId));
+    localStorage.setItem("tasks", JSON.stringify(upDatedTask));
+  });
+
+  actionOption.querySelector(".finish").addEventListener("click", () => {
+    const cardContent = {
+      title: vitalCard.querySelector(".vital-title-text").textContent,
+      textDescription: vitalCard.querySelector(".vital-body p").textContent,
+      // image: vitalCard.querySelector(".card-image").src,
+      date: vitalCard.querySelector(".created").textContent,
+    };
+
+    const completeCard = completedTask(cardContent);
+    document
+      .querySelector("#completed-card-container")
+      .appendChild(completeCard);
+
+    vitalCard.remove();
+    actionOption.classList.add("hidden");
+  });
+
+  return vitalCard;
 }
 
 function loadTask() {
@@ -371,12 +551,12 @@ function loadTask() {
       task.date,
       task.priority,
       task.textDescription,
-      task.projectLink
+      task.taskImage
     );
   });
 }
 
-function saveTask(title, date, priority, textDescription, projectLink) {
+function saveTask(title, date, priority, textDescription, taskImage) {
   const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
   const taskId = Date.now();
   tasks.push({
@@ -385,7 +565,7 @@ function saveTask(title, date, priority, textDescription, projectLink) {
     date,
     priority,
     textDescription,
-    projectLink,
+    taskImage,
   });
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
@@ -396,7 +576,7 @@ document.getElementById("addTaskBtn").addEventListener("click", () => {
   const priority =
     document.querySelector('input[name="priority"]:checked')?.value || "Low";
   const textDescription = document.getElementById("description").value.trim();
-  const projectLink = document.getElementById("taskProjectLink");
+  const taskImage = document.getElementById("taskProjectLink");
 
   if (title && date && textDescription) {
     const userDate = new Date(date);
@@ -408,12 +588,14 @@ document.getElementById("addTaskBtn").addEventListener("click", () => {
       formatDate = getCurrentDate(userDate);
     }
 
-    addTask(title, formatDate, priority, textDescription, projectLink);
-    saveTask(title, formatDate, priority, textDescription, projectLink);
+    addTask(title, formatDate, priority, textDescription, taskImage);
+    saveTask(title, formatDate, priority, textDescription, taskImage);
 
     document.getElementById("taskTitle").value = "";
     document.getElementById("taskDate").value = "";
-    document.querySelector('input[name="priority"]:checked').checked = false;
+    document.querySelector('input[name="priority"]').forEach((checkbox) => {
+      checkbox.checked = false;
+    });
     document.getElementById("description").value = "";
     // document.getElementById("taskProjectLink");
 
