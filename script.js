@@ -452,7 +452,8 @@ function completedTask(cardContent) {
 // Vital Task function
 function vitalTask(vitalContent) {
   const vitalCard = document.createElement("div");
-  vitalCard.classList.add("cardVital", "vital-card");
+  // vitalCard.classList.add("cardVital", "vital-card");
+  vitalCard.classList.add("cardVital");
   vitalCard.dataset.id = vitalContent.id;
 
   vitalCard.innerHTML = `
@@ -502,7 +503,17 @@ function vitalTask(vitalContent) {
   });
 
   actionOption.querySelector(".task").addEventListener("click", () => {
-    // Code here will pop up the add task window and display the same information for editing
+    const vitalClone = document.querySelector(".cardVital");
+    console.log(vitalClone);
+    vitalDetails(vitalClone);
+
+    vitalCard.classList.add("card-overlay");
+    const optionBtn = vitalCard.querySelector(".btn-option");
+    const actionOption = vitalCard.querySelector(".option-action");
+    optionBtn.addEventListener("click", () => {
+      actionOption.classList.add("hidden");
+    });
+
     console.log("task button click");
     actionOption.classList.add("hidden");
   });
@@ -541,6 +552,88 @@ function vitalTask(vitalContent) {
   });
 
   return vitalCard;
+}
+
+// Function for vital details to be displayed
+function vitalDetails(vitalCard) {
+  const title = vitalCard.querySelector(".vital-title-text").textContent;
+  console.log(title);
+  const priority = vitalCard.querySelector(".level").textContent;
+  console.log(priority);
+  const status = vitalCard.querySelector(".start").textContent;
+  console.log(status);
+  const date = vitalCard.querySelector(".created").textContent;
+  console.log(date);
+  const description = vitalCard.querySelector(".vital-body").textContent;
+  console.log(description);
+
+  const vitalDisplay = document.createElement("div");
+  vitalDisplay.classList.add("vital_display");
+  vitalDisplay.dataset.id = vitalCard.id;
+
+  // image: vitalCard.querySelector(".card-image").src
+
+  vitalDisplay.innerHTML = `
+    <div class="vital_details_header grid">
+      <div class="img_vital">
+        <img src="img/7.png" alt="image of my story" class="vital_img"/>
+      </div>
+
+      <div class="vital_text_header">
+        <h1 class="vital-title">${title}</h1>
+
+        <p class="card-level vital_level">
+          Priority: <span class="level">${priority}</span>
+        </p>
+        <p class="vital_start">
+          Status: <span class="start">${status}</span>
+        </p>
+        <p class="created-on vital_created">
+          Created on: <span class="created">${date}</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="vital_details_body">
+      <p class="vital_paragraph">${description}</p>
+    </div>
+
+    <div class="vital_details_footer flex">
+      <button class="vital-btn-icon">
+        <ion-icon name="trash" id="vital_delete"></ion-icon>
+      </button>
+
+      <button class="vital-btn-icon">
+        <ion-icon name="create" id="vital_edit"></ion-icon>
+      </button>
+    </div>
+  `;
+
+  document.querySelector("#vital_display").appendChild(vitalDisplay);
+
+  const deleteBtn = vitalDisplay.querySelector("#vital_delete");
+  const editBtn = vitalDisplay.querySelector("#vital_edit");
+
+  deleteBtn.addEventListener("click", () => {
+    vitalDisplay.remove();
+
+    document.querySelector(".cardVital").classList.remove("card-overlay");
+    const optionBtn = document
+      .querySelector(".cardVital")
+      .querySelector(".btn-option");
+    const actionOption = document
+      .querySelector(".cardVital")
+      .querySelector(".option-action");
+    optionBtn.addEventListener("click", () => {
+      actionOption.classList.add("hidden");
+    });
+  });
+
+  editBtn.addEventListener("click", () => {
+    // Your edit functionality here
+  });
+
+  return vitalDisplay;
 }
 
 function loadTask() {

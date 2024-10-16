@@ -774,6 +774,96 @@ circle.progress {
   color: var(--graywhite-col);
   font-weight: 500;
 }
+/** Vital Detail */
+.vital-details {
+  padding: 2rem;
+}
+.vital_details_header {
+  grid-template-columns: 20fr 80fr;
+  gap: 1.2rem;
+}
+.vital_text_header {
+  margin-top: 7rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 2rem;
+}
+.vital_img {
+  width: 20rem;
+  height: 20rem;
+  border: 0.5px solid var(--graywhite-col);
+  border-radius: 8px;
+}
+.vital-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.vital_level,
+.vital_start,
+.vital_created {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.vital_details_body {
+  margin-top: 3.2rem;
+  height: 68rem;
+  overflow-y: auto;
+}
+.vital_details_body::-webkit-scrollbar {
+  display: none;
+}
+.vital_paragraph {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.vital_details_footer {
+  margin: 1.2rem 0 0 56.5rem;
+  gap: 1rem;
+}
+.vital-btn-icon {
+  border: none;
+  border-radius: 5px;
+  padding: 0.8rem 1rem;
+  background-color: var(--primary-col);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.vital_details_footer ion-icon {
+  font-size: 2rem;
+  color: var(--white-col);
+}
+.vital-btn-icon:hover {
+  background-color: var(--prihover-col);
+}
+
+/* 
+1. Typography System (font-size)
+    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+2. Spacing System (Padding / Margin)
+    2 / 4 / 8 / 12 / 32 / 48 / 64 / 80 / 96 / 128
+
+3. Font-width
+    default: 400
+    medium: 500
+    semi-large: 600
+    large: 700
+
+4. line-height
+    default: 
+    smaill: 
+    medium: 
+
+5. letter-sapcing
+
+6. Colors
+    primary: #ff6767, #000
+    Tints: 
+    Shade: 
+    Accents: 
+    Grayes:
+ */
 
 /*? SECTION MYTASK */
 .section-mytask {
@@ -1209,31 +1299,3 @@ circle.progress {
 .cat-name-input:focus {
   outline: none;
 }
-
-/* 
-1. Typography System (font-size)
-    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
-
-2. Spacing System (Padding / Margin)
-    2 / 4 / 8 / 12 / 32 / 48 / 64 / 80 / 96 / 128
-
-3. Font-width
-    default: 400
-    medium: 500
-    semi-large: 600
-    large: 700
-
-4. line-height
-    default: 
-    smaill: 
-    medium: 
-
-5. letter-sapcing
-
-6. Colors
-    primary: #ff6767, #000
-    Tints: 
-    Shade: 
-    Accents: 
-    Grayes:
- */

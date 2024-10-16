@@ -56,6 +56,19 @@ body {
   transition: all 0.5s ease;
 }
 
+/** Overlay color on the vital card */
+.card-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0.5;
+  pointer-events: all; 
+}
+
+/* .card .card-content { */
+  /* pointer-events: none; Disable interactions with underlying content */
+/* } */
+
+
+
 /* ? JS Styling */
 .hidden {
   display: none;
