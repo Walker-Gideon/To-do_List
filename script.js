@@ -147,6 +147,19 @@ swapToSignUp.addEventListener("click", () => {
   signupContainer.classList.add("category");
 });
 
+//? Re-Usiable
+function showAddTask() {
+  overlay.classList.remove("hidden");
+  homeContainer.classList.add("aside-index");
+  dashTaskContent.classList.add("active");
+}
+
+function addContentToTask(title, textDescription, date) {
+  document.querySelector("#taskTitle").value = title;
+  document.querySelector("#description").value = textDescription;
+  document.querySelector("#taskDate").value = date;
+}
+
 //? Dashboard Date
 const date = new Date();
 const daysOfWeek = [
@@ -231,15 +244,16 @@ inviteBackBtn.addEventListener("click", () => {
 });
 
 //? TASK CATEGORY
-addCategoryBtn.addEventListener("click", () => {
+function showCategory() {
   categoryMainDisplay.classList.add("content");
   createCategory.classList.add("category");
-});
-
-backBtnCategory.addEventListener("click", () => {
+}
+function hideCategory() {
   categoryMainDisplay.classList.add("category");
   createCategory.classList.remove("category");
-});
+}
+addCategoryBtn.addEventListener("click", showCategory);
+backBtnCategory.addEventListener("click", hideCategory);
 
 //! Adding a task in the card of the dashboard
 const checkboxes = document.querySelectorAll(".checkbox");
@@ -349,8 +363,19 @@ function addTask(title, date, priority, textDescription, taskImage) {
   });
 
   actionOption.querySelector(".edit").addEventListener("click", () => {
-    // Code here will pop up the add task window and display the same information for editing
-    console.log("edit button click");
+    alert(
+      "Dear user your previous task will be remove from your dashboard, please click 'OK' to continue editing/create your card with your previous data"
+    );
+
+    const title = card.querySelector(".card-title-text").textContent;
+    const textDescription = card.querySelector(".card-body").textContent;
+    const date = card.querySelector(".created").textContent;
+
+    addContentToTask(title, textDescription, date);
+
+    showAddTask();
+    card.remove();
+
     actionOption.classList.add("hidden");
   });
 
@@ -369,7 +394,7 @@ function addTask(title, date, priority, textDescription, taskImage) {
       title: card.querySelector(".card-title-text").textContent,
       textDescription: card.querySelector(".card-body p").textContent,
       // image: card.querySelector(".card-image").src,
-      date: card.querySelector(".created").textContent,
+      // date: card.querySelector(".created").textContent,
     };
 
     const completeCard = completedTask(cardContent);
@@ -389,6 +414,12 @@ function completedTask(cardContent) {
   const completedCard = document.createElement("div");
   completedCard.classList.add("card", "completion-card");
   completedCard.dataset.id = cardContent.id;
+
+  const completedDate = new Date();
+  const year = completedDate.getFullYear();
+  const month = completedDate.getMonth() + 1;
+  const day = completedDate.getDate();
+  const formattedDate = `${day}/${month}/${year}`;
 
   completedCard.innerHTML = `
       <div class="card-header flex">
@@ -410,7 +441,7 @@ function completedTask(cardContent) {
 
       <div class="grid comp-body">
         <div class="completed-text-cont">
-          <p>${cardContent.textDescription}</p>
+          <p class="completed-paragraph">${cardContent.textDescription}</p>
 
           <p class="card-start start-comp">Status: <span class="comp-start">Completed</span></p>
         </div>
@@ -419,7 +450,7 @@ function completedTask(cardContent) {
       </div>
 
       <div class="card-status">
-        <p class="created-on comp-on">Completed on ${cardContent.date}</p>
+        <p class="created-on comp-on">Completed on <span class="completed-date">${formattedDate}</span></p>
       </div>
   `;
 
@@ -431,8 +462,21 @@ function completedTask(cardContent) {
   });
 
   actionOption.querySelector(".edit").addEventListener("click", () => {
-    // Code here will pop up the add task window and display the same information for editing
-    console.log("edit button click");
+    alert(
+      "Dear user your previous task will be remove from your dashboard, please click 'OK' to continue editing/create your card with your previous data"
+    );
+
+    const title = completedCard.querySelector(".card-title-text").textContent;
+    const textDescription = completedCard.querySelector(
+      ".completed-paragraph"
+    ).textContent;
+    const date = completedCard.querySelector(".completed-date").textContent;
+
+    addContentToTask(title, textDescription, date);
+
+    showAddTask();
+    completedCard.remove();
+
     actionOption.classList.add("hidden");
   });
 
@@ -451,6 +495,19 @@ function completedTask(cardContent) {
 
 // Vital Task function
 function vitalTask(vitalContent) {
+  let priorityColor;
+  let ellipseColor;
+  if (vitalContent.priority === "Extreme") {
+    priorityColor = "#f21e1e";
+    ellipseColor = "#f21e1e";
+  } else if (vitalContent.priority === "Moderate") {
+    priorityColor = "#42ade2";
+    ellipseColor = "#42ade2";
+  } else if (vitalContent.priority === "Low") {
+    priorityColor = "#04c400";
+    ellipseColor = "#04c400";
+  }
+
   const vitalCard = document.createElement("div");
   // vitalCard.classList.add("cardVital", "vital-card");
   vitalCard.classList.add("cardVital");
@@ -458,7 +515,7 @@ function vitalTask(vitalContent) {
 
   vitalCard.innerHTML = `
       <div class="vital-header flex">
-        <ion-icon name="ellipse-outline" class="card-title-icon"></ion-icon>
+        <ion-icon name="ellipse-outline" class="card-title-icon" style="color: ${ellipseColor};"></ion-icon>
          
         <button class="btn-option">
           <ion-icon name="ellipsis-horizontal-outline" class="option-icon"></ion-icon>
@@ -467,7 +524,6 @@ function vitalTask(vitalContent) {
         <div class="option-action hidden">
           <div class="inner-option-container">
             <button class="option-btn task">Task</button>
-            <button class="option-btn edit">Edit</button>
             <button class="option-btn delete">Delete</button>
             <button class="option-btn finish">Finish</button>
           </div>
@@ -477,14 +533,14 @@ function vitalTask(vitalContent) {
       <p class="vital-title-text">${vitalContent.title}</p>
 
       <div class="grid vital-body">
-          <p>${vitalContent.textDescription}</p>
+          <p class="vital-paragraph">${vitalContent.textDescription}</p>
 
         <img src="./img/user2.jpg" alt="" class="card-image" />
       </div>
 
       <div class="vital-status flex">
         <p class="card-level">
-          Priority: <span class="level">${vitalContent.priority}</span>
+          Priority: <span class="level" style="color: ${priorityColor};">${vitalContent.priority}</span>
         </p>
         <p class="card-start">
           Status: <span class="start">${vitalContent.status}</span>
@@ -503,26 +559,21 @@ function vitalTask(vitalContent) {
   });
 
   actionOption.querySelector(".task").addEventListener("click", () => {
+    const removePreviousDisplay = document.querySelector(".vital_display");
+    if (removePreviousDisplay) {
+      removePreviousDisplay.remove();
+    }
+
+    // vitalCard.classList.add("card-overlay");
     const vitalClone = document.querySelector(".cardVital");
-    console.log(vitalClone);
     vitalDetails(vitalClone);
 
-    vitalCard.classList.add("card-overlay");
-    const optionBtn = vitalCard.querySelector(".btn-option");
-    const actionOption = vitalCard.querySelector(".option-action");
-    optionBtn.addEventListener("click", () => {
-      actionOption.classList.add("hidden");
-    });
-
-    console.log("task button click");
     actionOption.classList.add("hidden");
   });
 
-  actionOption.querySelector(".edit").addEventListener("click", () => {
-    // Code here will pop up the add task window and display the same information for editing
-    console.log("edit button click");
-    actionOption.classList.add("hidden");
-  });
+  // actionOption.querySelector(".edit").addEventListener("click", () => {
+  //   actionOption.classList.add("hidden");
+  // });
 
   actionOption.querySelector(".delete").addEventListener("click", () => {
     const taskId = vitalCard.dataset.id;
@@ -557,15 +608,19 @@ function vitalTask(vitalContent) {
 // Function for vital details to be displayed
 function vitalDetails(vitalCard) {
   const title = vitalCard.querySelector(".vital-title-text").textContent;
-  console.log(title);
   const priority = vitalCard.querySelector(".level").textContent;
-  console.log(priority);
   const status = vitalCard.querySelector(".start").textContent;
-  console.log(status);
-  const date = vitalCard.querySelector(".created").textContent;
-  console.log(date);
   const description = vitalCard.querySelector(".vital-body").textContent;
-  console.log(description);
+  const date = vitalCard.querySelector(".created").textContent;
+
+  let priorityColor;
+  if (priority === "Extreme") {
+    priorityColor = "#f21e1e";
+  } else if (priority === "Moderate") {
+    priorityColor = "#42ade2";
+  } else if (priority === "Low") {
+    priorityColor = "#04c400";
+  }
 
   const vitalDisplay = document.createElement("div");
   vitalDisplay.classList.add("vital_display");
@@ -583,7 +638,7 @@ function vitalDetails(vitalCard) {
         <h1 class="vital-title">${title}</h1>
 
         <p class="card-level vital_level">
-          Priority: <span class="level">${priority}</span>
+          Priority: <span class="level" style="color: ${priorityColor};">${priority}</span>
         </p>
         <p class="vital_start">
           Status: <span class="start">${status}</span>
@@ -616,21 +671,23 @@ function vitalDetails(vitalCard) {
 
   deleteBtn.addEventListener("click", () => {
     vitalDisplay.remove();
-
     document.querySelector(".cardVital").classList.remove("card-overlay");
-    const optionBtn = document
-      .querySelector(".cardVital")
-      .querySelector(".btn-option");
-    const actionOption = document
-      .querySelector(".cardVital")
-      .querySelector(".option-action");
-    optionBtn.addEventListener("click", () => {
-      actionOption.classList.add("hidden");
-    });
   });
 
   editBtn.addEventListener("click", () => {
-    // Your edit functionality here
+    // alert(
+    //   "Dear user your previous task will be remove from your dashboard, please click 'OK' to continue editing/create your card with your previous data"
+    // );
+
+    const title = vitalDisplay.querySelector(".vital-title").textContent;
+    const textDescription =
+      vitalDisplay.querySelector(".vital_paragraph").textContent;
+    const date = vitalDisplay.querySelector(".created").textContent;
+
+    addContentToTask(title, textDescription, date);
+
+    showAddTask();
+    // vitalDisplay.remove();
   });
 
   return vitalDisplay;
@@ -677,6 +734,7 @@ document.getElementById("addTaskBtn").addEventListener("click", () => {
 
     if (isNaN(userDate)) {
       alert("Please enter a valid date.");
+      return;
     } else {
       formatDate = getCurrentDate(userDate);
     }
@@ -684,15 +742,17 @@ document.getElementById("addTaskBtn").addEventListener("click", () => {
     addTask(title, formatDate, priority, textDescription, taskImage);
     saveTask(title, formatDate, priority, textDescription, taskImage);
 
+    setTimeout(() => {
+      closeAddTask();
+    }, 5000);
+
     document.getElementById("taskTitle").value = "";
     document.getElementById("taskDate").value = "";
+    document.getElementById("description").value = "";
     document.querySelector('input[name="priority"]').forEach((checkbox) => {
       checkbox.checked = false;
     });
-    document.getElementById("description").value = "";
     // document.getElementById("taskProjectLink");
-
-    closeAddTask();
   } else {
     alert("Please fill in all the fields correctly.");
   }
@@ -714,9 +774,7 @@ dashboardAddTaskBtn.addEventListener("click", () => {
   document.getElementById("taskDate").value = "";
   document.getElementById("description").value = "";
 
-  overlay.classList.remove("hidden");
-  homeContainer.classList.add("aside-index");
-  dashTaskContent.classList.add("active");
+  showAddTask();
 });
 
 addTaskBackBtn.addEventListener("click", closeAddTask);
