@@ -3,6 +3,118 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/js.css" />
+    <script defer src="script.js"></script>
+
+    <title>Give Me a Reason to...</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Component Header -->
+      <header class="container_header flex">
+        <h1 class="dashboard_logo">
+          <span class="dash">Dash</span><span class="board">board</span>
+        </h1>
+
+        <form action="" method="get" class="search_form">
+          <input
+            type="text"
+            name="query"
+            id="search"
+            placeholder="Search your task here..."
+            class="search_bar"
+          />
+
+          <button type="submit" class="search_btn">
+            <ion-icon name="search-outline" class="search_btn_icon"></ion-icon>
+          </button>
+        </form>
+
+        <div class="notification_container flex">
+          <div class="icons_container flex">
+            <button class="search_btn" id="notification_btn">
+              <ion-icon
+                name="notifications-outline"
+                class="search_btn_icon"
+              ></ion-icon>
+            </button>
+
+            <button class="search_btn" id="calendar_btn">
+              <ion-icon
+                name="calendar-outline"
+                class="search_btn_icon"
+              ></ion-icon>
+            </button>
+          </div>
+
+          <div class="date_comtainer">
+            <p class="day">Friday</p>
+            <p class="full_date">06/07/2002</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main  Component -->
+      <main class="main_container">
+        <!-- Component Aside -->
+        <aside class="aside_container"></aside>
+
+        <!-- Dashboard Component -->
+        <div class="dashboard_display_container">
+          <!-- Component Dashboard -->
+          <div class="dashboard_container"></div>
+
+          <!-- Component Vital -->
+          <div class="vital_container"></div>
+
+          <!-- Component My Task -->
+          <div class="my_task_container"></div>
+
+          <!-- Component Categorie -->
+          <div class="caategories_container"></div>
+
+          <!-- Component Settings -->
+          <div class="settings_container"></div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Registration Component -->
+    <div class="register_container"></div>
+  </body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <style>
@@ -116,6 +228,7 @@
     </script>
   </body>
 </html>
+ -->
 
 <!--
 <!DOCTYPE html>

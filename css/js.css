@@ -11,22 +11,22 @@ html {
   /* Colors */
   --primary-col: #ff6767;
   --prihover-col: #ff7676;
+  --mixed-seconday-orange-col: #f24e1e;
+  --mixed-seconday-hover-col: #f5714b;
+  --orangered-col: #f21e1e;
   --primary-black-col: #000;
   --topheader-col: #f8f8f8;
   --white-col: #fff;
-  --gray-col: #747474;
-  --graywhite-col: #a1a3ab;
-  --blue-col: #0225ff;
-  --greenone-col: #05a301;
-  --orangered-col: #f21e1e;
-  --greentwo-col: #04c400;
-  --lightblue-col: #42ade2;
   --whitegray-col: #d9d9d9;
+  --graywhite-col: #a1a3ab;
+  --mixed-gray-col: #a1a3ab;
+  --blue-col: #0225ff;
+  --lightblue-col: #42ade2;
+  --greenone-col: #05a301;
+  --greentwo-col: #04c400;
   --secondary-white-col: #f5f8ff;
   --primary-gray-col: #888888;
-  --mixed-gray-col: #a1a3ab;
-  --mixed-seconday-orange-col: #f24e1e;
-  --mixed-seconday-hover-col: #f5714b;
+  --gray-col: #747474;
 }
 body {
   font-family: "Rubik", "Roboto", sans-serif;

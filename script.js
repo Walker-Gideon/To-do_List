@@ -1,4 +1,6 @@
 "use strict";
+// Component Header
+const presentfullDate = document.querySelector(".full_date");
 
 const todayDay = document.querySelector(".date-day");
 const todayDate = document.querySelector(".date");
@@ -192,11 +194,9 @@ todayDay.textContent = dayName;
 
 const day = date.getDate().toString();
 const month = monthNames[date.getMonth()];
-// const month = (date.getMonth() + 1).toString();
-// const year = date.getFullYear();
-// todayDate.textContent = `${day}/${month.padStart(2, "0")}/${year}`;
 
 todayDate.textContent = date.toLocaleDateString();
+presentfullDate.textContent = date.toLocaleDateString();
 presentDate.textContent = day.padStart(2, "0");
 presentMonth.textContent = month;
 
@@ -277,6 +277,7 @@ function getCurrentDate(currentDate) {
 
 function addTask(title, date, priority, textDescription, taskImage) {
   const todoList = document.getElementById("toda-list");
+  // const myTodoList = document.getElementById("my_task_display");
   const taskId = Date.now();
 
   let priorityColor;
@@ -407,6 +408,24 @@ function addTask(title, date, priority, textDescription, taskImage) {
   });
 
   todoList.appendChild(card);
+
+  // const presentDateNow = new Date();
+  // const formatPresentDate = presentDateNow.toLocaleDateString("en-GB");
+
+  // const createdDateText = card.querySelector(".created").textContent.trim();
+
+  // function presentDateFun(dateString) {
+  //   const [day, month, year] = dateString.split("/").map(Number);
+  //   return new Date(day, month - 1, year);
+  // }
+
+  // const createdDate = presentDateFun(createdDateText);
+
+  // if (createdDate.toLocaleDateString("en-GB") === formatPresentDate) {
+
+  // } else {
+  //   myTodoList.appendChild(card);
+  // }
 }
 
 // Completed Task function
