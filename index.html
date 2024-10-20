@@ -41,12 +41,11 @@
   <body>
     <!-- ! ENTIRE WORK -->
     <div class="home-container">
+      <!-- Component Header -->
       <header class="top-header flex">
-        <a href="" class="dashboard-logo">
-          <h1>
-            <span class="dash">Dash</span><span class="board">board</span>
-          </h1>
-        </a>
+        <h1 class="dashboard-logo">
+          <span class="dash">Dash</span><span class="board">board</span>
+        </h1>
 
         <form action="" method="get" class="searchbar">
           <input
@@ -63,15 +62,18 @@
 
         <div class="notice-main-container flex">
           <div class="icons-container flex">
-            <button class="search-btn-icon">
+            <button class="search-btn">
               <ion-icon
                 name="notifications-outline"
-                class="btn-icon"
+                class="search-btn-icon"
               ></ion-icon>
             </button>
 
-            <button class="search-btn-icon">
-              <ion-icon name="calendar-outline" class="btn-icon"></ion-icon>
+            <button class="search-btn">
+              <ion-icon
+                name="calendar-outline"
+                class="search-btn-icon"
+              ></ion-icon>
             </button>
           </div>
 
@@ -82,7 +84,9 @@
         </div>
       </header>
 
+      <!-- Main Component -->
       <main class="main">
+        <!-- Component Aside -->
         <aside class="aside">
           <div class="userImage">
             <img src="./img/7.png" alt="" class="img" />
@@ -110,19 +114,14 @@
                 <p class="btn Mytask-btn">My Task</p>
               </button>
 
-              <button class="btn-container" data-target="content4">
+              <!-- <button class="btn-container" data-target="content4">
                 <ion-icon name="list-outline"></ion-icon>
                 <p class="btn categories-btn">Task Categories</p>
-              </button>
+              </button> -->
 
               <button class="btn-container" data-target="content5">
                 <ion-icon name="settings-outline"></ion-icon>
                 <p class="btn settings-btn">Settings</p>
-              </button>
-
-              <button class="btn-container" data-target="content6">
-                <ion-icon name="help-circle-outline"></ion-icon>
-                <p class="btn help-btn">Help</p>
               </button>
             </div>
 
@@ -139,9 +138,11 @@
           </div>
         </aside>
 
+        <!-- Dashboard Component -->
         <div class="container">
-          <!-- ! DASHBOARD START -->
+          <!-- Component Dashboard -->
           <div id="content1" class="section-dashboard content">
+            <!-- Component Dashboard Header -->
             <div class="dashboard-body-header">
               <div class="welcome">
                 <p>
@@ -150,45 +151,11 @@
                   👋
                 </p>
               </div>
-
-              <div class="image-invite-container">
-                <div class="user-images">
-                  <img
-                    src="./img/user4.jpg"
-                    alt="Woman folded her hands, standing smiling"
-                    class="img-users"
-                  />
-                  <img
-                    src="./img/user2.jpg"
-                    alt="Man using his phone smiling"
-                    class="img-users"
-                  />
-
-                  <img
-                    src="./img/user1.jpg"
-                    alt="Woman smiling"
-                    class="img-users"
-                  />
-                  <img
-                    src="./img/user3.jpg"
-                    alt="Man using his phone with glasses on smiling"
-                    class="img-users"
-                  />
-                  <img
-                    src="./img/user5.jpg"
-                    alt="Woman standing with her hand on her head smiling"
-                    class="img-users"
-                  />
-                </div>
-
-                <button class="invite-btn">
-                  <ion-icon name="people-outline"></ion-icon>
-                  <p class="invite">Invite</p>
-                </button>
-              </div>
             </div>
 
+            <!-- Component Dashboard Body Content -->
             <div class="dashboard-body">
+              <!-- Component Dashboard Body Content Todo Card -->
               <div class="todo">
                 <div class="todo-header">
                   <div class="to-do flex">
@@ -205,10 +172,9 @@
                   </button>
                 </div>
 
-                <!-- ? Will have to make changes to this later -->
                 <div class="todo-date flex">
-                  <p class="present-date">20</p>
-                  <p class="presnt-month">June</p>
+                  <p class="present-date"></p>
+                  <p class="presnt-month"></p>
                   <p class="today">.Today</p>
                 </div>
 
@@ -265,8 +231,9 @@
                 </div>
               </div>
 
+              <!-- Component Dashboard Body Content Completed Card and Status -->
               <div class="task">
-                <!-- neext -->
+                <!-- Status -->
                 <div class="status-container">
                   <div class="status-header flex">
                     <ion-icon
@@ -351,6 +318,7 @@
                   </div>
                 </div>
 
+                <!-- Completed Card -->
                 <div class="completed-task-container">
                   <header class="completed-task-header flex">
                     <ion-icon
@@ -408,11 +376,11 @@
             </div>
           </div>
 
-          <!-- ! VITALS START -->
+          <!-- Component Vital -->
           <div id="content2" class="content">
             <div class="section-vitals grid">
               <section class="vital-task">
-                <p class="vital-htext"><span>Vital </span>Tasks</p>
+                <h1 class="vital-htext"><span>Vital </span>Tasks</h1>
 
                 <div class="vital-task-container" id="vital_card">
                   <!-- <div class="cardVital card-overlay">
@@ -499,11 +467,11 @@
             </div>
           </div>
 
-          <!-- ! MY TASKS START -->
+          <!-- Component My Task -->
           <div id="content3" class="content">
             <div class="section-mytask grid">
               <section class="my-task">
-                <p class="vital-htext"><span>My </span>Tasks</p>
+                <h1 class="vital-htext"><span>My </span>Tasks</h1>
 
                 <div class="vital-task-container" id="my_task_display">
                   <!-- <div class="cardVital vital-card">
@@ -555,368 +523,37 @@
             </div>
           </div>
 
-          <!-- ! TASK CATEGORIES -->
-          <div id="content4" class="content">
-            <!-- Categories main display 1 -->
-            <div class="inner-categories-container">
-              <div class="categories-container">
-                <div class="categories-header flex">
-                  <h1 class="cat-header-title"><span>Task</span> Categories</h1>
-
-                  <div class="back-container">
-                    <button class="cat-btn-back">Go Back</button>
-                  </div>
-                </div>
-
-                <div class="addcat-btn-container">
-                  <button class="search-members-btn cat-btn-addcat addcategory">
-                    Add Category
-                  </button>
-                </div>
-
-                <!-- Categories display -->
-                <div class="categories-display-container">
-                  <!-- Categories Display 1 -->
-                  <div class="categories-display">
-                    <div class="cat-display-heaader flex">
-                      <h2 class="display-title-cat">
-                        <span>Task S</span>tatus
-                      </h2>
-
-                      <button class="cat-status-container flex">
-                        <ion-icon name="add" class="cat-add-icon"></ion-icon>
-                        <p class="status-text-cat">Add Task Status</p>
-                      </button>
-                    </div>
-
-                    <div class="cat-display-body">
-                      <div class="table-container grid">
-                        <div class="table1 col-1">
-                          <div class="table-header-container">
-                            <h2 class="table-header flex">SN</h2>
-                          </div>
-
-                          <div class="table-body">
-                            <div class="sn-container flex">
-                              <p>1</p>
-                              <p>2</p>
-                              <p>3</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="table2 col-1">
-                          <div class="table-header-container">
-                            <h2 class="table-header flex">Task Status</h2>
-                          </div>
-
-                          <div class="table-body">
-                            <div class="tast-status-container flex">
-                              <p>Completed</p>
-                              <p>In Progress</p>
-                              <p>Not Started</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="table3 col-1">
-                          <div class="table-header-container action-container">
-                            <h2 class="table-header flex">Action</h2>
-                          </div>
-
-                          <div class="table-body action-body">
-                            <div class="act-container flex">
-                              <div class="editdel-container flex">
-                                <button class="edi-container flex">
-                                  <ion-icon name="create"></ion-icon>
-                                  <p class="edi-text">Edit</p>
-                                </button>
-
-                                <button class="delete-contsiner flex">
-                                  <ion-icon name="trash"></ion-icon>
-                                  <p class="delete-text">Delete</p>
-                                </button>
-                              </div>
-
-                              <div class="editdel-container flex">
-                                <button class="edi-container flex">
-                                  <ion-icon name="create"></ion-icon>
-                                  <p class="edi-text">Edit</p>
-                                </button>
-
-                                <button class="delete-contsiner flex">
-                                  <ion-icon name="trash"></ion-icon>
-                                  <p class="delete-text">Delete</p>
-                                </button>
-                              </div>
-
-                              <div class="editdel-container flex">
-                                <button class="edi-container flex">
-                                  <ion-icon name="create"></ion-icon>
-                                  <p class="edi-text">Edit</p>
-                                </button>
-
-                                <button class="delete-contsiner flex">
-                                  <ion-icon name="trash"></ion-icon>
-                                  <p class="delete-text">Delete</p>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Categories Display 2 -->
-                  <div class="category-display">
-                    <div class="cat-display-heaader flex">
-                      <h2 class="display-title-cat">
-                        <span>Task S</span>tatus
-                      </h2>
-
-                      <button class="cat-status-container flex">
-                        <ion-icon name="add" class="cat-add-icon"></ion-icon>
-                        <p class="status-text-cat">Add Task Status</p>
-                      </button>
-                    </div>
-
-                    <div class="cat-display-body">
-                      <div class="table-container grid">
-                        <div class="table1 col-1">
-                          <div class="table-header-container">
-                            <h2 class="table-header flex">SN</h2>
-                          </div>
-
-                          <div class="table-body">
-                            <div class="sn-container flex">
-                              <p>1</p>
-                              <p>2</p>
-                              <p>3</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="table2 col-1">
-                          <div class="table-header-container">
-                            <h2 class="table-header flex">Task Status</h2>
-                          </div>
-
-                          <div class="table-body">
-                            <div class="tast-status-container flex">
-                              <p>Completed</p>
-                              <p>In Progress</p>
-                              <p>Not Started</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="table3 col-1">
-                          <div class="table-header-container action-container">
-                            <h2 class="table-header flex">Action</h2>
-                          </div>
-
-                          <div class="table-body action-body">
-                            <div class="act-container flex">
-                              <div class="editdel-container flex">
-                                <button class="edi-container flex">
-                                  <ion-icon name="create"></ion-icon>
-                                  <p class="edi-text">Edit</p>
-                                </button>
-
-                                <button class="delete-contsiner flex">
-                                  <ion-icon name="trash"></ion-icon>
-                                  <p class="delete-text">Delete</p>
-                                </button>
-                              </div>
-
-                              <div class="editdel-container flex">
-                                <button class="edi-container flex">
-                                  <ion-icon name="create"></ion-icon>
-                                  <p class="edi-text">Edit</p>
-                                </button>
-
-                                <button class="delete-contsiner flex">
-                                  <ion-icon name="trash"></ion-icon>
-                                  <p class="delete-text">Delete</p>
-                                </button>
-                              </div>
-
-                              <div class="editdel-container flex">
-                                <button class="edi-container flex">
-                                  <ion-icon name="create"></ion-icon>
-                                  <p class="edi-text">Edit</p>
-                                </button>
-
-                                <button class="delete-contsiner flex">
-                                  <ion-icon name="trash"></ion-icon>
-                                  <p class="delete-text">Delete</p>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Create Category main display -->
-              <div class="create-category-container content">
-                <div class="inner-category-container">
-                  <div class="categories-header flex">
-                    <h1 class="cat-header-title">
-                      <span>Crea</span>te Categories
-                    </h1>
-
-                    <div class="back-container">
-                      <button class="cat-btn-back create-category-backbtn">
-                        Go Back
-                      </button>
-                    </div>
-                  </div>
-
-                  <div class="cat-create-box">
-                    <h2 class="display-title-cat">Category Name</h2>
-                    <input type="text" class="cat-name-input" />
-                  </div>
-
-                  <div class="addcat-btn-container flex">
-                    <button class="search-members-btn cat-btn-addcat">
-                      Create
-                    </button>
-
-                    <button class="search-members-btn cat-btn-addcat">
-                      Cancel
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ! SETTIGNS -->
+          <!-- Component Settings -->
           <div id="content5" class="content">
             <div class="setting-container">
-              <h1>setting</h1>
-            </div>
-          </div>
+              <!-- Component Settings Header -->
+              <h1 class="vital-htext"><span>Sett</span>ings</h1>
 
-          <!-- ! HELP -->
-          <div id="content6" class="content">
-            <div class="help-container">
-              <h1>help</h1>
+              <!-- Component Settings Body -->
+              <div class="setting-body-container">
+                <!-- Component Settings Body Account Info -->
+                <div class="box account_info-container">
+                  <p class="account">Account Info</p>
+
+                  <!-- Account Display -->
+                  <div class="account-display-container"></div>
+                </div>
+
+                <!-- Component Settings Body Change Password -->
+                <div class="box change_password-contaner">
+                  <p class="password">Change Password</p>
+
+                  <!-- Change Password Display -->
+                  <div class="change_password-display-container"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </main>
     </div>
 
-    <!--  !Invite button (it is a button display) -->
-    <div class="section-addtask content">
-      <div class="addtask-header flex">
-        <p><span>Send an invi</span>te to a new member</p>
-
-        <div class="back-container">
-          <button class="addtask-btn">Go Back</button>
-        </div>
-      </div>
-
-      <div class="addtask-content-container">
-        <p class="addtask-text">Email</p>
-
-        <div class="addtask-search-container flex">
-          <input class="search-members" placeholder="gideonawortwe@gmail.com" />
-          <button class="search-members-btn">Send Invite</button>
-        </div>
-
-        <div class="members-container">
-          <p class="addtask-text members">Members</p>
-
-          <div class="wrap-content">
-            <!-- content 1 -->
-            <div class="members-content flex">
-              <div class="member-details flex">
-                <img src="img/7.png" alt="" class="member-img" />
-
-                <div class="member-name-container">
-                  <p class="member-name">Essi Music</p>
-                  <p class="member-emial">essimusic@online</p>
-                </div>
-              </div>
-
-              <div class="edit-option flex">
-                <p class="edit-text">Can edit</p>
-                <ion-icon name="chevron-down" class="downarrow"></ion-icon>
-              </div>
-            </div>
-            <!-- content 2 -->
-            <div class="members-content flex">
-              <div class="member-details flex">
-                <img src="img/7.png" alt="" class="member-img" />
-
-                <div class="member-name-container">
-                  <p class="member-name">Essi Music</p>
-                  <p class="member-emial">essimusic@online</p>
-                </div>
-              </div>
-
-              <div class="edit-option flex">
-                <p class="edit-text">Can edit</p>
-                <ion-icon name="chevron-down" class="downarrow"></ion-icon>
-              </div>
-            </div>
-
-            <!-- content 3 -->
-            <div class="members-content flex">
-              <div class="member-details flex">
-                <img src="img/7.png" alt="" class="member-img" />
-
-                <div class="member-name-container">
-                  <p class="member-name">Essi Music</p>
-                  <p class="member-emial">essimusic@online</p>
-                </div>
-              </div>
-
-              <div class="edit-option flex">
-                <p class="edit-text">Can edit</p>
-                <ion-icon name="chevron-down" class="downarrow"></ion-icon>
-              </div>
-            </div>
-
-            <!-- content 4 -->
-            <div class="members-content flex">
-              <div class="member-details flex">
-                <img src="img/7.png" alt="" class="member-img" />
-
-                <div class="member-name-container">
-                  <p class="member-name">Essi Music</p>
-                  <p class="member-emial">essimusic@online</p>
-                </div>
-              </div>
-
-              <div class="edit-option flex">
-                <p class="edit-text">Can edit</p>
-                <ion-icon name="chevron-down" class="downarrow"></ion-icon>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <p class="addtask-text">Project Link</p>
-
-        <div class="addtask-search-container projectlink flex">
-          <input
-            class="search-members"
-            placeholder="https://walkergideonhere.com/337550"
-          />
-          <button class="search-members-btn copylink">Copy Link</button>
-        </div>
-      </div>
-    </div>
-
-    <!--  !Add Task (it is a button display) -->
+    <!--  Sub Component Add Task -->
     <div class="dashTask content">
       <div class="addtask-header flex">
         <p><span>Add New T</span>ask</p>
@@ -1016,167 +653,8 @@
       <button class="search-members-btn done-btn" id="addTaskBtn">Done</button>
     </div>
 
-    <!-- !SIGN UP -->
-    <div class="registration-container hidden">
-      <div class="inner-register-container">
-        <div class="container-signup">
-          <section class="section-signup grid">
-            <div class="left-box">
-              <img
-                class="image"
-                src="img/signin2.png"
-                alt="An image of signing up"
-              />
-            </div>
-
-            <div class="right-box">
-              <h1>Sign Up</h1>
-
-              <form id="form_signup" method="post" class="form-container">
-                <div class="input-container">
-                  <ion-icon name="person"></ion-icon>
-                  <input
-                    type="text"
-                    name="firstname"
-                    id="firstName"
-                    placeholder="Enter First Name"
-                    required
-                  />
-                </div>
-
-                <div class="input-container">
-                  <ion-icon name="person"></ion-icon>
-                  <input
-                    type="text"
-                    name="lastname"
-                    id="lastName"
-                    placeholder="Enter Last Name"
-                    required
-                  />
-                </div>
-
-                <div class="input-container">
-                  <ion-icon name="person-outline"></ion-icon>
-                  <input
-                    type="text"
-                    name="username"
-                    id="userName"
-                    placeholder="Enter Username"
-                    required
-                  />
-                </div>
-
-                <div class="input-container">
-                  <ion-icon name="mail"></ion-icon>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Enter Email"
-                    required
-                  />
-                </div>
-
-                <div class="input-container">
-                  <ion-icon name="lock-closed"></ion-icon>
-                  <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="Enter Password"
-                    required
-                  />
-                </div>
-
-                <div class="input-container">
-                  <ion-icon name="lock-closed-outline"></ion-icon>
-                  <input
-                    type="password"
-                    name="password"
-                    id="confPassword"
-                    placeholder="Confirm Password"
-                    required
-                  />
-                </div>
-
-                <div class="check-container flex">
-                  <input type="checkbox" class="checkbox" id="sign_in_check" />
-                  <p>I agree to all terms.</p>
-                </div>
-
-                <button type="submit" class="submit-btn" id="register">
-                  Register
-                </button>
-
-                <p class="info-text">
-                  Already have an account?
-                  <span class="sigin-text">Sign In</span>
-                </p>
-              </form>
-            </div>
-          </section>
-        </div>
-
-        <div class="container-signin content">
-          <section class="section-signin grid">
-            <div class="left-box">
-              <h1>Sign In</h1>
-
-              <form action="" method="post" class="form-container">
-                <div class="input-container">
-                  <ion-icon name="person"></ion-icon>
-                  <input
-                    type="text"
-                    name="username"
-                    id="userName"
-                    placeholder="Enter Username"
-                    required
-                  />
-                </div>
-
-                <div class="input-container">
-                  <ion-icon name="lock-closed"></ion-icon>
-                  <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="Enter Password"
-                    required
-                  />
-                </div>
-
-                <div class="check-container flex">
-                  <input type="checkbox" class="checkbox" />
-                  <p>Remember Me</p>
-                </div>
-
-                <button class="submit-btn" id="login">Login</button>
-
-                <div class="icon-info flex">
-                  <p class="info-text">Or, Login with</p>
-                  <ion-icon name="logo-facebook" class="facebook"></ion-icon>
-                  <ion-icon name="logo-linkedin" class="linked"></ion-icon>
-                  <ion-icon name="logo-tiktok"></ion-icon>
-                </div>
-
-                <p class="info-text">
-                  Don't have an account?
-                  <span class="signup-text">Create One</span>
-                </p>
-              </form>
-            </div>
-
-            <div class="right-box">
-              <img
-                class="inimage"
-                src="img/signup2.png"
-                alt=";Image of signing in"
-              />
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>
+    <!-- Registration Component -->
+    <div class="registration-container hidden"></div>
 
     <div class="overlay hidden"></div>
   </body>

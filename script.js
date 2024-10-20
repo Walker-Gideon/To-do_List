@@ -1,155 +1,18 @@
 "use strict";
-// Component Header
-const presentfullDate = document.querySelector(".full_date");
 
-const todayDay = document.querySelector(".date-day");
-const todayDate = document.querySelector(".date");
-const presentDate = document.querySelector(".present-date");
-const presentMonth = document.querySelector(".presnt-month");
-const inviteBtn = document.querySelector(".invite-btn");
-const intiteContent = document.querySelector(".section-addtask");
-const addTaskContent = document.querySelector(".dashTask");
 const dashTaskContent = document.querySelector(".dashTask");
 const homeContainer = document.querySelector(".home-container");
-const inviteBackBtn = document.querySelector(".addtask-btn");
-const addTaskBackBtn = document.querySelector(".dashtask-btn");
-const dashboardAddTaskBtn = document.querySelector(".add-task");
-const createCategory = document.querySelector(".create-category-container");
-const categoryMainDisplay = document.querySelector(".categories-container");
-const addCategoryBtn = document.querySelector(".addcategory");
-const backBtnCategory = document.querySelector(".create-category-backbtn");
+const addTaskContent = document.querySelector(".dashTask");
 const overlay = document.querySelector(".overlay");
-
-//! SECTIONS
-const dashboardCont = document.querySelector(".section-dashboard");
 const VitalCont = document.querySelector(".section-vitals");
+
+// DEFAULT DISPLAY
+const dashboardCont = document.querySelector(".section-dashboard");
 const dashboardBtn = document.querySelector(".dashboardbtn");
-const buttons = document.querySelectorAll(".btn-container");
-const contents = document.querySelectorAll(".content");
-
-//? REGISTRATION
-const registrationContainer = document.querySelector(".registration-container");
-
-//* For my coding purpose I  place it here
 dashboardCont.classList.add("active");
 dashboardBtn.classList.add("active");
 
-// Sign Up data
-const firstNameInput = document.getElementById("firstName");
-const lastNameInput = document.getElementById("userName");
-const usernameInput = document.getElementById("userName");
-const useremailInput = document.getElementById("email");
-const passwordInput = document.getElementById("password");
-const confPasswordInput = document.getElementById("confPassword");
-const signInCheck = document.getElementById("sign_in_check");
-const signUpForm = document.getElementById("form_signup");
-
-// sign in data
-const signInUserNameInput = document.getElementById("userName");
-const signInPasswordInput = document.getElementById("password");
-const logInBtn = document.getElementById("login");
-
-function saveUserInfo(name, username, email) {
-  localStorage.setItem("name", name);
-  localStorage.setItem("username", username);
-  localStorage.setItem("email", email);
-  localStorage.setItem("isLoggedIn", "true");
-}
-
-signUpForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const firstName = firstNameInput.value.trim();
-  const lastName = lastNameInput.value.trim();
-  const email = useremailInput.value.trim();
-  const username = usernameInput.value.trim();
-  const password = passwordInput.value;
-  const confPassword = confPasswordInput.value;
-
-  const fullName = `${firstName} ${lastName}`;
-
-  if (password !== confPassword) {
-    alert("Password do not match! Please try again");
-    return;
-  }
-
-  if (!signInCheck.checked) {
-    alert("Please accept our terms by clicking on the checkbox");
-    return;
-  }
-
-  saveUserInfo(fullName, username, email);
-  getUserInfo();
-
-  registrationContainer.classList.add("hidden");
-  document.querySelector(".home-container").classList.add("active");
-});
-
-function getUserInfo() {
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
-
-  if (isLoggedIn) {
-    registrationContainer.classList.add("hidden");
-    document.querySelector(".home-container").classList.add("active");
-  } else {
-    registrationContainer.classList.remove("hidden");
-    document.querySelector(".home-container").classList.remove("active");
-  }
-
-  const name = localStorage.getItem("name");
-  const username = localStorage.getItem("username");
-  const email = localStorage.getItem("email");
-
-  if (name) {
-    document.querySelector(".dashboard-name").textContent = name;
-    document.querySelector(".dashboard-email").textContent = email;
-    document.querySelector(".user-name").textContent = username;
-  }
-
-  //? DEFAULT DISPLAY
-  dashboardCont.classList.add("active");
-  dashboardBtn.classList.add("active");
-}
-
-window.onload = getUserInfo;
-
-function logout() {
-  localStorage.removeItem("isLoggedIn");
-  localStorage.removeItem("name");
-  localStorage.removeItem("username");
-  localStorage.removeItem("email");
-
-  firstNameInput.value = "";
-  lastNameInput.value = "";
-  useremailInput.value = "";
-  usernameInput.value = "";
-  passwordInput.value = "";
-  confPasswordInput.value = "";
-  signInCheck.checked = false;
-
-  registrationContainer.classList.remove("hidden");
-  document.querySelector(".home-container").classList.remove("active");
-}
-
-//logout
-document.getElementById("log_out_btn").addEventListener("click", logout);
-
-const swapToSignin = document.querySelector(".sigin-text");
-const swapToSignUp = document.querySelector(".signup-text");
-const signupContainer = document.querySelector(".container-signup");
-const siginContainer = document.querySelector(".container-signin");
-
-swapToSignin.addEventListener("click", () => {
-  signupContainer.classList.add("content");
-  siginContainer.classList.add("category");
-});
-
-swapToSignUp.addEventListener("click", () => {
-  siginContainer.classList.remove("category");
-  signupContainer.classList.add("category");
-});
-
-//? Re-Usiable
+//! Re-Usiable
 function showAddTask() {
   overlay.classList.remove("hidden");
   homeContainer.classList.add("aside-index");
@@ -162,7 +25,12 @@ function addContentToTask(title, textDescription, date) {
   document.querySelector("#taskDate").value = date;
 }
 
-//? Dashboard Date
+// Component Header Date
+const todayDay = document.querySelector(".date-day");
+const todayDate = document.querySelector(".date");
+const presentDate = document.querySelector(".present-date");
+const presentMonth = document.querySelector(".presnt-month");
+
 const date = new Date();
 const daysOfWeek = [
   "Sunday",
@@ -196,11 +64,10 @@ const day = date.getDate().toString();
 const month = monthNames[date.getMonth()];
 
 todayDate.textContent = date.toLocaleDateString();
-presentfullDate.textContent = date.toLocaleDateString();
 presentDate.textContent = day.padStart(2, "0");
 presentMonth.textContent = month;
 
-//? PROGRESS on TASK Container
+//?**** PROGRESS on TASK Container
 document.querySelectorAll(".circle-progress").forEach((circle) => {
   const progress = circle.getAttribute("data-progress");
   const circumference = 2 * Math.PI * 40; // 2πr, where r is 40 (radius of circle)
@@ -211,7 +78,9 @@ document.querySelectorAll(".circle-progress").forEach((circle) => {
   progressCircle.style.strokeDashoffset = offset;
 });
 
-//? ASIDES BUTTONS
+// ASIDES BUTTONS
+const buttons = document.querySelectorAll(".btn-container");
+const contents = document.querySelectorAll(".content");
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -228,34 +97,32 @@ buttons.forEach((button) => {
   });
 });
 
-//? INVITE BUTTON
-inviteBtn.addEventListener("click", () => {
-  inviteBtn.classList.add("inviteBtn");
-  overlay.classList.remove("hidden");
-  intiteContent.classList.add("active");
-  homeContainer.classList.add("aside-index");
-});
+// DASHBOARD ADD TASK
+const addTaskBackBtn = document.querySelector(".dashtask-btn");
+const dashboardAddTaskBtn = document.querySelector(".add-task");
+const inviteBtn = document.querySelector(".add-task");
 
-inviteBackBtn.addEventListener("click", () => {
+function closeAddTask() {
   inviteBtn.classList.remove("inviteBtn");
   overlay.classList.add("hidden");
-  intiteContent.classList.remove("active");
+  addTaskContent.classList.remove("active");
   homeContainer.classList.remove("aside-index");
+}
+
+dashboardAddTaskBtn.addEventListener("click", () => {
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = false;
+  });
+  document.getElementById("taskTitle").value = "";
+  document.getElementById("taskDate").value = "";
+  document.getElementById("description").value = "";
+
+  showAddTask();
 });
 
-//? TASK CATEGORY
-function showCategory() {
-  categoryMainDisplay.classList.add("content");
-  createCategory.classList.add("category");
-}
-function hideCategory() {
-  categoryMainDisplay.classList.add("category");
-  createCategory.classList.remove("category");
-}
-addCategoryBtn.addEventListener("click", showCategory);
-backBtnCategory.addEventListener("click", hideCategory);
+addTaskBackBtn.addEventListener("click", closeAddTask);
 
-//! Adding a task in the card of the dashboard
+// Adding a task in the card of the dashboard
 const checkboxes = document.querySelectorAll(".checkbox");
 checkboxes.forEach((checkbox) => {
   checkbox.addEventListener("click", () => {
@@ -712,32 +579,32 @@ function vitalDetails(vitalCard) {
   return vitalDisplay;
 }
 
-function loadTask() {
-  const tasks = JSON.parse(localStorage.getItem("tasks") || []);
-  tasks.forEach((task) => {
-    addTask(
-      task.title,
-      task.date,
-      task.priority,
-      task.textDescription,
-      task.taskImage
-    );
-  });
-}
+// function loadTask() {
+//   const tasks = JSON.parse(localStorage.getItem("tasks") || []);
+//   tasks.forEach((task) => {
+//     addTask(
+//       task.title,
+//       task.date,
+//       task.priority,
+//       task.textDescription,
+//       task.taskImage
+//     );
+//   });
+// }
 
-function saveTask(title, date, priority, textDescription, taskImage) {
-  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  const taskId = Date.now();
-  tasks.push({
-    id: taskId,
-    title,
-    date,
-    priority,
-    textDescription,
-    taskImage,
-  });
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-}
+// function saveTask(title, date, priority, textDescription, taskImage) {
+//   const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+//   const taskId = Date.now();
+//   tasks.push({
+//     id: taskId,
+//     title,
+//     date,
+//     priority,
+//     textDescription,
+//     taskImage,
+//   });
+//   localStorage.setItem("tasks", JSON.stringify(tasks));
+// }
 
 document.getElementById("addTaskBtn").addEventListener("click", () => {
   const title = document.getElementById("taskTitle").value.trim();
@@ -759,11 +626,9 @@ document.getElementById("addTaskBtn").addEventListener("click", () => {
     }
 
     addTask(title, formatDate, priority, textDescription, taskImage);
-    saveTask(title, formatDate, priority, textDescription, taskImage);
+    // saveTask(title, formatDate, priority, textDescription, taskImage);
 
-    setTimeout(() => {
-      closeAddTask();
-    }, 5000);
+    closeAddTask();
 
     document.getElementById("taskTitle").value = "";
     document.getElementById("taskDate").value = "";
@@ -777,25 +642,28 @@ document.getElementById("addTaskBtn").addEventListener("click", () => {
   }
 });
 
-//? DASHBOARD ADD TASK
-function closeAddTask() {
-  inviteBtn.classList.remove("inviteBtn");
-  overlay.classList.add("hidden");
-  addTaskContent.classList.remove("active");
-  homeContainer.classList.remove("aside-index");
-}
+// window.onload = loadTask;
 
-dashboardAddTaskBtn.addEventListener("click", () => {
-  checkboxes.forEach((checkbox) => {
-    checkbox.checked = false;
-  });
-  document.getElementById("taskTitle").value = "";
-  document.getElementById("taskDate").value = "";
-  document.getElementById("description").value = "";
+// Component Settings
+const accountInfoContainer = document.querySelector(".account_info-container");
+const changePasswordContainer = document.querySelector(
+  ".change_password-contaner"
+);
 
-  showAddTask();
+accountInfoContainer.addEventListener("mouseenter", () => {
+  accountInfoContainer.classList.add("settings_width");
+  changePasswordContainer.classList.remove("settings_width");
 });
 
-addTaskBackBtn.addEventListener("click", closeAddTask);
+accountInfoContainer.addEventListener("mouseleave", () => {
+  accountInfoContainer.classList.remove("settings_width");
+});
 
-window.onload = loadTask;
+changePasswordContainer.addEventListener("mouseenter", () => {
+  changePasswordContainer.classList.add("settings_width");
+  accountInfoContainer.classList.remove("settings_width");
+});
+
+changePasswordContainer.addEventListener("mouseleave", () => {
+  changePasswordContainer.classList.remove("settings_width");
+});
