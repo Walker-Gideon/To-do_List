@@ -527,24 +527,46 @@
           <div id="content5" class="content">
             <div class="setting-container">
               <!-- Component Settings Header -->
-              <h1 class="vital-htext"><span>Sett</span>ings</h1>
+              <h1 class="vital-htext setting-header"><span>Sett</span>ings</h1>
 
               <!-- Component Settings Body -->
               <div class="setting-body-container">
                 <!-- Component Settings Body Account Info -->
                 <div class="box account_info-container">
-                  <p class="account">Account Info</p>
+                  <p class="account">Account Information</p>
 
                   <!-- Account Display -->
-                  <div class="account-display-container"></div>
-                </div>
+                  <div class="account-display-container">
+                    <div class="header-account_display flex">
+                      <img src="img/7.png" alt="" class="image_account" />
 
-                <!-- Component Settings Body Change Password -->
-                <div class="box change_password-contaner">
-                  <p class="password">Change Password</p>
+                      <div class="innerheader-account">
+                        <p class="name-account">Username</p>
+                        <p class="email-account">example.@gmail.com</p>
+                      </div>
+                    </div>
 
-                  <!-- Change Password Display -->
-                  <div class="change_password-display-container"></div>
+                    <form class="inneraccount-display">
+                      <div class="info_input_container">
+                        <label for="firstname">First Name</label>
+                        <input type="text" name="firstname" id="firstname" />
+                      </div>
+
+                      <div class="info_input_container">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" name="lastname" id="lastname" />
+                      </div>
+
+                      <div class="info_input_container">
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" />
+                      </div>
+
+                      <div class="info_btn-container">
+                        <button class="submit_info-btn">Save Changes</button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
