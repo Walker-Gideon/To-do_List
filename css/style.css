@@ -168,8 +168,7 @@ body {
 .userImage {
   position: absolute;
   top: 10px;
-  align-items: center;
-  margin-left: 9rem; /* Have to chage this late*/
+  margin-left: 6rem;
 }
 .img {
   width: 12.8rem;
@@ -596,6 +595,12 @@ circle.progress {
 }
 .vital-task-container {
   padding: 1.2rem 0 0.8rem;
+  margin-top: 1.2rem;
+  overflow-y: auto;
+  height: 92rem;
+}
+.vital-task-container::-webkit-scrollbar {
+  display: none;
 }
 
 /*? Vital Card  */
@@ -727,23 +732,7 @@ circle.progress {
   background-color: var(--prihover-col);
 }
 
-/*? SECTION MYTASK */
-.section-mytask {
-  padding: 0 4.8rem;
-  grid-template-columns: 40fr 60fr;
-  gap: 1.2rem;
-}
-.my-task,
-.my-details {
-  height: 100rem;
-  border: 1px solid var(--graywhite-col);
-  border-radius: 11px;
-}
-.my-task {
-  padding: 1.8rem 3.2rem;
-}
-
-/* ? INVITE BTN setion */
+/*  Sub Component Add Task */
 .section-addtask,
 .dashTask {
   position: absolute;
@@ -784,7 +773,7 @@ circle.progress {
 .dashtask-btn:hover {
   color: var(--lightblue-col);
 }
-.addtask-content-container {
+.innerform_container {
   border: 0.5px solid var(--mixed-gray-col);
   border-radius: 1px;
   margin-top: 2rem;
@@ -800,8 +789,11 @@ circle.progress {
 }
 .addtask-search-container {
   margin-top: 1.2rem;
-  align-items: center;
-  gap: 1rem;
+  /* align-items: center; */
+  /* gap: 1rem; */
+}
+.search-box_first {
+  margin-bottom: 1.2rem;
 }
 .search-members {
   width: 81%;
@@ -976,7 +968,6 @@ circle.progress {
 
 /* Component Settings */
 .setting-container {
-  /* padding: 3.2rem 1.2rem 4.8rem; */
   margin: 0 4.8rem;
   padding: 2rem;
   height: 100rem;
@@ -990,12 +981,10 @@ circle.progress {
   margin-top: 8rem;
   display: flex;
   width: 100%;
-  /* height: ; */
   gap: 1.2rem;
 }
 .box {
   flex: 1;
-  /* height: ; */
   transform: all 0.3s ease;
   z-index: 1;
 }
@@ -1015,24 +1004,24 @@ circle.progress {
   gap: 1.2rem;
 }
 .image_account {
-  width: 8rem;
-  height: 8rem;
+  width: 12rem;
+  height: 12rem;
   border: 1px solid var(--white-col);
   border-radius: 50%;
 }
 .name-account {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   font-weight: 600;
 }
 .email-account {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 500;
 }
 .inneraccount-display {
   border: 1px solid var(--graywhite-col);
   border-radius: 8px;
   padding: 2rem;
-  margin: 2rem 0 4.8rem;
+  margin: 4rem 0 4.8rem;
 }
 .info_input_container {
   display: flex;
@@ -1062,6 +1051,10 @@ circle.progress {
   font-weight: 500;
   color: var(--white-col);
   cursor: pointer;
+  transition: all 0.3s;
+}
+.submit_info-btn:hover {
+  background-color: var(--prihover-col);
 }
 
 /* 

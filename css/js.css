@@ -34,8 +34,11 @@
   height: 100rem;
 }
 
-/** Component Settings */
-.settings_width {
-  flex: 2;
-  z-index: 999;
+.limit_paragraph {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 7.5rem;
 }

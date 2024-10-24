@@ -469,57 +469,17 @@
 
           <!-- Component My Task -->
           <div id="content3" class="content">
-            <div class="section-mytask grid">
-              <section class="my-task">
+            <div class="section-vitals grid">
+              <section class="vital-task">
                 <h1 class="vital-htext"><span>My </span>Tasks</h1>
 
-                <div class="vital-task-container" id="my_task_display">
-                  <!-- <div class="cardVital vital-card">
-                    <div class="vital-header flex">
-                      <ion-icon
-                        name="ellipse-outline"
-                        class="card-title-icon"
-                      ></ion-icon>
-
-                      <button class="btn-option">
-                        <ion-icon
-                          name="ellipsis-horizontal-outline"
-                          class="option-icon"
-                        ></ion-icon>
-                      </button>
-                    </div>
-
-                    <p class="vital-title-text">Attend John's Birthday Party</p>
-
-                    <div class="vital-body flex">
-                      <p>
-                        Buy gifts on the way and pick up cake from the bakery.
-                        (6PM | Fresh Elements)....
-                      </p>
-                      <img src="./img/user2.jpg" alt="" class="card-image" />
-                    </div>
-
-                    <div class="vital-status flex">
-                      <p class="card-level">
-                        Priority: <span class="level">Moderate</span>
-                      </p>
-                      <p class="card-start">
-                        Status: <span class="start">Not Started</span>
-                      </p>
-                      <p class="created-on">
-                        Created on: <span class="created">20/06/2023</span>
-                      </p>
-                    </div>
-                  </div>-->
-                </div>
+                <div class="vital-task-container" id="my_task_display"></div>
               </section>
 
-              <section class="my-details">
-                <div class="details">
-                  <!-- <ion-icon name="trash"></ion-icon> -->
-                  <!-- <ion-icon name="create"></ion-icon> -->
-                </div>
-              </section>
+              <section
+                class="vital-details my-details"
+                id="mytask_display"
+              ></section>
             </div>
           </div>
 
@@ -563,7 +523,7 @@
                       </div>
 
                       <div class="info_btn-container">
-                        <button class="submit_info-btn">Save Changes</button>
+                        <button class="submit_info-btn">Update Info</button>
                       </div>
                     </form>
                   </div>
@@ -578,101 +538,120 @@
     <!--  Sub Component Add Task -->
     <div class="dashTask content">
       <div class="addtask-header flex">
-        <p><span>Add New T</span>ask</p>
+        <p><span class="edit-span">Add New T</span>ask</p>
         <div class="back-container">
           <button class="dashtask-btn">Go Back</button>
         </div>
       </div>
 
-      <div class="addtask-content-container content-container">
-        <p class="addtask-text">Title</p>
-        <div class="addtask-search-container">
-          <input class="search-members search-me" id="taskTitle" />
-        </div>
-
-        <p class="addtask-text addtask-date">Date</p>
-        <div class="addtask-search-container search-contain">
-          <input class="search-members search-me" id="taskDate" />
-          <!-- placeholder="31/12/2024" -->
-          <ion-icon name="calendar-outline" class="addtask-calendar"></ion-icon>
-        </div>
-
-        <p class="addtask-text addtask-date">Priority</p>
-        <div class="priority-container flex">
-          <div class="priority-sub flex">
-            <ion-icon
-              name="ellipse"
-              class="priority-icon priority-red"
-            ></ion-icon>
-            <p>Extreme</p>
+      <form
+        class="addtask-content-container content-container"
+        id="addTaskForm"
+      >
+        <div class="innerform_container">
+          <label for="title" class="addtask-text">Title</label>
+          <div class="addtask-search-container search-box_first">
             <input
-              type="checkbox"
-              name="priority"
-              value="Extreme"
-              class="checkbox checkbox-red"
+              type="text"
+              class="search-members search-me"
+              name="title"
+              id="taskTitle"
             />
           </div>
 
-          <div class="priority-sub flex">
-            <ion-icon
-              name="ellipse"
-              class="priority-icon priority-blue"
-            ></ion-icon>
-            <p>Moderate</p>
+          <label for="date" class="addtask-text addtask-date">Date</label>
+          <div class="addtask-search-container search-contain">
             <input
-              type="checkbox"
-              name="priority"
-              value="Moderate"
-              class="checkbox checkbox-blue"
+              type="text"
+              class="search-members search-me"
+              name="date"
+              id="taskDate"
             />
+            <ion-icon
+              name="calendar-outline"
+              class="addtask-calendar"
+            ></ion-icon>
           </div>
 
-          <div class="priority-sub flex">
-            <ion-icon
-              name="ellipse"
-              class="priority-icon priority-green"
-            ></ion-icon>
-            <p>Low</p>
-            <input
-              type="checkbox"
-              name="priority"
-              value="Low"
-              class="checkbox checkbox-green"
-            />
-          </div>
-        </div>
-
-        <div class="description-img-container grid">
-          <form class="description-container">
-            <p class="addtask-text addtask-date">Text Description</p>
-            <textarea
-              id="description"
-              name="description"
-              rows="12"
-              cols="40"
-              placeholder="Start writing here....."
-              class="input-description"
-            ></textarea>
-          </form>
-
-          <div class="img-container">
-            <p class="addtask-text addtask-date">Project Link</p>
-            <div class="img-sub flex">
-              <div id="taskProjectLink"></div>
-              <img
-                src="img/dragd.png"
-                alt="image of drag and drop"
-                class="addtask-img"
+          <p class="addtask-text addtask-date">Priority</p>
+          <div class="priority-container flex">
+            <div class="priority-sub flex">
+              <ion-icon
+                name="ellipse"
+                class="priority-icon priority-red"
+              ></ion-icon>
+              <p>Extreme</p>
+              <input
+                type="checkbox"
+                name="priority"
+                value="Extreme"
+                class="checkbox checkbox-red"
               />
-              <p class="img-text">Drag&Drop file here</p>
-              <p class="img-text">or</p>
-              <button class="img-browser-btn">Browse</button>
+            </div>
+
+            <div class="priority-sub flex">
+              <ion-icon
+                name="ellipse"
+                class="priority-icon priority-blue"
+              ></ion-icon>
+              <p>Moderate</p>
+              <input
+                type="checkbox"
+                name="priority"
+                value="Moderate"
+                class="checkbox checkbox-blue"
+              />
+            </div>
+
+            <div class="priority-sub flex">
+              <ion-icon
+                name="ellipse"
+                class="priority-icon priority-green"
+              ></ion-icon>
+              <p>Low</p>
+              <input
+                type="checkbox"
+                name="priority"
+                value="Low"
+                class="checkbox checkbox-green"
+              />
+            </div>
+          </div>
+
+          <div class="description-img-container grid">
+            <div class="description-container">
+              <p class="addtask-text addtask-date">Text Description</p>
+              <textarea
+                id="description"
+                name="description"
+                rows="12"
+                cols="40"
+                placeholder="Start writing here....."
+                class="input-description"
+              ></textarea>
+            </div>
+
+            <div class="img-container">
+              <p class="addtask-text addtask-date">Project Link</p>
+              <div class="img-sub flex">
+                <div id="taskProjectLink"></div>
+                <img
+                  src="img/dragd.png"
+                  alt="image of drag and drop"
+                  class="addtask-img"
+                />
+                <p class="img-text">Drag&Drop file here</p>
+                <p class="img-text">or</p>
+                <button class="img-browser-btn">Browse</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <button class="search-members-btn done-btn" id="addTaskBtn">Done</button>
+        <button class="search-members-btn done-btn" id="addTaskBtn">
+          Done
+        </button>
+      </form>
     </div>
 
     <!-- Registration Component -->
@@ -681,3 +660,5 @@
     <div class="overlay hidden"></div>
   </body>
 </html>
+
+<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit aliquid placeat dolores aspernatur, tempora nobis dolorum asperiores, voluptates nostrum quas libero modi cum, reiciendis commodi quibusdam sunt molestiae aliquam eos.</p> -->

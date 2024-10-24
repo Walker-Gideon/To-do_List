@@ -142,9 +142,9 @@ function getCurrentDate(currentDate) {
   return `${day}/${month}/${year}`;
 }
 
-function addTask(title, date, priority, textDescription, taskImage) {
+// function addTask(title, date, priority, textDescription, taskImage)
+function addTask(title, date, priority, textDescription) {
   const todoList = document.getElementById("toda-list");
-  // const myTodoList = document.getElementById("my_task_display");
   const taskId = Date.now();
 
   let priorityColor;
@@ -175,6 +175,7 @@ function addTask(title, date, priority, textDescription, taskImage) {
       <div class="option-action hidden">
         <div class="inner-option-container">
           <button class="option-btn vital">Vital</button>
+          <button class="option-btn mytask">My Task</button>
           <button class="option-btn edit">Edit</button>
           <button class="option-btn delete">Delete</button>
           <button class="option-btn finish">Finish</button>
@@ -185,7 +186,7 @@ function addTask(title, date, priority, textDescription, taskImage) {
     <p class="card-title-text">${title}</p>
 
     <div class="card-body grid">
-      <p>${textDescription}</p>
+      <p class="limit_paragraph">${textDescription}</p>
       
       <img src="./img/user2.jpg" alt="" class="card-image" />
     </div>
@@ -223,8 +224,25 @@ function addTask(title, date, priority, textDescription, taskImage) {
       date: card.querySelector(".created").textContent,
     };
 
-    const vitalCard = vitalTask(vitalContent);
+    const vitalCard = vitalTask(vitalContent, "vital_display");
     document.querySelector("#vital_card").appendChild(vitalCard);
+
+    card.remove();
+    actionOption.classList.add("hidden");
+  });
+
+  actionOption.querySelector(".mytask").addEventListener("click", () => {
+    const vitalContent = {
+      title: card.querySelector(".card-title-text").textContent,
+      textDescription: card.querySelector(".card-body p").textContent,
+      // image: card.querySelector(".card-image").src,
+      priority: card.querySelector(".level").textContent,
+      status: card.querySelector(".start").textContent,
+      date: card.querySelector(".created").textContent,
+    };
+
+    const vitalCard = vitalTask(vitalContent, "mytask_display");
+    document.querySelector("#my_task_display").appendChild(vitalCard);
 
     card.remove();
     actionOption.classList.add("hidden");
@@ -235,6 +253,8 @@ function addTask(title, date, priority, textDescription, taskImage) {
       "Dear user your previous task will be remove from your dashboard, please click 'OK' to continue editing/create your card with your previous data"
     );
 
+    const editText = document.querySelector(".edit-span");
+    editText.textContent = "Edit T";
     const title = card.querySelector(".card-title-text").textContent;
     const textDescription = card.querySelector(".card-body").textContent;
     const date = card.querySelector(".created").textContent;
@@ -275,24 +295,6 @@ function addTask(title, date, priority, textDescription, taskImage) {
   });
 
   todoList.appendChild(card);
-
-  // const presentDateNow = new Date();
-  // const formatPresentDate = presentDateNow.toLocaleDateString("en-GB");
-
-  // const createdDateText = card.querySelector(".created").textContent.trim();
-
-  // function presentDateFun(dateString) {
-  //   const [day, month, year] = dateString.split("/").map(Number);
-  //   return new Date(day, month - 1, year);
-  // }
-
-  // const createdDate = presentDateFun(createdDateText);
-
-  // if (createdDate.toLocaleDateString("en-GB") === formatPresentDate) {
-
-  // } else {
-  //   myTodoList.appendChild(card);
-  // }
 }
 
 // Completed Task function
@@ -327,7 +329,7 @@ function completedTask(cardContent) {
 
       <div class="grid comp-body">
         <div class="completed-text-cont">
-          <p class="completed-paragraph">${cardContent.textDescription}</p>
+          <p class="completed-paragraph limit_paragraph">${cardContent.textDescription}</p>
 
           <p class="card-start start-comp">Status: <span class="comp-start">Completed</span></p>
         </div>
@@ -352,6 +354,8 @@ function completedTask(cardContent) {
       "Dear user your previous task will be remove from your dashboard, please click 'OK' to continue editing/create your card with your previous data"
     );
 
+    const editText = document.querySelector(".edit-span");
+    editText.textContent = "Edit T";
     const title = completedCard.querySelector(".card-title-text").textContent;
     const textDescription = completedCard.querySelector(
       ".completed-paragraph"
@@ -380,7 +384,7 @@ function completedTask(cardContent) {
 }
 
 // Vital Task function
-function vitalTask(vitalContent) {
+function vitalTask(vitalContent, vitalDetailsContent) {
   let priorityColor;
   let ellipseColor;
   if (vitalContent.priority === "Extreme") {
@@ -419,7 +423,7 @@ function vitalTask(vitalContent) {
       <p class="vital-title-text">${vitalContent.title}</p>
 
       <div class="grid vital-body">
-          <p class="vital-paragraph">${vitalContent.textDescription}</p>
+          <p class="vital-paragraph limit_paragraph">${vitalContent.textDescription}</p>
 
         <img src="./img/user2.jpg" alt="" class="card-image" />
       </div>
@@ -444,6 +448,7 @@ function vitalTask(vitalContent) {
     actionOption.classList.toggle("hidden");
   });
 
+  let vitalContentDetails = vitalDetailsContent;
   actionOption.querySelector(".task").addEventListener("click", () => {
     const removePreviousDisplay = document.querySelector(".vital_display");
     if (removePreviousDisplay) {
@@ -452,7 +457,7 @@ function vitalTask(vitalContent) {
 
     // vitalCard.classList.add("card-overlay");
     const vitalClone = document.querySelector(".cardVital");
-    vitalDetails(vitalClone);
+    vitalDetails(vitalClone, vitalContentDetails);
 
     actionOption.classList.add("hidden");
   });
@@ -492,7 +497,7 @@ function vitalTask(vitalContent) {
 }
 
 // Function for vital details to be displayed
-function vitalDetails(vitalCard) {
+function vitalDetails(vitalCard, cardContainer) {
   const title = vitalCard.querySelector(".vital-title-text").textContent;
   const priority = vitalCard.querySelector(".level").textContent;
   const status = vitalCard.querySelector(".start").textContent;
@@ -550,7 +555,7 @@ function vitalDetails(vitalCard) {
     </div>
   `;
 
-  document.querySelector("#vital_display").appendChild(vitalDisplay);
+  document.getElementById(cardContainer).appendChild(vitalDisplay);
 
   const deleteBtn = vitalDisplay.querySelector("#vital_delete");
   const editBtn = vitalDisplay.querySelector("#vital_edit");
@@ -561,10 +566,8 @@ function vitalDetails(vitalCard) {
   });
 
   editBtn.addEventListener("click", () => {
-    // alert(
-    //   "Dear user your previous task will be remove from your dashboard, please click 'OK' to continue editing/create your card with your previous data"
-    // );
-
+    const editText = document.querySelector(".edit-span");
+    editText.textContent = "Edit T";
     const title = vitalDisplay.querySelector(".vital-title").textContent;
     const textDescription =
       vitalDisplay.querySelector(".vital_paragraph").textContent;
@@ -579,34 +582,9 @@ function vitalDetails(vitalCard) {
   return vitalDisplay;
 }
 
-// function loadTask() {
-//   const tasks = JSON.parse(localStorage.getItem("tasks") || []);
-//   tasks.forEach((task) => {
-//     addTask(
-//       task.title,
-//       task.date,
-//       task.priority,
-//       task.textDescription,
-//       task.taskImage
-//     );
-//   });
-// }
+document.getElementById("addTaskForm").addEventListener("submit", (e) => {
+  e.preventDefault();
 
-// function saveTask(title, date, priority, textDescription, taskImage) {
-//   const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-//   const taskId = Date.now();
-//   tasks.push({
-//     id: taskId,
-//     title,
-//     date,
-//     priority,
-//     textDescription,
-//     taskImage,
-//   });
-//   localStorage.setItem("tasks", JSON.stringify(tasks));
-// }
-
-document.getElementById("addTaskBtn").addEventListener("click", () => {
   const title = document.getElementById("taskTitle").value.trim();
   const date = document.getElementById("taskDate").value;
   const priority =
@@ -625,8 +603,8 @@ document.getElementById("addTaskBtn").addEventListener("click", () => {
       formatDate = getCurrentDate(userDate);
     }
 
-    addTask(title, formatDate, priority, textDescription, taskImage);
-    // saveTask(title, formatDate, priority, textDescription, taskImage);
+    addTask(title, formatDate, priority, textDescription);
+    // addTask(title, formatDate, priority, textDescription, taskImage);
 
     closeAddTask();
 
@@ -642,28 +620,8 @@ document.getElementById("addTaskBtn").addEventListener("click", () => {
   }
 });
 
-// window.onload = loadTask;
-
 // Component Settings
 const accountInfoContainer = document.querySelector(".account_info-container");
 const changePasswordContainer = document.querySelector(
   ".change_password-contaner"
 );
-
-accountInfoContainer.addEventListener("mouseenter", () => {
-  accountInfoContainer.classList.add("settings_width");
-  changePasswordContainer.classList.remove("settings_width");
-});
-
-accountInfoContainer.addEventListener("mouseleave", () => {
-  accountInfoContainer.classList.remove("settings_width");
-});
-
-changePasswordContainer.addEventListener("mouseenter", () => {
-  changePasswordContainer.classList.add("settings_width");
-  accountInfoContainer.classList.remove("settings_width");
-});
-
-changePasswordContainer.addEventListener("mouseleave", () => {
-  changePasswordContainer.classList.remove("settings_width");
-});
